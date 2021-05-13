@@ -1,7 +1,6 @@
 package edu.cmu.cs.mvelezce.tool.execute.java.adapter.sleep;
 
 import edu.cmu.cs.mvelezce.tool.execute.java.adapter.BaseAdapter;
-
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
@@ -12,29 +11,27 @@ import java.util.Set;
  */
 public class SleepAdapter extends BaseAdapter {
 
-    public SleepAdapter() {
-        this(null, null, null);
-    }
+  public SleepAdapter() { this(null, null, null); }
 
-    public SleepAdapter(String programName, String mainClass, String directory) {
-        super(programName, mainClass, directory, getSleepOptions());
-    }
+  public SleepAdapter(String programName, String mainClass, String directory) {
+    super(programName, mainClass, directory, getSleepOptions());
+  }
 
-    private static List<String> getSleepOptions() {
-        String[] options = {"A", "B", "C", "D", "IA", "DA"};
+  private static List<String> getSleepOptions() {
+    String[] options = {"A", "B", "C", "D", "IA", "DA"};
 
-        return Arrays.asList(options);
-    }
+    return Arrays.asList(options);
+  }
 
-    @Override
-    public void execute(Set<String> configuration, int iteration) throws IOException, InterruptedException {
-        String[] args = this.configurationAsMainArguments(configuration);
-        String[] newArgs = new String[args.length + 1];
+  @Override
+  public void execute(Set<String> configuration, int iteration)
+      throws IOException, InterruptedException {
+    String[] args = this.configurationAsMainArguments(configuration);
+    String[] newArgs = new String[args.length + 1];
 
-        newArgs[0] = iteration + "";
-        System.arraycopy(args, 0, newArgs, 1, args.length);
+    newArgs[0] = iteration + "";
+    System.arraycopy(args, 0, newArgs, 1, args.length);
 
-        this.execute(SleepMain.SLEEP_MAIN, newArgs);
-    }
-
+    this.execute(SleepMain.SLEEP_MAIN, newArgs);
+  }
 }

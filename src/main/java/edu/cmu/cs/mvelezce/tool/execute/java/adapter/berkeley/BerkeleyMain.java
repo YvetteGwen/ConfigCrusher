@@ -18,7 +18,8 @@ import java.util.Set;
 
 public class BerkeleyMain extends BaseMain {
 
-  public static final String BERKELEY_MAIN = BerkeleyMain.class.getCanonicalName();
+  public static final String BERKELEY_MAIN =
+      BerkeleyMain.class.getCanonicalName();
   public static final String PROGRAM_NAME = "berkeley-db";
 
   public BerkeleyMain(String programName, String iteration, String[] args) {
@@ -41,7 +42,8 @@ public class BerkeleyMain extends BaseMain {
     Adapter adapter = new BerkeleyAdapter();
     Set<String> configuration = adapter.configurationAsSet(this.getArgs());
 
-    ConfigCrusherExecutor executor = new ConfigCrusherExecutor(this.getProgramName());
+    ConfigCrusherExecutor executor =
+        new ConfigCrusherExecutor(this.getProgramName());
     Map<String, Long> results = executor.getResults();
     executor.writeToFile(this.getIteration(), configuration, results);
   }
@@ -49,12 +51,13 @@ public class BerkeleyMain extends BaseMain {
   @Override
   public void execute(String mainClass, String[] args) {
     if (!mainClass.contains("Run")) {
-      throw new RuntimeException(
-          "Could not find the main class " + mainClass + " to execute with berkeley db");
+      throw new RuntimeException("Could not find the main class " + mainClass +
+                                 " to execute with berkeley db");
     }
 
     try {
-      BaseRegionInstrumenter instrumenter = new ConfigCrusherTimerRegionInstrumenter(PROGRAM_NAME);
+      BaseRegionInstrumenter instrumenter =
+          new ConfigCrusherTimerRegionInstrumenter(PROGRAM_NAME);
       instrumenter.instrument(args);
       Set<JavaRegion> regions = instrumenter.getRegionsToOptionSet().keySet();
 
@@ -63,11 +66,8 @@ public class BerkeleyMain extends BaseMain {
       }
 
       Regions.regionsToOverhead.put(Regions.PROGRAM_REGION_ID, 0L);
-    } catch (InvocationTargetException
-        | NoSuchMethodException
-        | IOException
-        | IllegalAccessException
-        | InterruptedException e) {
+    } catch (InvocationTargetException | NoSuchMethodException | IOException |
+             IllegalAccessException | InterruptedException e) {
       throw new RuntimeException("Could not add regions to the Regions class");
     }
 

@@ -15,8 +15,9 @@ public class ConfigCrusherExecutorTest {
   @Test
   public void sleep1() throws Exception {
     String programName = "sleep1";
-    String classDirectory = BaseAdapter.USER_HOME
-        + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/instrumented/dummy/out/production/dummy";
+    String classDirectory =
+        BaseAdapter.USER_HOME +
+        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/instrumented/dummy/out/production/dummy";
     String entryPoint = "edu.cmu.cs.mvelezce.Sleep1";
 
     // Program arguments
@@ -30,16 +31,17 @@ public class ConfigCrusherExecutorTest {
     args[1] = "-saveres";
     args[2] = "-i1";
 
-    Executor executor = new ConfigCrusherExecutor(programName, entryPoint, classDirectory,
-        configurations);
+    Executor executor = new ConfigCrusherExecutor(
+        programName, entryPoint, classDirectory, configurations);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
   }
 
   @Test
   public void runningExample1() throws Exception {
     String programName = RunningExampleMain.PROGRAM_NAME;
-    String classDirectory = BaseAdapter.USER_HOME
-        + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/instrumented/running-example/target/classes";
+    String classDirectory =
+        BaseAdapter.USER_HOME +
+        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/instrumented/running-example/target/classes";
     String entryPoint = "edu.cmu.cs.mvelezce.Example";
 
     // Program arguments
@@ -47,20 +49,21 @@ public class ConfigCrusherExecutorTest {
 
     Compression compression = new SimpleCompression(programName);
     Set<Set<String>> configurations = compression.compressConfigurations(args);
-    configurations = BruteForceExecutor.getBruteForceConfigurations(configurations);
+    configurations =
+        BruteForceExecutor.getBruteForceConfigurations(configurations);
 
-//                configurations.clear();
-//        Set<String> n = new HashSet<>();
-//        n.add("A");
-//        configurations.add(n);
+    //                configurations.clear();
+    //        Set<String> n = new HashSet<>();
+    //        n.add("A");
+    //        configurations.add(n);
 
     args = new String[3];
     args[0] = "-delres";
     args[1] = "-saveres";
     args[2] = "-i1";
 
-    Executor executor = new ConfigCrusherExecutor(programName, entryPoint, classDirectory,
-        configurations);
+    Executor executor = new ConfigCrusherExecutor(
+        programName, entryPoint, classDirectory, configurations);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
     measuredPerformance.size();
   }
@@ -68,8 +71,9 @@ public class ConfigCrusherExecutorTest {
   @Test
   public void runningExample() throws Exception {
     String programName = RunningExampleMain.PROGRAM_NAME;
-    String classDirectory = BaseAdapter.USER_HOME
-        + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/instrumented/running-example/target/classes";
+    String classDirectory =
+        BaseAdapter.USER_HOME +
+        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/instrumented/running-example/target/classes";
     String entryPoint = "edu.cmu.cs.mvelezce.Example";
 
     // Program arguments
@@ -83,8 +87,8 @@ public class ConfigCrusherExecutorTest {
     args[1] = "-saveres";
     args[2] = "-i5";
 
-    Executor executor = new ConfigCrusherExecutor(programName, entryPoint, classDirectory,
-        configurations);
+    Executor executor = new ConfigCrusherExecutor(
+        programName, entryPoint, classDirectory, configurations);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
     measuredPerformance.size();
   }
@@ -92,8 +96,9 @@ public class ConfigCrusherExecutorTest {
   @Test
   public void colorCounter1() throws Exception {
     String programName = "pngtasticColorCounter";
-    String classDirectory = BaseAdapter.USER_HOME
-        + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/instrumented/pngtastic-counter/out/production/pngtastic-counter";
+    String classDirectory =
+        BaseAdapter.USER_HOME +
+        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/instrumented/pngtastic-counter/out/production/pngtastic-counter";
     String entryPoint = "counter.com.googlecode.pngtastic.Run";
 
     // Program arguments
@@ -101,20 +106,21 @@ public class ConfigCrusherExecutorTest {
 
     Compression compression = new SimpleCompression(programName);
     Set<Set<String>> configurations = compression.compressConfigurations(args);
-    configurations = BruteForceExecutor.getBruteForceConfigurations(configurations);
+    configurations =
+        BruteForceExecutor.getBruteForceConfigurations(configurations);
 
-//        configurations.clear();
-//        Set<String> n = new HashSet<>();
-////        n.add("A");
-//        configurations.add(n);
+    //        configurations.clear();
+    //        Set<String> n = new HashSet<>();
+    ////        n.add("A");
+    //        configurations.add(n);
 
     args = new String[3];
     args[0] = "-delres";
     args[1] = "-saveres";
     args[2] = "-i1";
 
-    Executor executor = new ConfigCrusherExecutor(programName, entryPoint, classDirectory,
-        configurations);
+    Executor executor = new ConfigCrusherExecutor(
+        programName, entryPoint, classDirectory, configurations);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
     measuredPerformance.size();
   }
@@ -122,8 +128,9 @@ public class ConfigCrusherExecutorTest {
   @Test
   public void colorCounter() throws Exception {
     String programName = "pngtasticColorCounter";
-    String classDirectory = BaseAdapter.USER_HOME
-        + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/instrumented/pngtastic-counter/out/production/pngtastic-counter";
+    String classDirectory =
+        BaseAdapter.USER_HOME +
+        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/instrumented/pngtastic-counter/out/production/pngtastic-counter";
     String entryPoint = "counter.com.googlecode.pngtastic.Run";
 
     // Program arguments
@@ -137,8 +144,8 @@ public class ConfigCrusherExecutorTest {
     args[1] = "-saveres";
     args[2] = "-i5";
 
-    Executor executor = new ConfigCrusherExecutor(programName, entryPoint, classDirectory,
-        configurations);
+    Executor executor = new ConfigCrusherExecutor(
+        programName, entryPoint, classDirectory, configurations);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
     measuredPerformance.size();
   }
@@ -146,8 +153,9 @@ public class ConfigCrusherExecutorTest {
   @Test
   public void colorCounter2() throws Exception {
     String programName = "pngtasticColorCounter";
-    String classDirectory = BaseAdapter.USER_HOME
-        + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/instrumented/pngtastic-counter/out/production/pngtastic-counter";
+    String classDirectory =
+        BaseAdapter.USER_HOME +
+        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/instrumented/pngtastic-counter/out/production/pngtastic-counter";
     String entryPoint = "counter.com.googlecode.pngtastic.Run";
 
     // Program arguments
@@ -165,8 +173,8 @@ public class ConfigCrusherExecutorTest {
     args[1] = "-saveres";
     args[2] = "-i1";
 
-    Executor executor = new ConfigCrusherExecutor(programName, entryPoint, classDirectory,
-        configurations);
+    Executor executor = new ConfigCrusherExecutor(
+        programName, entryPoint, classDirectory, configurations);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
     measuredPerformance.size();
   }
@@ -174,8 +182,9 @@ public class ConfigCrusherExecutorTest {
   @Test
   public void optimizer() throws Exception {
     String programName = "pngtasticOptimizer";
-    String classDirectory = BaseAdapter.USER_HOME
-        + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/instrumented/pngtastic-optimizer/out/production/pngtastic-optimizer";
+    String classDirectory =
+        BaseAdapter.USER_HOME +
+        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/instrumented/pngtastic-optimizer/out/production/pngtastic-optimizer";
     String entryPoint = "optimizer.com.googlecode.pngtastic.Run";
 
     // Program arguments
@@ -189,8 +198,8 @@ public class ConfigCrusherExecutorTest {
     args[1] = "-saveres";
     args[2] = "-i5";
 
-    Executor executor = new ConfigCrusherExecutor(programName, entryPoint, classDirectory,
-        configurations);
+    Executor executor = new ConfigCrusherExecutor(
+        programName, entryPoint, classDirectory, configurations);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
     measuredPerformance.size();
   }
@@ -198,8 +207,9 @@ public class ConfigCrusherExecutorTest {
   @Test
   public void prevayler() throws Exception {
     String programName = "prevayler";
-    String classDirectory = BaseAdapter.USER_HOME
-        + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/instrumented/prevayler/target/classes";
+    String classDirectory =
+        BaseAdapter.USER_HOME +
+        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/instrumented/prevayler/target/classes";
     String entryPoint = "org.prevayler.demos.demo1.PrimeNumbers";
 
     // Program arguments
@@ -213,8 +223,8 @@ public class ConfigCrusherExecutorTest {
     args[1] = "-saveres";
     args[2] = "-i5";
 
-    Executor executor = new ConfigCrusherExecutor(programName, entryPoint, classDirectory,
-        configurations);
+    Executor executor = new ConfigCrusherExecutor(
+        programName, entryPoint, classDirectory, configurations);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
     measuredPerformance.size();
   }
@@ -222,8 +232,9 @@ public class ConfigCrusherExecutorTest {
   @Test
   public void prevayler1() throws Exception {
     String programName = "prevayler";
-    String classDirectory = BaseAdapter.USER_HOME
-        + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/instrumented/prevayler/target/classes";
+    String classDirectory =
+        BaseAdapter.USER_HOME +
+        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/instrumented/prevayler/target/classes";
     String entryPoint = "org.prevayler.demos.demo1.PrimeNumbers";
 
     // Program arguments
@@ -247,8 +258,8 @@ public class ConfigCrusherExecutorTest {
     args[1] = "-saveres";
     args[2] = "-i1";
 
-    Executor executor = new ConfigCrusherExecutor(programName, entryPoint, classDirectory,
-        configurations);
+    Executor executor = new ConfigCrusherExecutor(
+        programName, entryPoint, classDirectory, configurations);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
     measuredPerformance.size();
   }
@@ -257,8 +268,9 @@ public class ConfigCrusherExecutorTest {
   public void kanzi() throws Exception {
     String programName = "kanzi";
     String entryPoint = "kanzi.Run";
-    String classDirectory = BaseAdapter.USER_HOME
-        + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/instrumented/kanzi/target/classes";
+    String classDirectory =
+        BaseAdapter.USER_HOME +
+        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/instrumented/kanzi/target/classes";
 
     // Program arguments
     String[] args = new String[0];
@@ -271,8 +283,8 @@ public class ConfigCrusherExecutorTest {
     args[1] = "-saveres";
     args[2] = "-i5";
 
-    Executor executor = new ConfigCrusherExecutor(programName, entryPoint, classDirectory,
-        configurations);
+    Executor executor = new ConfigCrusherExecutor(
+        programName, entryPoint, classDirectory, configurations);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
     measuredPerformance.size();
   }
@@ -281,8 +293,9 @@ public class ConfigCrusherExecutorTest {
   public void grep() throws Exception {
     String programName = "grep";
     String entryPoint = "org.unix4j.grep.Main";
-    String classDirectory = BaseAdapter.USER_HOME
-        + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/instrumented/grep/target/classes";
+    String classDirectory =
+        BaseAdapter.USER_HOME +
+        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/instrumented/grep/target/classes";
 
     // Program arguments
     String[] args = new String[0];
@@ -295,8 +308,8 @@ public class ConfigCrusherExecutorTest {
     args[1] = "-saveres";
     args[2] = "-i5";
 
-    Executor executor = new ConfigCrusherExecutor(programName, entryPoint, classDirectory,
-        configurations);
+    Executor executor = new ConfigCrusherExecutor(
+        programName, entryPoint, classDirectory, configurations);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
     measuredPerformance.size();
   }
@@ -305,8 +318,9 @@ public class ConfigCrusherExecutorTest {
   public void email() throws Exception {
     String programName = "email";
     String entryPoint = "family.PL_Interface_impl";
-    String classDirectory = BaseAdapter.USER_HOME
-        + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/instrumented/email/target/classes";
+    String classDirectory =
+        BaseAdapter.USER_HOME +
+        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/instrumented/email/target/classes";
 
     // Program arguments
     String[] args = new String[0];
@@ -319,8 +333,8 @@ public class ConfigCrusherExecutorTest {
     args[1] = "-saveres";
     args[2] = "-i5";
 
-    Executor executor = new ConfigCrusherExecutor(programName, entryPoint, classDirectory,
-        configurations);
+    Executor executor = new ConfigCrusherExecutor(
+        programName, entryPoint, classDirectory, configurations);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
     measuredPerformance.size();
   }
@@ -329,9 +343,11 @@ public class ConfigCrusherExecutorTest {
   public void grep1() throws Exception {
     String programName = "grep";
     String entryPoint = "org.unix4j.grep.Main";
-//        String classDirectory = BaseAdapter.USER_HOME + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/grep/target/classes";
-    String classDirectory = BaseAdapter.USER_HOME
-        + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/instrumented/grep/target/classes";
+    //        String classDirectory = BaseAdapter.USER_HOME +
+    //        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/grep/target/classes";
+    String classDirectory =
+        BaseAdapter.USER_HOME +
+        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/instrumented/grep/target/classes";
 
     // Program arguments
     String[] args = new String[0];
@@ -351,8 +367,8 @@ public class ConfigCrusherExecutorTest {
     args[1] = "-saveres";
     args[2] = "-i1";
 
-    Executor executor = new ConfigCrusherExecutor(programName, entryPoint, classDirectory,
-        configurations);
+    Executor executor = new ConfigCrusherExecutor(
+        programName, entryPoint, classDirectory, configurations);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
     measuredPerformance.size();
   }
@@ -361,8 +377,9 @@ public class ConfigCrusherExecutorTest {
   public void kanzi1() throws Exception {
     String programName = "kanzi";
     String entryPoint = "kanzi.Run";
-    String classDirectory = BaseAdapter.USER_HOME
-        + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/instrumented/kanzi/target/classes";
+    String classDirectory =
+        BaseAdapter.USER_HOME +
+        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/instrumented/kanzi/target/classes";
 
     // Program arguments
     String[] args = new String[0];
@@ -384,8 +401,8 @@ public class ConfigCrusherExecutorTest {
     args[1] = "-saveres";
     args[2] = "-i1";
 
-    Executor executor = new ConfigCrusherExecutor(programName, entryPoint, classDirectory,
-        configurations);
+    Executor executor = new ConfigCrusherExecutor(
+        programName, entryPoint, classDirectory, configurations);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
     measuredPerformance.size();
   }
@@ -393,8 +410,9 @@ public class ConfigCrusherExecutorTest {
   @Test
   public void optimizer1() throws Exception {
     String programName = "pngtasticOptimizer";
-    String classDirectory = BaseAdapter.USER_HOME
-        + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/instrumented/pngtastic-optimizer/out/production/pngtastic-optimizer";
+    String classDirectory =
+        BaseAdapter.USER_HOME +
+        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/instrumented/pngtastic-optimizer/out/production/pngtastic-optimizer";
     String entryPoint = "optimizer.com.googlecode.pngtastic.Run";
 
     // Program arguments
@@ -402,15 +420,16 @@ public class ConfigCrusherExecutorTest {
 
     Compression compression = new SimpleCompression(programName);
     Set<Set<String>> configurations = compression.compressConfigurations(args);
-    configurations = BruteForceExecutor.getBruteForceConfigurations(configurations);
+    configurations =
+        BruteForceExecutor.getBruteForceConfigurations(configurations);
 
     args = new String[3];
     args[0] = "-delres";
     args[1] = "-saveres";
     args[2] = "-i1";
 
-    Executor executor = new ConfigCrusherExecutor(programName, entryPoint, classDirectory,
-        configurations);
+    Executor executor = new ConfigCrusherExecutor(
+        programName, entryPoint, classDirectory, configurations);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
     measuredPerformance.size();
   }
@@ -418,8 +437,9 @@ public class ConfigCrusherExecutorTest {
   @Test
   public void regions12() throws Exception {
     String programName = "regions12";
-    String classDirectory = BaseAdapter.USER_HOME
-        + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/instrumented/dummy/out/production/dummy";
+    String classDirectory =
+        BaseAdapter.USER_HOME +
+        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/instrumented/dummy/out/production/dummy";
     String entryPoint = "edu.cmu.cs.mvelezce.Regions12";
 
     // Program arguments
@@ -440,8 +460,8 @@ public class ConfigCrusherExecutorTest {
     args[1] = "-saveres";
     args[2] = "-i1";
 
-    Executor executor = new ConfigCrusherExecutor(programName, entryPoint, classDirectory,
-        configurations);
+    Executor executor = new ConfigCrusherExecutor(
+        programName, entryPoint, classDirectory, configurations);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
     measuredPerformance.size();
   }
@@ -449,8 +469,9 @@ public class ConfigCrusherExecutorTest {
   @Test
   public void regions13() throws Exception {
     String programName = "regions13";
-    String classDirectory = BaseAdapter.USER_HOME
-        + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/instrumented/dummy/out/production/dummy";
+    String classDirectory =
+        BaseAdapter.USER_HOME +
+        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/instrumented/dummy/out/production/dummy";
     String entryPoint = "edu.cmu.cs.mvelezce.Regions13";
 
     // Program arguments
@@ -470,8 +491,8 @@ public class ConfigCrusherExecutorTest {
     args[1] = "-saveres";
     args[2] = "-i1";
 
-    Executor executor = new ConfigCrusherExecutor(programName, entryPoint, classDirectory,
-        configurations);
+    Executor executor = new ConfigCrusherExecutor(
+        programName, entryPoint, classDirectory, configurations);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
     measuredPerformance.size();
   }
@@ -479,8 +500,9 @@ public class ConfigCrusherExecutorTest {
   @Test
   public void regions14() throws Exception {
     String programName = "regions14";
-    String classDirectory = BaseAdapter.USER_HOME
-        + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/instrumented/dummy/out/production/dummy";
+    String classDirectory =
+        BaseAdapter.USER_HOME +
+        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/instrumented/dummy/out/production/dummy";
     String entryPoint = "edu.cmu.cs.mvelezce.Regions14";
 
     // Program arguments
@@ -500,8 +522,8 @@ public class ConfigCrusherExecutorTest {
     args[1] = "-saveres";
     args[2] = "-i1";
 
-    Executor executor = new ConfigCrusherExecutor(programName, entryPoint, classDirectory,
-        configurations);
+    Executor executor = new ConfigCrusherExecutor(
+        programName, entryPoint, classDirectory, configurations);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
     measuredPerformance.size();
   }
@@ -509,8 +531,9 @@ public class ConfigCrusherExecutorTest {
   @Test
   public void sort() throws Exception {
     String programName = "sort";
-    String classDirectory = BaseAdapter.USER_HOME
-        + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/sort/target/classes";
+    String classDirectory =
+        BaseAdapter.USER_HOME +
+        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/sort/target/classes";
     String entryPoint = "org.unix4j.sort.Main";
 
     // Program arguments
@@ -524,8 +547,8 @@ public class ConfigCrusherExecutorTest {
     args[1] = "-saveres";
     args[2] = "-i5";
 
-    Executor executor = new ConfigCrusherExecutor(programName, entryPoint, classDirectory,
-        configurations);
+    Executor executor = new ConfigCrusherExecutor(
+        programName, entryPoint, classDirectory, configurations);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
     measuredPerformance.size();
   }
@@ -533,8 +556,9 @@ public class ConfigCrusherExecutorTest {
   @Test
   public void density() throws Exception {
     String programName = "density";
-    String classDirectory = BaseAdapter.USER_HOME
-        + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/instrumented/density/target/classes";
+    String classDirectory =
+        BaseAdapter.USER_HOME +
+        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/instrumented/density/target/classes";
     String entryPoint = "at.favre.tools.dconvert.Main";
 
     // Program arguments
@@ -548,8 +572,8 @@ public class ConfigCrusherExecutorTest {
     args[1] = "-saveres";
     args[2] = "-i1";
 
-    Executor executor = new ConfigCrusherExecutor(programName, entryPoint, classDirectory,
-        configurations);
+    Executor executor = new ConfigCrusherExecutor(
+        programName, entryPoint, classDirectory, configurations);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
     measuredPerformance.size();
   }
@@ -557,8 +581,9 @@ public class ConfigCrusherExecutorTest {
   @Test
   public void density1() throws Exception {
     String programName = "density";
-    String classDirectory = BaseAdapter.USER_HOME
-        + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/instrumented/density/target/classes";
+    String classDirectory =
+        BaseAdapter.USER_HOME +
+        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/instrumented/density/target/classes";
     String entryPoint = "at.favre.tools.dconvert.Main";
 
     // Program arguments
@@ -580,11 +605,9 @@ public class ConfigCrusherExecutorTest {
     args[1] = "-saveres";
     args[2] = "-i1";
 
-    Executor executor = new ConfigCrusherExecutor(programName, entryPoint, classDirectory,
-        configurations);
+    Executor executor = new ConfigCrusherExecutor(
+        programName, entryPoint, classDirectory, configurations);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
     measuredPerformance.size();
   }
-
-
 }

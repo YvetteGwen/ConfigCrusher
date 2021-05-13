@@ -18,7 +18,8 @@ import java.util.Set;
 
 public class Regions16Main extends BaseMain {
 
-  public static final String REGIONS_16_MAIN = Regions16Main.class.getCanonicalName();
+  public static final String REGIONS_16_MAIN =
+      Regions16Main.class.getCanonicalName();
   public static final String PROGRAM_NAME = "regions16";
 
   public Regions16Main(String programName, String iteration, String[] args) {
@@ -41,7 +42,8 @@ public class Regions16Main extends BaseMain {
     Adapter adapter = new Regions16Adapter();
     Set<String> configuration = adapter.configurationAsSet(this.getArgs());
 
-    ConfigCrusherExecutor executor = new ConfigCrusherExecutor(this.getProgramName());
+    ConfigCrusherExecutor executor =
+        new ConfigCrusherExecutor(this.getProgramName());
     Map<String, Long> results = executor.getResults();
     executor.writeToFile(this.getIteration(), configuration, results);
   }
@@ -49,7 +51,8 @@ public class Regions16Main extends BaseMain {
   @Override
   public void execute(String mainClass, String[] args) {
     try {
-      BaseRegionInstrumenter instrumenter = new ConfigCrusherTimerRegionInstrumenter("regions16");
+      BaseRegionInstrumenter instrumenter =
+          new ConfigCrusherTimerRegionInstrumenter("regions16");
       instrumenter.instrument(args);
       Set<JavaRegion> regions = instrumenter.getRegionsToOptionSet().keySet();
 
@@ -57,7 +60,8 @@ public class Regions16Main extends BaseMain {
         Regions.regionsToOverhead.put(region.getRegionID(), 0L);
       }
       Regions.regionsToOverhead.put(Regions.PROGRAM_REGION_ID, 0L);
-    } catch (InvocationTargetException | NoSuchMethodException | IOException | IllegalAccessException | InterruptedException e) {
+    } catch (InvocationTargetException | NoSuchMethodException | IOException |
+             IllegalAccessException | InterruptedException e) {
       throw new RuntimeException("Could not add regions to the Regions class");
     }
 
@@ -71,8 +75,7 @@ public class Regions16Main extends BaseMain {
       } finally {
         Regions.exit(program.getRegionID());
       }
-    }
-    else {
+    } else {
       throw new RuntimeException("Could not find the main class " + mainClass);
     }
   }

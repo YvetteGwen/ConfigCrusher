@@ -26,7 +26,8 @@ import org.junit.Test;
 public class BruteForceExecutorTest {
 
   //    @Test
-  //    public void testElevator() throws IOException, ParseException, InterruptedException {
+  //    public void testElevator() throws IOException, ParseException,
+  //    InterruptedException {
   //        String programName = "elevator";
   //        String srcDir = BaseAdapter.USER_HOME +
   // "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/elevator/";
@@ -34,27 +35,34 @@ public class BruteForceExecutorTest {
   // "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/elevator/out/production/elevator/";
   //        String entryPoint = "edu.cmu.cs.mvelezce.PL_Interface_impl";
   //
-  //        Set<PerformanceEntry> measuredPerf = BruteForce.repeatProcessMeasure(programName, 5,
+  //        Set<PerformanceEntry> measuredPerf =
+  //        BruteForce.repeatProcessMeasure(programName, 5,
   // srcDir, classDir, entryPoint);
-  ////        Set<PerformanceEntry> measuredPerf = BruteForce.repeatProcessMeasure(programName, 5);
+  ////        Set<PerformanceEntry> measuredPerf =
+  /// BruteForce.repeatProcessMeasure(programName, 5);
   //    }
   //
   //    @Test
-  //    public void testPngtastic() throws IOException, ParseException, InterruptedException {
+  //    public void testPngtastic() throws IOException, ParseException,
+  //    InterruptedException {
   //        String programName = "pngtastic";
   //        String srcDir = BaseAdapter.USER_HOME +
   // "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/pngtastic/";
   //        String classDir = BaseAdapter.USER_HOME +
   // "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/pngtastic/target/classes/";
-  //        String entryPoint = "com.googlecode.pngtastic.PngtasticColorCounter";
+  //        String entryPoint =
+  //        "com.googlecode.pngtastic.PngtasticColorCounter";
   //
-  //        Set<PerformanceEntry> measuredPerf = BruteForce.repeatProcessMeasure(programName, 1,
+  //        Set<PerformanceEntry> measuredPerf =
+  //        BruteForce.repeatProcessMeasure(programName, 1,
   // srcDir, classDir, entryPoint);
-  ////        Set<PerformanceEntry> measuredPerf = BruteForce.repeatProcessMeasure(programName, 5);
+  ////        Set<PerformanceEntry> measuredPerf =
+  /// BruteForce.repeatProcessMeasure(programName, 5);
   //    }
   //
   //    @Test
-  //    public void testSleep1() throws IOException, ParseException, InterruptedException {
+  //    public void testSleep1() throws IOException, ParseException,
+  //    InterruptedException {
   //        String programName = "sleep1";
   //        String srcDir = BaseAdapter.USER_HOME +
   // "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/dummy/";
@@ -62,13 +70,16 @@ public class BruteForceExecutorTest {
   // "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/dummy/out/production/dummy/";
   //        String entryPoint = "edu.cmu.cs.mvelezce.Sleep1";
   //
-  //        Set<PerformanceEntry> measuredPerf = BruteForce.repeatProcessMeasure(programName, 5,
+  //        Set<PerformanceEntry> measuredPerf =
+  //        BruteForce.repeatProcessMeasure(programName, 5,
   // srcDir, classDir, entryPoint);
-  ////        Set<PerformanceEntry> measuredPerf = BruteForce.repeatProcessMeasure(programName, 5);
+  ////        Set<PerformanceEntry> measuredPerf =
+  /// BruteForce.repeatProcessMeasure(programName, 5);
   //    }
   //
   //    @Test
-  //    public void testSleep26() throws IOException, ParseException, InterruptedException {
+  //    public void testSleep26() throws IOException, ParseException,
+  //    InterruptedException {
   //        String programName = "sleep26";
   //        String srcDir = BaseAdapter.USER_HOME +
   // "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/dummy/";
@@ -76,13 +87,16 @@ public class BruteForceExecutorTest {
   // "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/dummy/out/production/dummy/";
   //        String entryPoint = "edu.cmu.cs.mvelezce.Sleep26";
   //
-  //        Set<PerformanceEntry> measuredPerf = BruteForce.repeatProcessMeasure(programName, 1,
+  //        Set<PerformanceEntry> measuredPerf =
+  //        BruteForce.repeatProcessMeasure(programName, 1,
   // srcDir, classDir, entryPoint);
-  ////        Set<PerformanceEntry> measuredPerf = BruteForce.repeatProcessMeasure(programName, 5);
+  ////        Set<PerformanceEntry> measuredPerf =
+  /// BruteForce.repeatProcessMeasure(programName, 5);
   //    }
   //
   //    @Test
-  //    public void testSleep29() throws IOException, ParseException, InterruptedException {
+  //    public void testSleep29() throws IOException, ParseException,
+  //    InterruptedException {
   //        String programName = "sleep29";
   //        String srcDir = BaseAdapter.USER_HOME +
   // "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/dummy/";
@@ -90,13 +104,16 @@ public class BruteForceExecutorTest {
   // "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/dummy/out/production/dummy/";
   //        String entryPoint = "edu.cmu.cs.mvelezce.Sleep29";
   //
-  //        Set<PerformanceEntry> measuredPerf = BruteForce.repeatProcessMeasure(programName, 1,
+  //        Set<PerformanceEntry> measuredPerf =
+  //        BruteForce.repeatProcessMeasure(programName, 1,
   // srcDir, classDir, entryPoint);
-  ////        Set<PerformanceEntry> measuredPerf = BruteForce.repeatProcessMeasure(programName, 5);
+  ////        Set<PerformanceEntry> measuredPerf =
+  /// BruteForce.repeatProcessMeasure(programName, 5);
   //    }
   //
   //    @Test
-  //    public void testZipme() throws IOException, ParseException, InterruptedException {
+  //    public void testZipme() throws IOException, ParseException,
+  //    InterruptedException {
   //        String programName = "zipme";
   //        String srcDir = BaseAdapter.USER_HOME +
   // "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/zipme/";
@@ -104,7 +121,8 @@ public class BruteForceExecutorTest {
   // "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/zipme/out/production/zipme/";
   //        String entryPoint = "edu.cmu.cs.mvelezce.ZipMain";
   //
-  //        Set<PerformanceEntry> measuredPerf = BruteForce.repeatProcessMeasure(programName, 1,
+  //        Set<PerformanceEntry> measuredPerf =
+  //        BruteForce.repeatProcessMeasure(programName, 1,
   // srcDir, classDir, entryPoint);
   //    }
 
@@ -112,8 +130,8 @@ public class BruteForceExecutorTest {
   public void runningExample() throws IOException, InterruptedException {
     String programName = RunningExampleMain.PROGRAM_NAME;
     String classDirectory =
-        BaseAdapter.USER_HOME
-            + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/running-example/target/classes";
+        BaseAdapter.USER_HOME +
+        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/running-example/target/classes";
     String entryPoint = "edu.cmu.cs.mvelezce.Example";
     String iterations = "5";
 
@@ -133,8 +151,8 @@ public class BruteForceExecutorTest {
   public void berkeley() throws IOException, InterruptedException {
     String programName = "berkeley-db";
     String classDirectory =
-        BaseAdapter.USER_HOME
-            + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/berkeley-db/target/classes";
+        BaseAdapter.USER_HOME +
+        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/berkeley-db/target/classes";
     String entryPoint = "com.sleepycat.analysis.Run";
     String iterations = "5";
 
@@ -154,17 +172,14 @@ public class BruteForceExecutorTest {
   public void lucene() throws IOException, InterruptedException {
     String programName = "lucene";
     String classDirectory =
-        BaseAdapter.USER_HOME
-            + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/lucene/demo/target/classes"
-            + BaseAdapter.PATH_SEPARATOR
-            + BaseAdapter.USER_HOME
-            + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/lucene/analysis/common/target/classes"
-            + BaseAdapter.PATH_SEPARATOR
-            + BaseAdapter.USER_HOME
-            + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/lucene/codecs/target/classes"
-            + BaseAdapter.PATH_SEPARATOR
-            + BaseAdapter.USER_HOME
-            + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/lucene/jars/core/lucene-core-7.4.0.jar";
+        BaseAdapter.USER_HOME +
+        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/lucene/demo/target/classes" +
+        BaseAdapter.PATH_SEPARATOR + BaseAdapter.USER_HOME +
+        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/lucene/analysis/common/target/classes" +
+        BaseAdapter.PATH_SEPARATOR + BaseAdapter.USER_HOME +
+        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/lucene/codecs/target/classes" +
+        BaseAdapter.PATH_SEPARATOR + BaseAdapter.USER_HOME +
+        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/lucene/jars/core/lucene-core-7.4.0.jar";
     String entryPoint = "org.apache.lucene.demo.IndexFiles";
     String iterations = "5";
 
@@ -184,11 +199,12 @@ public class BruteForceExecutorTest {
   public void colorCounter() throws IOException, InterruptedException {
     String programName = "pngtasticColorCounter";
     String classDirectory =
-        BaseAdapter.USER_HOME
-            + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/pngtastic-counter/out/production/pngtastic-counter";
+        BaseAdapter.USER_HOME +
+        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/pngtastic-counter/out/production/pngtastic-counter";
     String entryPoint = "counter.com.googlecode.pngtastic.Run";
 
-    Set<String> options = new HashSet<>(ColorCounterAdapter.getColorCounterOptions());
+    Set<String> options =
+        new HashSet<>(ColorCounterAdapter.getColorCounterOptions());
     Set<Set<String>> configurations =
         BruteForceExecutor.getBruteForceConfigurationsFromOptions(options);
     System.out.println("Configurations to sample: " + configurations.size());
@@ -198,8 +214,8 @@ public class BruteForceExecutorTest {
     args[1] = "-saveres";
     args[2] = "-i5";
 
-    Executor executor =
-        new BruteForceExecutor(programName, entryPoint, classDirectory, configurations);
+    Executor executor = new BruteForceExecutor(programName, entryPoint,
+                                               classDirectory, configurations);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
   }
 
@@ -207,8 +223,8 @@ public class BruteForceExecutorTest {
   public void optimizer() throws IOException, InterruptedException {
     String programName = "pngtasticOptimizer";
     String classDirectory =
-        BaseAdapter.USER_HOME
-            + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/pngtastic-optimizer/out/production/pngtastic-optimizer";
+        BaseAdapter.USER_HOME +
+        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/pngtastic-optimizer/out/production/pngtastic-optimizer";
     String entryPoint = "optimizer.com.googlecode.pngtastic.Run";
 
     Set<String> options = new HashSet<>(OptimizerAdapter.getOptimizerOptions());
@@ -221,8 +237,8 @@ public class BruteForceExecutorTest {
     args[1] = "-saveres";
     args[2] = "-i5";
 
-    Executor executor =
-        new BruteForceExecutor(programName, entryPoint, classDirectory, configurations);
+    Executor executor = new BruteForceExecutor(programName, entryPoint,
+                                               classDirectory, configurations);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
   }
 
@@ -230,8 +246,8 @@ public class BruteForceExecutorTest {
   public void prevayler() throws IOException, InterruptedException {
     String programName = "prevayler";
     String classDirectory =
-        BaseAdapter.USER_HOME
-            + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/prevayler/target/classes";
+        BaseAdapter.USER_HOME +
+        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/prevayler/target/classes";
     String entryPoint = "org.prevayler.demos.demo1.PrimeNumbers";
 
     Set<String> options = new HashSet<>(PrevaylerAdapter.getPrevaylerOptions());
@@ -244,8 +260,8 @@ public class BruteForceExecutorTest {
     args[1] = "-saveres";
     args[2] = "-i5";
 
-    Executor executor =
-        new BruteForceExecutor(programName, entryPoint, classDirectory, configurations);
+    Executor executor = new BruteForceExecutor(programName, entryPoint,
+                                               classDirectory, configurations);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
   }
 
@@ -253,8 +269,8 @@ public class BruteForceExecutorTest {
   public void prevayler1() throws IOException, InterruptedException {
     String programName = "prevayler";
     String classDirectory =
-        BaseAdapter.USER_HOME
-            + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/prevayler/target/classes";
+        BaseAdapter.USER_HOME +
+        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/prevayler/target/classes";
     String entryPoint = "org.prevayler.demos.demo1.PrimeNumbers";
 
     Set<String> options = new HashSet<>(PrevaylerAdapter.getPrevaylerOptions());
@@ -276,8 +292,8 @@ public class BruteForceExecutorTest {
     args[1] = "-saveres";
     args[2] = "-i1";
 
-    Executor executor =
-        new BruteForceExecutor(programName, entryPoint, classDirectory, configurations);
+    Executor executor = new BruteForceExecutor(programName, entryPoint,
+                                               classDirectory, configurations);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
   }
 
@@ -286,8 +302,8 @@ public class BruteForceExecutorTest {
     String programName = "kanzi";
     String entryPoint = "kanzi.Run";
     String classDirectory =
-        BaseAdapter.USER_HOME
-            + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/kanzi/target/classes";
+        BaseAdapter.USER_HOME +
+        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/kanzi/target/classes";
 
     Set<String> options = new HashSet<>(KanziAdapter.getKanziOptions());
     Set<Set<String>> configurations =
@@ -299,8 +315,8 @@ public class BruteForceExecutorTest {
     args[1] = "-saveres";
     args[2] = "-i5";
 
-    Executor executor =
-        new BruteForceExecutor(programName, entryPoint, classDirectory, configurations);
+    Executor executor = new BruteForceExecutor(programName, entryPoint,
+                                               classDirectory, configurations);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
   }
 
@@ -308,8 +324,8 @@ public class BruteForceExecutorTest {
   public void regions12() throws IOException, InterruptedException {
     String programName = "regions12";
     String classDirectory =
-        BaseAdapter.USER_HOME
-            + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/dummy/out/production/dummy";
+        BaseAdapter.USER_HOME +
+        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/dummy/out/production/dummy";
     ;
     String entryPoint = "edu.cmu.cs.mvelezce.Regions12";
 
@@ -318,7 +334,8 @@ public class BruteForceExecutorTest {
 
     Compression compression = new SimpleCompression(programName);
     Set<Set<String>> configurations = compression.compressConfigurations(args);
-    configurations = BruteForceExecutor.getBruteForceConfigurations(configurations);
+    configurations =
+        BruteForceExecutor.getBruteForceConfigurations(configurations);
     System.out.println("Configurations to sample: " + configurations.size());
 
     args = new String[3];
@@ -326,8 +343,8 @@ public class BruteForceExecutorTest {
     args[1] = "-saveres";
     args[2] = "-i1";
 
-    Executor executor =
-        new BruteForceExecutor(programName, entryPoint, classDirectory, configurations);
+    Executor executor = new BruteForceExecutor(programName, entryPoint,
+                                               classDirectory, configurations);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
   }
 
@@ -335,8 +352,8 @@ public class BruteForceExecutorTest {
   public void regions16() throws IOException, InterruptedException {
     String programName = "regions16";
     String classDirectory =
-        BaseAdapter.USER_HOME
-            + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/dummy/out/production/dummy";
+        BaseAdapter.USER_HOME +
+        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/dummy/out/production/dummy";
     ;
     String entryPoint = "edu.cmu.cs.mvelezce.Regions16";
 
@@ -345,7 +362,8 @@ public class BruteForceExecutorTest {
 
     Compression compression = new SimpleCompression(programName);
     Set<Set<String>> configurations = compression.compressConfigurations(args);
-    configurations = BruteForceExecutor.getBruteForceConfigurations(configurations);
+    configurations =
+        BruteForceExecutor.getBruteForceConfigurations(configurations);
     System.out.println("Configurations to sample: " + configurations.size());
 
     args = new String[3];
@@ -353,8 +371,8 @@ public class BruteForceExecutorTest {
     args[1] = "-saveres";
     args[2] = "-i1";
 
-    Executor executor =
-        new BruteForceExecutor(programName, entryPoint, classDirectory, configurations);
+    Executor executor = new BruteForceExecutor(programName, entryPoint,
+                                               classDirectory, configurations);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
   }
 
@@ -362,8 +380,8 @@ public class BruteForceExecutorTest {
   public void grep() throws IOException, InterruptedException {
     String programName = "grep";
     String classDirectory =
-        BaseAdapter.USER_HOME
-            + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/grep/target/classes";
+        BaseAdapter.USER_HOME +
+        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/grep/target/classes";
 
     String entryPoint = "org.unix4j.grep.Main";
 
@@ -377,8 +395,8 @@ public class BruteForceExecutorTest {
     args[1] = "-saveres";
     args[2] = "-i5";
 
-    Executor executor =
-        new BruteForceExecutor(programName, entryPoint, classDirectory, configurations);
+    Executor executor = new BruteForceExecutor(programName, entryPoint,
+                                               classDirectory, configurations);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
   }
 
@@ -407,8 +425,8 @@ public class BruteForceExecutorTest {
     args[1] = "-saveres";
     args[2] = "-i1";
 
-    Executor executor =
-        new BruteForceExecutor(programName, entryPoint, classDirectory, configurations);
+    Executor executor = new BruteForceExecutor(programName, entryPoint,
+                                               classDirectory, configurations);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
   }
 
@@ -416,8 +434,8 @@ public class BruteForceExecutorTest {
   public void find() throws IOException, InterruptedException {
     String programName = "find";
     String classDirectory =
-        BaseAdapter.USER_HOME
-            + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/find/target/classes";
+        BaseAdapter.USER_HOME +
+        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/find/target/classes";
 
     String entryPoint = "org.unix4j.find.Main";
 
@@ -431,8 +449,8 @@ public class BruteForceExecutorTest {
     args[1] = "-saveres";
     args[2] = "-i5";
 
-    Executor executor =
-        new BruteForceExecutor(programName, entryPoint, classDirectory, configurations);
+    Executor executor = new BruteForceExecutor(programName, entryPoint,
+                                               classDirectory, configurations);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
   }
 
@@ -440,8 +458,8 @@ public class BruteForceExecutorTest {
   public void elevator() throws IOException, InterruptedException {
     String programName = "elevator";
     String classDirectory =
-        BaseAdapter.USER_HOME
-            + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/elevator/target/classes";
+        BaseAdapter.USER_HOME +
+        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/elevator/target/classes";
 
     String entryPoint = "family.PL_Interface_impl";
 
@@ -455,8 +473,8 @@ public class BruteForceExecutorTest {
     args[1] = "-saveres";
     args[2] = "-i5";
 
-    Executor executor =
-        new BruteForceExecutor(programName, entryPoint, classDirectory, configurations);
+    Executor executor = new BruteForceExecutor(programName, entryPoint,
+                                               classDirectory, configurations);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
   }
 
@@ -464,8 +482,8 @@ public class BruteForceExecutorTest {
   public void email() throws IOException, InterruptedException {
     String programName = "email";
     String classDirectory =
-        BaseAdapter.USER_HOME
-            + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/email/target/classes";
+        BaseAdapter.USER_HOME +
+        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/email/target/classes";
 
     String entryPoint = "family.PL_Interface_impl";
 
@@ -479,8 +497,8 @@ public class BruteForceExecutorTest {
     args[1] = "-saveres";
     args[2] = "-i5";
 
-    Executor executor =
-        new BruteForceExecutor(programName, entryPoint, classDirectory, configurations);
+    Executor executor = new BruteForceExecutor(programName, entryPoint,
+                                               classDirectory, configurations);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
   }
 
@@ -488,8 +506,8 @@ public class BruteForceExecutorTest {
   public void density1() throws Exception {
     String programName = "density";
     String classDirectory =
-        BaseAdapter.USER_HOME
-            + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/density/target/classes";
+        BaseAdapter.USER_HOME +
+        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/density/target/classes";
     String entryPoint = "at.favre.tools.dconvert.Main";
 
     // Program arguments
@@ -516,8 +534,8 @@ public class BruteForceExecutorTest {
     args[1] = "-saveres";
     args[2] = "-i1";
 
-    Executor executor =
-        new BruteForceExecutor(programName, entryPoint, classDirectory, configurations);
+    Executor executor = new BruteForceExecutor(programName, entryPoint,
+                                               classDirectory, configurations);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
   }
 
@@ -525,8 +543,8 @@ public class BruteForceExecutorTest {
   public void elevator1() throws IOException, InterruptedException {
     String programName = "elevator";
     String classDirectory =
-        BaseAdapter.USER_HOME
-            + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/elevator/target/classes";
+        BaseAdapter.USER_HOME +
+        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/elevator/target/classes";
 
     String entryPoint = "family.PL_Interface_impl";
 
@@ -544,8 +562,8 @@ public class BruteForceExecutorTest {
     args[1] = "-saveres";
     args[2] = "-i1";
 
-    Executor executor =
-        new BruteForceExecutor(programName, entryPoint, classDirectory, configurations);
+    Executor executor = new BruteForceExecutor(programName, entryPoint,
+                                               classDirectory, configurations);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
   }
 }

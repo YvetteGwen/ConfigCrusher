@@ -8,21 +8,21 @@ import edu.cmu.cs.mvelezce.sleep.statements.TimedStatement;
 /**
  * Created by mvelezce on 4/13/17.
  */
-public class TimedVisitorReturner extends ReturnerVisitor implements TimedVisitor<Expression, Void> {
+public class TimedVisitorReturner
+    extends ReturnerVisitor implements TimedVisitor<Expression, Void> {
 
-    @Override
-    public Void visitTimedStatement(TimedStatement timedStatement) {
-        if(timedStatement == null) {
-            throw new IllegalArgumentException("The timedStatement cannot be null");
-        }
-
-        timedStatement.getStatements().accept(this);
-        return null;
+  @Override
+  public Void visitTimedStatement(TimedStatement timedStatement) {
+    if (timedStatement == null) {
+      throw new IllegalArgumentException("The timedStatement cannot be null");
     }
 
-    @Override
-    public Void visitTimedProgram(TimedProgram timedProgram) {
-        throw new RuntimeException("This method is currently not implemented");
-    }
+    timedStatement.getStatements().accept(this);
+    return null;
+  }
 
+  @Override
+  public Void visitTimedProgram(TimedProgram timedProgram) {
+    throw new RuntimeException("This method is currently not implemented");
+  }
 }

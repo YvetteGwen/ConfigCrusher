@@ -9,23 +9,23 @@ import edu.cmu.cs.mvelezce.sleep.visitor.TimedVisitor;
  */
 public class TimedProgram extends TimedStatement {
 
-    /**
-     * Instantiates a {@code TimedStatement}.
-     *
-     * @param regionID
-     * @param statements
-     */
-    public TimedProgram(String regionID, Statement statements) {
-        super(regionID, statements);
-    }
+  /**
+   * Instantiates a {@code TimedStatement}.
+   *
+   * @param regionID
+   * @param statements
+   */
+  public TimedProgram(String regionID, Statement statements) {
+    super(regionID, statements);
+  }
 
-    @Override
-    public String toString() {
-        return "TimedProgram: " + this.getStatements();
-    }
+  @Override
+  public String toString() {
+    return "TimedProgram: " + this.getStatements();
+  }
 
-    @Override
-    public <T, U> U accept(Visitor<T, U> visitor) {
-        return ((TimedVisitor<T, U>) visitor).visitTimedProgram(this);
-    }
+  @Override
+  public <T, U> U accept(Visitor<T, U> visitor) {
+    return ((TimedVisitor<T, U>)visitor).visitTimedProgram(this);
+  }
 }

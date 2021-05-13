@@ -4,8 +4,7 @@ import java.util.Set;
 
 public interface FeatureModel {
 
-    String BASE = "BASE";
+  String BASE = "BASE";
 
-    boolean isValidProduct(Set<String> conf);
-
+  boolean isValidProduct(Set<String> conf);
 }

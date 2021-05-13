@@ -4,8 +4,7 @@ import java.io.IOException;
 
 public interface Main {
 
-    public void logExecution() throws IOException;
+  public void logExecution() throws IOException;
 
-    public void execute(String mainClass, String[] sleepArgs);
-
+  public void execute(String mainClass, String[] sleepArgs);
 }

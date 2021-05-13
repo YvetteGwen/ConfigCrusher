@@ -4,75 +4,78 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import edu.cmu.cs.mvelezce.evaluation.approaches.splatdelay.Coverage;
 import edu.cmu.cs.mvelezce.tool.Helper;
 import edu.cmu.cs.mvelezce.tool.Options;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
 
 public abstract class SPLatDelayMain {
 
-    public static final String DIRECTORY = Options.DIRECTORY + "/compression/java/programs/splatdelay";
+  public static final String DIRECTORY =
+      Options.DIRECTORY + "/compression/java/programs/splatdelay";
 
-    private String programName;
-    private Map<Set<String>, Set<Set<String>>> configsToCovered = new HashMap<>();
+  private String programName;
+  private Map<Set<String>, Set<Set<String>>> configsToCovered = new HashMap<>();
 
-    public SPLatDelayMain(String programName) {
-        this.programName = programName;
+  public SPLatDelayMain(String programName) { this.programName = programName; }
+
+  public abstract Set<Set<String>> getSPLatConfigurations()
+      throws InterruptedException;
+
+  public void writeToFileCoverage() throws IOException {
+    if (this.configsToCovered.isEmpty()) {
+      throw new RuntimeException("The coverage map is empty");
+    }
+    List<Coverage> coverageList = new ArrayList<>();
+
+    for (Map.Entry<Set<String>, Set<Set<String>>> entry :
+         this.configsToCovered.entrySet()) {
+      Coverage coverage = new Coverage(entry.getKey(), entry.getValue());
+      coverageList.add(coverage);
     }
 
-    public abstract Set<Set<String>> getSPLatConfigurations() throws InterruptedException;
+    ObjectMapper mapper = new ObjectMapper();
+    String outputFile = SPLatDelayMain.DIRECTORY + "/" + this.programName +
+                        "/coverage" + Options.DOT_JSON;
+    File file = new File(outputFile);
+    file.getParentFile().mkdirs();
 
-    public void writeToFileCoverage() throws IOException {
-        if(this.configsToCovered.isEmpty()) {
-            throw new RuntimeException("The coverage map is empty");
-        }
-        List<Coverage> coverageList = new ArrayList<>();
+    mapper.writeValue(file, coverageList);
+  }
 
-        for(Map.Entry<Set<String>, Set<Set<String>>> entry : this.configsToCovered.entrySet()) {
-            Coverage coverage = new Coverage(entry.getKey(), entry.getValue());
-            coverageList.add(coverage);
-        }
+  public Set<Set<String>> mapConfigs(Set<String> config,
+                                     Set<String> optionsNotInStack) {
+    Set<Set<String>> coveredPartialCofigs =
+        Helper.getConfigurations(optionsNotInStack);
+    Set<Set<String>> coveredConfigs = new HashSet<>();
 
-        ObjectMapper mapper = new ObjectMapper();
-        String outputFile = SPLatDelayMain.DIRECTORY + "/" + this.programName + "/coverage" + Options.DOT_JSON;
-        File file = new File(outputFile);
-        file.getParentFile().mkdirs();
+    for (Set<String> partialConfig : coveredPartialCofigs) {
+      Set<String> coveredConfig = new HashSet<>();
+      coveredConfig.addAll(config);
+      coveredConfig.addAll(partialConfig);
 
-        mapper.writeValue(file, coverageList);
+      coveredConfigs.add(coveredConfig);
     }
 
-    public Set<Set<String>> mapConfigs(Set<String> config, Set<String> optionsNotInStack) {
-        Set<Set<String>> coveredPartialCofigs = Helper.getConfigurations(optionsNotInStack);
-        Set<Set<String>> coveredConfigs = new HashSet<>();
+    return coveredConfigs;
+  }
 
-        for(Set<String> partialConfig : coveredPartialCofigs) {
-            Set<String> coveredConfig = new HashSet<>();
-            coveredConfig.addAll(config);
-            coveredConfig.addAll(partialConfig);
+  public Set<String> getOptionsNotInStack(Stack<String> stack,
+                                          List<String> options) {
+    Set<String> optionsNotInStack = new HashSet<>();
 
-            coveredConfigs.add(coveredConfig);
-        }
-
-        return coveredConfigs;
+    for (String option : options) {
+      if (!stack.contains(option)) {
+        optionsNotInStack.add(option);
+      }
     }
 
-    public Set<String> getOptionsNotInStack(Stack<String> stack, List<String> options) {
-        Set<String> optionsNotInStack = new HashSet<>();
+    return optionsNotInStack;
+  }
 
-        for(String option : options) {
-            if(!stack.contains(option)) {
-                optionsNotInStack.add(option);
-            }
-        }
+  public String getProgramName() { return programName; }
 
-        return optionsNotInStack;
-    }
-
-    public String getProgramName() {
-        return programName;
-    }
-
-    public void setConfigsToCovered(Map<Set<String>, Set<Set<String>>> configsToCovered) {
-        this.configsToCovered = configsToCovered;
-    }
+  public void
+  setConfigsToCovered(Map<Set<String>, Set<Set<String>>> configsToCovered) {
+    this.configsToCovered = configsToCovered;
+  }
 }

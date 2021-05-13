@@ -8,18 +8,17 @@ import java.util.Set;
 
 public class LuceneAdapter extends BaseAdapter {
 
-  public LuceneAdapter() {
-    this(null, null, null);
-  }
+  public LuceneAdapter() { this(null, null, null); }
 
   public LuceneAdapter(String programName, String entryPoint, String dir) {
-    super(programName, entryPoint, dir, LuceneAdapter
-        .getLuceneOptions());
+    super(programName, entryPoint, dir, LuceneAdapter.getLuceneOptions());
   }
 
   public static List<String> getLuceneOptions() {
-    String[] options = {"CREATE", "RAM_BUFFER_SIZE", "MERGE_POLICY", "CODEC", "MAX_BUFFERED_DOCS",
-        "USE_COMPOUND_FILE", "MAX_TOKEN_LENGTH"};
+    String[] options = {
+        "CREATE",          "RAM_BUFFER_SIZE",   "MERGE_POLICY",
+        "CODEC",           "MAX_BUFFERED_DOCS", "USE_COMPOUND_FILE",
+        "MAX_TOKEN_LENGTH"};
 
     return Arrays.asList(options);
   }

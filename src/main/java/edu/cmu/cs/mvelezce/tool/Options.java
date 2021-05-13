@@ -10,7 +10,8 @@ import org.apache.commons.cli.ParseException;
 import org.apache.commons.io.FileUtils;
 
 /**
- * TODO add options for each component of the pipeline Created by mvelezce on 4/28/17.
+ * TODO add options for each component of the pipeline Created by mvelezce on
+ * 4/28/17.
  */
 public abstract class Options {
 
@@ -24,9 +25,11 @@ public abstract class Options {
   private static CommandLine cmd = null;
 
   public static void getCommandLine(String[] args) {
-    org.apache.commons.cli.Options componentOptions = new org.apache.commons.cli.Options();
+    org.apache.commons.cli.Options componentOptions =
+        new org.apache.commons.cli.Options();
 
-    Option componentOption = new Option(Options.DELRES, "Deletes the stored result");
+    Option componentOption =
+        new Option(Options.DELRES, "Deletes the stored result");
     componentOptions.addOption(componentOption);
 
     componentOption = new Option(Options.SAVERES, "Saves the result");
@@ -52,9 +55,7 @@ public abstract class Options {
     }
   }
 
-  public static boolean checkIfSave() {
-    return cmd.hasOption(Options.SAVERES);
-  }
+  public static boolean checkIfSave() { return cmd.hasOption(Options.SAVERES); }
 
   public static boolean checkIfDeleteResult() {
     return cmd.hasOption(Options.DELRES);

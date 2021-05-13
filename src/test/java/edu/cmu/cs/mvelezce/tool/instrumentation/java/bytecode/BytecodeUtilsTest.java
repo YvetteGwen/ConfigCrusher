@@ -7,10 +7,9 @@ import org.junit.Test;
  */
 public class BytecodeUtilsTest {
 
-    @Test
-    public void of() {
-        String desc = BytecodeUtils.toBytecodeDescriptor("boolean[]");
-        System.out.println(desc);
-    }
-
+  @Test
+  public void of() {
+    String desc = BytecodeUtils.toBytecodeDescriptor("boolean[]");
+    System.out.println(desc);
+  }
 }

@@ -11,43 +11,38 @@ import edu.cmu.cs.mvelezce.sleep.visitor.TimedVisitor;
  * @version 0.1.0.1
  */
 public class TimedStatement extends Statement {
-    private String regionID;
-    private Statement statements;
+  private String regionID;
+  private Statement statements;
 
-    /**
-     * Instantiates a {@code TimedStatement}.
-     *
-     * @param statements
-     */
-    public TimedStatement(String regionID, Statement statements) {
-        if(regionID == null) {
-            throw new IllegalArgumentException("The regionID cannot be null");
-        }
-
-        if(statements == null) {
-            throw new IllegalArgumentException("The statements cannot be null");
-        }
-
-        this.regionID = regionID;
-        this.statements = statements;
+  /**
+   * Instantiates a {@code TimedStatement}.
+   *
+   * @param statements
+   */
+  public TimedStatement(String regionID, Statement statements) {
+    if (regionID == null) {
+      throw new IllegalArgumentException("The regionID cannot be null");
     }
 
-    public String getRegionID() {
-        return this.regionID;
+    if (statements == null) {
+      throw new IllegalArgumentException("The statements cannot be null");
     }
 
-    public Statement getStatements() {
-        return this.statements;
-    }
+    this.regionID = regionID;
+    this.statements = statements;
+  }
 
-    @Override
-    public String toString() {
-        return "Time: " + this.statements;
-    }
+  public String getRegionID() { return this.regionID; }
 
-    @Override
-    public <T, U> U accept(Visitor<T, U> visitor) {
-        return ((TimedVisitor<T, U>) visitor).visitTimedStatement(this);
-    }
+  public Statement getStatements() { return this.statements; }
 
+  @Override
+  public String toString() {
+    return "Time: " + this.statements;
+  }
+
+  @Override
+  public <T, U> U accept(Visitor<T, U> visitor) {
+    return ((TimedVisitor<T, U>)visitor).visitTimedStatement(this);
+  }
 }

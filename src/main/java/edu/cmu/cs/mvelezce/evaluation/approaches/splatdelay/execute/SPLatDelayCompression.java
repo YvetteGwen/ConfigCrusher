@@ -24,12 +24,11 @@ public class SPLatDelayCompression extends BaseCompression {
   public static final String DIRECTORY =
       Options.DIRECTORY + "/compression/java/programs/splatdelay";
 
-  public SPLatDelayCompression(String programName) {
-    super(programName, null);
-  }
+  public SPLatDelayCompression(String programName) { super(programName, null); }
 
   @Override
-  public Set<Set<String>> compressConfigurations(String[] args) throws IOException {
+  public Set<Set<String>> compressConfigurations(String[] args)
+      throws IOException {
     Options.getCommandLine(args);
 
     String outputFile = this.getOutputDir() + "/" + this.getProgramName();
@@ -65,34 +64,27 @@ public class SPLatDelayCompression extends BaseCompression {
     String programName = this.getProgramName();
 
     if (programName.contains(RunningExampleMain.PROGRAM_NAME)) {
-      main = new SPLatDelayRunningExampleDelayMain(RunningExampleMain.PROGRAM_NAME);
-    }
-    else if (programName.contains("pngtasticColorCounter")) {
+      main = new SPLatDelayRunningExampleDelayMain(
+          RunningExampleMain.PROGRAM_NAME);
+    } else if (programName.contains("pngtasticColorCounter")) {
       main = new SPLatDelayCounterDelayMain("pngtasticColorCounter");
-    }
-    else if (programName.contains("pngtasticOptimizer")) {
+    } else if (programName.contains("pngtasticOptimizer")) {
       main = new SPLatDelayOptimizerDelayMain("pngtasticOptimizer");
-    }
-    else if (programName.contains("grep")) {
+    } else if (programName.contains("grep")) {
       main = new SPLatDelayGrepDelayMain("grep");
-    }
-    else if (programName.contains("kanzi")) {
+    } else if (programName.contains("kanzi")) {
       main = new SPLatDelayKanziDelayMain("kanzi");
-    }
-    else if (programName.contains("prevayler")) {
+    } else if (programName.contains("prevayler")) {
       main = new SPLatDelayPrevaylerDelayMain("prevayler");
-    }
-    else if (programName.contains("elevator")) {
+    } else if (programName.contains("elevator")) {
       main = new SPLatDelayElevatorDelayMain("elevator");
-    }
-    else if (programName.contains("density")) {
+    } else if (programName.contains("density")) {
       main = new SPLatDelayDensityDelayMain("density");
-    }
-    else if (programName.contains("sort")) {
+    } else if (programName.contains("sort")) {
       main = new SPLatDelaySortDelayMain("sort");
-    }
-    else {
-      throw new RuntimeException("Could not create an adapter for " + programName);
+    } else {
+      throw new RuntimeException("Could not create an adapter for " +
+                                 programName);
     }
 
     Set<Set<String>> splatConfigurations;
@@ -100,7 +92,8 @@ public class SPLatDelayCompression extends BaseCompression {
       splatConfigurations = main.getSPLatConfigurations();
       main.writeToFileCoverage();
     } catch (InterruptedException | IOException e) {
-      throw new RuntimeException("There was an error calculating the splat configurations");
+      throw new RuntimeException(
+          "There was an error calculating the splat configurations");
     }
 
     return splatConfigurations;

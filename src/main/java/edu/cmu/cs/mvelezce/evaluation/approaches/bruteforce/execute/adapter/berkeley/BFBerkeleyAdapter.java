@@ -6,19 +6,19 @@ import java.util.Set;
 
 public class BFBerkeleyAdapter extends BerkeleyAdapter {
 
-    public BFBerkeleyAdapter(String programName, String entryPoint, String dir) {
-        super(programName, entryPoint, dir);
-    }
+  public BFBerkeleyAdapter(String programName, String entryPoint, String dir) {
+    super(programName, entryPoint, dir);
+  }
 
-    @Override
-    public void execute(Set<String> configuration, int iteration) throws IOException, InterruptedException {
-        String[] args = this.configurationAsMainArguments(configuration);
-        String[] newArgs = new String[args.length + 1];
+  @Override
+  public void execute(Set<String> configuration, int iteration)
+      throws IOException, InterruptedException {
+    String[] args = this.configurationAsMainArguments(configuration);
+    String[] newArgs = new String[args.length + 1];
 
-        newArgs[0] = iteration + "";
-        System.arraycopy(args, 0, newArgs, 1, args.length);
+    newArgs[0] = iteration + "";
+    System.arraycopy(args, 0, newArgs, 1, args.length);
 
-        this.execute(BFBerkeleyMain.BF_BERKELEY_MAIN, newArgs);
-    }
-
+    this.execute(BFBerkeleyMain.BF_BERKELEY_MAIN, newArgs);
+  }
 }

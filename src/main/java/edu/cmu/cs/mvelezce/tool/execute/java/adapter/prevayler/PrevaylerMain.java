@@ -18,7 +18,8 @@ import org.prevayler.demos.demo1.PrimeNumbers;
 
 public class PrevaylerMain extends BaseMain {
 
-  public static final String PREVAYLER_MAIN = PrevaylerMain.class.getCanonicalName();
+  public static final String PREVAYLER_MAIN =
+      PrevaylerMain.class.getCanonicalName();
   public static final String PROGRAM_NAME = "prevayler";
 
   public PrevaylerMain(String programName, String iteration, String[] args) {
@@ -41,7 +42,8 @@ public class PrevaylerMain extends BaseMain {
     Adapter adapter = new PrevaylerAdapter();
     Set<String> configuration = adapter.configurationAsSet(this.getArgs());
 
-    ConfigCrusherExecutor executor = new ConfigCrusherExecutor(this.getProgramName());
+    ConfigCrusherExecutor executor =
+        new ConfigCrusherExecutor(this.getProgramName());
     Map<String, Long> results = executor.getResults();
     executor.writeToFile(this.getIteration(), configuration, results);
   }
@@ -49,7 +51,8 @@ public class PrevaylerMain extends BaseMain {
   @Override
   public void execute(String mainClass, String[] args) {
     try {
-      BaseRegionInstrumenter instrumenter = new ConfigCrusherTimerRegionInstrumenter("prevayler");
+      BaseRegionInstrumenter instrumenter =
+          new ConfigCrusherTimerRegionInstrumenter("prevayler");
       instrumenter.instrument(args);
       Set<JavaRegion> regions = instrumenter.getRegionsToOptionSet().keySet();
 
@@ -57,7 +60,8 @@ public class PrevaylerMain extends BaseMain {
         Regions.regionsToOverhead.put(region.getRegionID(), 0L);
       }
       Regions.regionsToOverhead.put(Regions.PROGRAM_REGION_ID, 0L);
-    } catch (InvocationTargetException | NoSuchMethodException | IOException | IllegalAccessException | InterruptedException e) {
+    } catch (InvocationTargetException | NoSuchMethodException | IOException |
+             IllegalAccessException | InterruptedException e) {
       throw new RuntimeException("Could not add regions to the Regions class");
     }
 
@@ -72,8 +76,7 @@ public class PrevaylerMain extends BaseMain {
       } finally {
         Regions.exit(program.getRegionID());
       }
-    }
-    else {
+    } else {
       throw new RuntimeException("Could not find the main class " + mainClass);
     }
   }

@@ -109,7 +109,8 @@ public class EvaluationTest {
     String programName = RunningExampleMain.PROGRAM_NAME;
 
     Evaluation eval = new Evaluation(programName);
-    eval.compareApproaches(Evaluation.BRUTE_FORCE, Evaluation.GROUND_TRUTH, true);
+    eval.compareApproaches(Evaluation.BRUTE_FORCE, Evaluation.GROUND_TRUTH,
+                           true);
   }
 
   @Test
@@ -117,7 +118,8 @@ public class EvaluationTest {
     String programName = RunningExampleMain.PROGRAM_NAME;
 
     Evaluation eval = new Evaluation(programName);
-    eval.compareApproaches(Evaluation.CONFIG_CRUSHER, Evaluation.GROUND_TRUTH, true);
+    eval.compareApproaches(Evaluation.CONFIG_CRUSHER, Evaluation.GROUND_TRUTH,
+                           true);
   }
 
   @Test
@@ -125,7 +127,8 @@ public class EvaluationTest {
     String programName = RunningExampleMain.PROGRAM_NAME;
 
     Evaluation eval = new Evaluation(programName);
-    eval.compareApproaches(Evaluation.FEATURE_WISE, Evaluation.GROUND_TRUTH, true);
+    eval.compareApproaches(Evaluation.FEATURE_WISE, Evaluation.GROUND_TRUTH,
+                           true);
   }
 
   @Test
@@ -141,7 +144,8 @@ public class EvaluationTest {
     String programName = RunningExampleMain.PROGRAM_NAME;
 
     Evaluation eval = new Evaluation(programName);
-    eval.compareApproaches(Evaluation.SPLAT_DELAY, Evaluation.GROUND_TRUTH, true);
+    eval.compareApproaches(Evaluation.SPLAT_DELAY, Evaluation.GROUND_TRUTH,
+                           true);
   }
 
   @Test
@@ -149,7 +153,8 @@ public class EvaluationTest {
     String programName = "pngtasticColorCounter";
 
     Evaluation eval = new Evaluation(programName);
-    eval.compareApproaches(Evaluation.BRUTE_FORCE, Evaluation.GROUND_TRUTH, true);
+    eval.compareApproaches(Evaluation.BRUTE_FORCE, Evaluation.GROUND_TRUTH,
+                           true);
   }
 
   @Test
@@ -157,7 +162,8 @@ public class EvaluationTest {
     String programName = "pngtasticColorCounter";
 
     Evaluation eval = new Evaluation(programName);
-    eval.compareApproaches(Evaluation.CONFIG_CRUSHER, Evaluation.GROUND_TRUTH, true);
+    eval.compareApproaches(Evaluation.CONFIG_CRUSHER, Evaluation.GROUND_TRUTH,
+                           true);
   }
 
   @Test
@@ -165,7 +171,8 @@ public class EvaluationTest {
     String programName = "pngtasticColorCounter";
 
     Evaluation eval = new Evaluation(programName);
-    eval.compareApproaches(Evaluation.FEATURE_WISE, Evaluation.GROUND_TRUTH, true);
+    eval.compareApproaches(Evaluation.FEATURE_WISE, Evaluation.GROUND_TRUTH,
+                           true);
   }
 
   @Test
@@ -181,7 +188,8 @@ public class EvaluationTest {
     String programName = "pngtasticColorCounter";
 
     Evaluation eval = new Evaluation(programName);
-    eval.compareApproaches(Evaluation.SPLAT_DELAY, Evaluation.GROUND_TRUTH, true);
+    eval.compareApproaches(Evaluation.SPLAT_DELAY, Evaluation.GROUND_TRUTH,
+                           true);
   }
 
   @Test
@@ -205,7 +213,8 @@ public class EvaluationTest {
     String programName = "elevator";
 
     Evaluation eval = new Evaluation(programName);
-    eval.compareApproaches(Evaluation.BRUTE_FORCE, Evaluation.GROUND_TRUTH, true);
+    eval.compareApproaches(Evaluation.BRUTE_FORCE, Evaluation.GROUND_TRUTH,
+                           true);
   }
 
   @Test
@@ -221,7 +230,8 @@ public class EvaluationTest {
     String programName = "elevator";
 
     Evaluation eval = new Evaluation(programName);
-    eval.compareApproaches(Evaluation.FEATURE_WISE, Evaluation.GROUND_TRUTH, true);
+    eval.compareApproaches(Evaluation.FEATURE_WISE, Evaluation.GROUND_TRUTH,
+                           true);
   }
 
   @Test
@@ -229,7 +239,8 @@ public class EvaluationTest {
     String programName = "elevator";
 
     Evaluation eval = new Evaluation(programName);
-    eval.compareApproaches(Evaluation.SPLAT_DELAY, Evaluation.GROUND_TRUTH, true);
+    eval.compareApproaches(Evaluation.SPLAT_DELAY, Evaluation.GROUND_TRUTH,
+                           true);
   }
 
   @Test
@@ -285,7 +296,8 @@ public class EvaluationTest {
     String programName = "email";
 
     Evaluation eval = new Evaluation(programName);
-    eval.compareApproaches(Evaluation.BRUTE_FORCE, Evaluation.GROUND_TRUTH, true);
+    eval.compareApproaches(Evaluation.BRUTE_FORCE, Evaluation.GROUND_TRUTH,
+                           true);
   }
 
   @Test
@@ -293,7 +305,8 @@ public class EvaluationTest {
     String programName = "email";
 
     Evaluation eval = new Evaluation(programName);
-    eval.compareApproaches(Evaluation.CONFIG_CRUSHER, Evaluation.GROUND_TRUTH, true);
+    eval.compareApproaches(Evaluation.CONFIG_CRUSHER, Evaluation.GROUND_TRUTH,
+                           true);
   }
 
   @Test
@@ -301,7 +314,8 @@ public class EvaluationTest {
     String programName = "email";
 
     Evaluation eval = new Evaluation(programName);
-    eval.compareApproaches(Evaluation.FEATURE_WISE, Evaluation.GROUND_TRUTH, true);
+    eval.compareApproaches(Evaluation.FEATURE_WISE, Evaluation.GROUND_TRUTH,
+                           true);
   }
 
   @Test
@@ -319,7 +333,6 @@ public class EvaluationTest {
     Evaluation eval = new Evaluation(programName);
     eval.compareApproaches(Evaluation.FAMILY, Evaluation.GROUND_TRUTH, true);
   }
-
 
   @Test
   public void compareEmail0() throws Exception {
@@ -366,7 +379,8 @@ public class EvaluationTest {
     String programName = "grep";
 
     Evaluation eval = new Evaluation(programName);
-    eval.compareApproaches(Evaluation.BRUTE_FORCE, Evaluation.GROUND_TRUTH, true);
+    eval.compareApproaches(Evaluation.BRUTE_FORCE, Evaluation.GROUND_TRUTH,
+                           true);
   }
 
   @Test
@@ -374,7 +388,8 @@ public class EvaluationTest {
     String programName = "grep";
 
     Evaluation eval = new Evaluation(programName);
-    eval.compareApproaches(Evaluation.CONFIG_CRUSHER, Evaluation.GROUND_TRUTH, true);
+    eval.compareApproaches(Evaluation.CONFIG_CRUSHER, Evaluation.GROUND_TRUTH,
+                           true);
   }
 
   @Test
@@ -382,7 +397,8 @@ public class EvaluationTest {
     String programName = "grep";
 
     Evaluation eval = new Evaluation(programName);
-    eval.compareApproaches(Evaluation.FEATURE_WISE, Evaluation.GROUND_TRUTH, true);
+    eval.compareApproaches(Evaluation.FEATURE_WISE, Evaluation.GROUND_TRUTH,
+                           true);
   }
 
   @Test
@@ -398,7 +414,8 @@ public class EvaluationTest {
     String programName = "grep";
 
     Evaluation eval = new Evaluation(programName);
-    eval.compareApproaches(Evaluation.SPLAT_DELAY, Evaluation.GROUND_TRUTH, true);
+    eval.compareApproaches(Evaluation.SPLAT_DELAY, Evaluation.GROUND_TRUTH,
+                           true);
   }
 
   @Test
@@ -446,7 +463,8 @@ public class EvaluationTest {
     String programName = "sort";
 
     Evaluation eval = new Evaluation(programName);
-    eval.compareApproaches(Evaluation.BRUTE_FORCE, Evaluation.GROUND_TRUTH, true);
+    eval.compareApproaches(Evaluation.BRUTE_FORCE, Evaluation.GROUND_TRUTH,
+                           true);
   }
 
   @Test
@@ -454,7 +472,8 @@ public class EvaluationTest {
     String programName = "sort";
 
     Evaluation eval = new Evaluation(programName);
-    eval.compareApproaches(Evaluation.CONFIG_CRUSHER, Evaluation.GROUND_TRUTH, true);
+    eval.compareApproaches(Evaluation.CONFIG_CRUSHER, Evaluation.GROUND_TRUTH,
+                           true);
   }
 
   @Test
@@ -462,7 +481,8 @@ public class EvaluationTest {
     String programName = "sort";
 
     Evaluation eval = new Evaluation(programName);
-    eval.compareApproaches(Evaluation.FEATURE_WISE, Evaluation.GROUND_TRUTH, true);
+    eval.compareApproaches(Evaluation.FEATURE_WISE, Evaluation.GROUND_TRUTH,
+                           true);
   }
 
   @Test
@@ -478,7 +498,8 @@ public class EvaluationTest {
     String programName = "sort";
 
     Evaluation eval = new Evaluation(programName);
-    eval.compareApproaches(Evaluation.SPLAT_DELAY, Evaluation.GROUND_TRUTH, true);
+    eval.compareApproaches(Evaluation.SPLAT_DELAY, Evaluation.GROUND_TRUTH,
+                           true);
   }
 
   @Test
@@ -526,7 +547,8 @@ public class EvaluationTest {
     String programName = "density";
 
     Evaluation eval = new Evaluation(programName);
-    eval.compareApproaches(Evaluation.BRUTE_FORCE, Evaluation.GROUND_TRUTH, true);
+    eval.compareApproaches(Evaluation.BRUTE_FORCE, Evaluation.GROUND_TRUTH,
+                           true);
   }
 
   @Test
@@ -534,7 +556,8 @@ public class EvaluationTest {
     String programName = "density";
 
     Evaluation eval = new Evaluation(programName);
-    eval.compareApproaches(Evaluation.CONFIG_CRUSHER, Evaluation.GROUND_TRUTH, true);
+    eval.compareApproaches(Evaluation.CONFIG_CRUSHER, Evaluation.GROUND_TRUTH,
+                           true);
   }
 
   @Test
@@ -542,7 +565,8 @@ public class EvaluationTest {
     String programName = "density";
 
     Evaluation eval = new Evaluation(programName);
-    eval.compareApproaches(Evaluation.FEATURE_WISE, Evaluation.GROUND_TRUTH, true);
+    eval.compareApproaches(Evaluation.FEATURE_WISE, Evaluation.GROUND_TRUTH,
+                           true);
   }
 
   @Test
@@ -614,7 +638,8 @@ public class EvaluationTest {
     String programName = "pngtasticOptimizer";
 
     Evaluation eval = new Evaluation(programName);
-    eval.compareApproaches(Evaluation.BRUTE_FORCE, Evaluation.GROUND_TRUTH, true);
+    eval.compareApproaches(Evaluation.BRUTE_FORCE, Evaluation.GROUND_TRUTH,
+                           true);
   }
 
   @Test
@@ -622,7 +647,8 @@ public class EvaluationTest {
     String programName = "pngtasticOptimizer";
 
     Evaluation eval = new Evaluation(programName);
-    eval.compareApproaches(Evaluation.CONFIG_CRUSHER, Evaluation.GROUND_TRUTH, true);
+    eval.compareApproaches(Evaluation.CONFIG_CRUSHER, Evaluation.GROUND_TRUTH,
+                           true);
   }
 
   @Test
@@ -630,7 +656,8 @@ public class EvaluationTest {
     String programName = "pngtasticOptimizer";
 
     Evaluation eval = new Evaluation(programName);
-    eval.compareApproaches(Evaluation.FEATURE_WISE, Evaluation.GROUND_TRUTH, true);
+    eval.compareApproaches(Evaluation.FEATURE_WISE, Evaluation.GROUND_TRUTH,
+                           true);
   }
 
   @Test
@@ -646,7 +673,8 @@ public class EvaluationTest {
     String programName = "pngtasticOptimizer";
 
     Evaluation eval = new Evaluation(programName);
-    eval.compareApproaches(Evaluation.SPLAT_DELAY, Evaluation.GROUND_TRUTH, true);
+    eval.compareApproaches(Evaluation.SPLAT_DELAY, Evaluation.GROUND_TRUTH,
+                           true);
   }
 
   @Test
@@ -694,7 +722,8 @@ public class EvaluationTest {
     String programName = "prevayler";
 
     Evaluation eval = new Evaluation(programName);
-    eval.compareApproaches(Evaluation.BRUTE_FORCE, Evaluation.GROUND_TRUTH, true);
+    eval.compareApproaches(Evaluation.BRUTE_FORCE, Evaluation.GROUND_TRUTH,
+                           true);
   }
 
   @Test
@@ -702,7 +731,8 @@ public class EvaluationTest {
     String programName = "prevayler";
 
     Evaluation eval = new Evaluation(programName);
-    eval.compareApproaches(Evaluation.CONFIG_CRUSHER, Evaluation.GROUND_TRUTH, true);
+    eval.compareApproaches(Evaluation.CONFIG_CRUSHER, Evaluation.GROUND_TRUTH,
+                           true);
   }
 
   @Test
@@ -710,7 +740,8 @@ public class EvaluationTest {
     String programName = "prevayler";
 
     Evaluation eval = new Evaluation(programName);
-    eval.compareApproaches(Evaluation.FEATURE_WISE, Evaluation.GROUND_TRUTH, true);
+    eval.compareApproaches(Evaluation.FEATURE_WISE, Evaluation.GROUND_TRUTH,
+                           true);
   }
 
   @Test
@@ -726,7 +757,8 @@ public class EvaluationTest {
     String programName = "prevayler";
 
     Evaluation eval = new Evaluation(programName);
-    eval.compareApproaches(Evaluation.SPLAT_DELAY, Evaluation.GROUND_TRUTH, true);
+    eval.compareApproaches(Evaluation.SPLAT_DELAY, Evaluation.GROUND_TRUTH,
+                           true);
   }
 
   @Test
@@ -774,7 +806,8 @@ public class EvaluationTest {
     String programName = "kanzi";
 
     Evaluation eval = new Evaluation(programName);
-    eval.compareApproaches(Evaluation.BRUTE_FORCE, Evaluation.GROUND_TRUTH, true);
+    eval.compareApproaches(Evaluation.BRUTE_FORCE, Evaluation.GROUND_TRUTH,
+                           true);
   }
 
   @Test
@@ -782,7 +815,8 @@ public class EvaluationTest {
     String programName = "kanzi";
 
     Evaluation eval = new Evaluation(programName);
-    eval.compareApproaches(Evaluation.CONFIG_CRUSHER, Evaluation.GROUND_TRUTH, true);
+    eval.compareApproaches(Evaluation.CONFIG_CRUSHER, Evaluation.GROUND_TRUTH,
+                           true);
   }
 
   @Test
@@ -790,7 +824,8 @@ public class EvaluationTest {
     String programName = "kanzi";
 
     Evaluation eval = new Evaluation(programName);
-    eval.compareApproaches(Evaluation.FEATURE_WISE, Evaluation.GROUND_TRUTH, true);
+    eval.compareApproaches(Evaluation.FEATURE_WISE, Evaluation.GROUND_TRUTH,
+                           true);
   }
 
   @Test
@@ -806,7 +841,8 @@ public class EvaluationTest {
     String programName = "kanzi";
 
     Evaluation eval = new Evaluation(programName);
-    eval.compareApproaches(Evaluation.SPLAT_DELAY, Evaluation.GROUND_TRUTH, true);
+    eval.compareApproaches(Evaluation.SPLAT_DELAY, Evaluation.GROUND_TRUTH,
+                           true);
   }
 
   @Test
@@ -876,7 +912,8 @@ public class EvaluationTest {
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.BRUTE_FORCE, performanceEntries);
+    eval.writeConfigurationToPerformance(Evaluation.BRUTE_FORCE,
+                                         performanceEntries);
   }
 
   @Test
@@ -895,36 +932,41 @@ public class EvaluationTest {
     // arguments
     String[] args = new String[0];
 
-    BaseRegionInstrumenter instrumenter = new ConfigCrusherTimerRegionInstrumenter(programName);
+    BaseRegionInstrumenter instrumenter =
+        new ConfigCrusherTimerRegionInstrumenter(programName);
     instrumenter.instrument(args);
-    Map<JavaRegion, Set<Set<String>>> javaRegionsToOptionSet = instrumenter.getRegionsToOptionSet();
+    Map<JavaRegion, Set<Set<String>>> javaRegionsToOptionSet =
+        instrumenter.getRegionsToOptionSet();
 
     Analysis analysis = new DefaultStaticAnalysis();
-    Map<Region, Set<Set<String>>> regionsToOptionSet = analysis.transform(javaRegionsToOptionSet);
+    Map<Region, Set<Set<String>>> regionsToOptionSet =
+        analysis.transform(javaRegionsToOptionSet);
 
     Executor executor = new ConfigCrusherExecutor(programName);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
 
-    Set<String> options = new HashSet<>(RunningExampleAdapter.getRunningExampleOptions());
-    Set<Set<String>> configurations = BruteForceExecutor
-        .getBruteForceConfigurationsFromOptions(options);
+    Set<String> options =
+        new HashSet<>(RunningExampleAdapter.getRunningExampleOptions());
+    Set<Set<String>> configurations =
+        BruteForceExecutor.getBruteForceConfigurationsFromOptions(options);
 
     args = new String[2];
     args[0] = "-delres";
     args[1] = "-saveres";
 
-    PerformanceModelBuilder builder = new ConfigCrusherPerformanceModelBuilder(programName,
-        measuredPerformance,
-        regionsToOptionSet);
+    PerformanceModelBuilder builder = new ConfigCrusherPerformanceModelBuilder(
+        programName, measuredPerformance, regionsToOptionSet);
     PerformanceModel performanceModel = builder.createModel(args);
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.CONFIG_CRUSHER, performanceModel,
-        measuredPerformance, configurations);
+    eval.writeConfigurationToPerformance(Evaluation.CONFIG_CRUSHER,
+                                         performanceModel, measuredPerformance,
+                                         configurations);
   }
 
   @Test
-  public void runningExampleGroundTruth() throws IOException, InterruptedException {
+  public void runningExampleGroundTruth()
+      throws IOException, InterruptedException {
     this.analyzeGroundTruth(RunningExampleMain.PROGRAM_NAME);
   }
 
@@ -953,8 +995,8 @@ public class EvaluationTest {
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
 
     Featurewise featurewise = new Featurewise(programName);
-    Set<PerformanceEntryStatistic> featurewiseEntries = featurewise
-        .getFeaturewiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> featurewiseEntries =
+        featurewise.getFeaturewiseEntries(performanceEntries);
 
     Evaluation eval = new Evaluation(programName);
     double samplingTime = eval.getTotalSamplingTime(featurewiseEntries);
@@ -972,8 +1014,8 @@ public class EvaluationTest {
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
 
     Pairwise pairwise = new Pairwise(programName);
-    Set<PerformanceEntryStatistic> pairwiseEntries = pairwise
-        .getPairwiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> pairwiseEntries =
+        pairwise.getPairwiseEntries(performanceEntries);
 
     Evaluation eval = new Evaluation(programName);
     double samplingTime = eval.getTotalSamplingTime(pairwiseEntries);
@@ -991,7 +1033,8 @@ public class EvaluationTest {
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
 
     SPLatDelay splatDelay = new SPLatDelay(programName);
-    Set<Set<String>> splatConfigurations = splatDelay.getSPLatDelayConfigurations();
+    Set<Set<String>> splatConfigurations =
+        splatDelay.getSPLatDelayConfigurations();
 
     Set<PerformanceEntryStatistic> splatEntries = new HashSet<>();
 
@@ -1019,8 +1062,8 @@ public class EvaluationTest {
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
 
     Featurewise featurewise = new Featurewise(programName);
-    Set<PerformanceEntryStatistic> featurewiseEntries = featurewise
-        .getFeaturewiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> featurewiseEntries =
+        featurewise.getFeaturewiseEntries(performanceEntries);
     List<String> options = RunningExampleAdapter.getRunningExampleOptions();
     featurewise.generateCSVData(featurewiseEntries, options);
   }
@@ -1031,15 +1074,16 @@ public class EvaluationTest {
 
     List<String> options = RunningExampleAdapter.getRunningExampleOptions();
     Featurewise featurewise = new Featurewise(programName);
-    Map<Set<String>, Double> learnedModel = featurewise.getLearnedModel(options);
+    Map<Set<String>, Double> learnedModel =
+        featurewise.getLearnedModel(options);
 
     // arguments
     String[] args = new String[0];
 
     Executor executor = new FeaturewiseExecutor(programName);
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
-    Set<PerformanceEntryStatistic> featurewiseEntries = featurewise
-        .getFeaturewiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> featurewiseEntries =
+        featurewise.getFeaturewiseEntries(performanceEntries);
 
     Set<Set<String>> configurations = this.getConfigs(performanceEntries);
 
@@ -1048,13 +1092,14 @@ public class EvaluationTest {
     args[0] = "-delres";
     args[1] = "-saveres";
 
-    PerformanceModelBuilder featurewiseBuilder = new FeaturewisePerformanceModelBuilder(programName,
-        learnedModel);
+    PerformanceModelBuilder featurewiseBuilder =
+        new FeaturewisePerformanceModelBuilder(programName, learnedModel);
     PerformanceModel performanceModel = featurewiseBuilder.createModel(args);
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.FEATURE_WISE, performanceModel,
-        featurewiseEntries, configurations);
+    eval.writeConfigurationToPerformance(Evaluation.FEATURE_WISE,
+                                         performanceModel, featurewiseEntries,
+                                         configurations);
   }
 
   @Test
@@ -1070,8 +1115,8 @@ public class EvaluationTest {
     List<String> options = RunningExampleAdapter.getRunningExampleOptions();
 
     Pairwise pairwise = new Pairwise(programName);
-    Set<PerformanceEntryStatistic> pairwiseEntries = pairwise
-        .getPairwiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> pairwiseEntries =
+        pairwise.getPairwiseEntries(performanceEntries);
     pairwise.generateCSVData(pairwiseEntries, options);
   }
 
@@ -1088,8 +1133,8 @@ public class EvaluationTest {
 
     Executor executor = new PairwiseExecutor(programName);
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
-    Set<PerformanceEntryStatistic> pairwiseEntries = pairwise
-        .getPairwiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> pairwiseEntries =
+        pairwise.getPairwiseEntries(performanceEntries);
 
     Set<Set<String>> configurations = this.getConfigs(performanceEntries);
 
@@ -1098,13 +1143,13 @@ public class EvaluationTest {
     args[0] = "-delres";
     args[1] = "-saveres";
 
-    PerformanceModelBuilder pairwiseBuilder = new PairwisePerformanceModelBuilder(programName,
-        learnedModel);
+    PerformanceModelBuilder pairwiseBuilder =
+        new PairwisePerformanceModelBuilder(programName, learnedModel);
     PerformanceModel performanceModel = pairwiseBuilder.createModel(args);
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.PAIR_WISE, performanceModel, pairwiseEntries,
-        configurations);
+    eval.writeConfigurationToPerformance(Evaluation.PAIR_WISE, performanceModel,
+                                         pairwiseEntries, configurations);
   }
 
   @Test
@@ -1120,7 +1165,8 @@ public class EvaluationTest {
     SPLatDelay splatDelay = new SPLatDelay(programName);
     List<Coverage> coverageList = splatDelay.readFileCoverage();
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.SPLAT_DELAY, coverageList, performanceEntries);
+    eval.writeConfigurationToPerformance(Evaluation.SPLAT_DELAY, coverageList,
+                                         performanceEntries);
   }
 
   @Test
@@ -1144,7 +1190,8 @@ public class EvaluationTest {
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.BRUTE_FORCE, performanceEntries);
+    eval.writeConfigurationToPerformance(Evaluation.BRUTE_FORCE,
+                                         performanceEntries);
   }
 
   @Test
@@ -1163,12 +1210,15 @@ public class EvaluationTest {
     // arguments
     String[] args = new String[0];
 
-    BaseRegionInstrumenter instrumenter = new ConfigCrusherTimerRegionInstrumenter(programName);
+    BaseRegionInstrumenter instrumenter =
+        new ConfigCrusherTimerRegionInstrumenter(programName);
     instrumenter.instrument(args);
-    Map<JavaRegion, Set<Set<String>>> javaRegionsToOptionSet = instrumenter.getRegionsToOptionSet();
+    Map<JavaRegion, Set<Set<String>>> javaRegionsToOptionSet =
+        instrumenter.getRegionsToOptionSet();
 
     Analysis analysis = new DefaultStaticAnalysis();
-    Map<Region, Set<Set<String>>> regionsToOptionSet = analysis.transform(javaRegionsToOptionSet);
+    Map<Region, Set<Set<String>>> regionsToOptionSet =
+        analysis.transform(javaRegionsToOptionSet);
 
     Executor executor = new ConfigCrusherExecutor(programName);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
@@ -1185,14 +1235,14 @@ public class EvaluationTest {
     args[0] = "-delres";
     args[1] = "-saveres";
 
-    PerformanceModelBuilder builder = new ConfigCrusherPerformanceModelBuilder(programName,
-        measuredPerformance,
-        regionsToOptionSet);
+    PerformanceModelBuilder builder = new ConfigCrusherPerformanceModelBuilder(
+        programName, measuredPerformance, regionsToOptionSet);
     PerformanceModel performanceModel = builder.createModel(args);
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.CONFIG_CRUSHER, performanceModel,
-        measuredPerformance, configurations);
+    eval.writeConfigurationToPerformance(Evaluation.CONFIG_CRUSHER,
+                                         performanceModel, measuredPerformance,
+                                         configurations);
   }
 
   @Test
@@ -1221,7 +1271,8 @@ public class EvaluationTest {
     Set<String> optionsSet = new HashSet<>(options);
 
     Set<PerformanceEntryStatistic> entries = new HashSet<>();
-    PerformanceEntryStatistic entry = new PerformanceEntryStatistic(true, optionsSet);
+    PerformanceEntryStatistic entry =
+        new PerformanceEntryStatistic(true, optionsSet);
     entries.add(entry);
 
     Executor executor = new GroundTruthEvaluationExecutor(programName);
@@ -1234,8 +1285,8 @@ public class EvaluationTest {
     }
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.FAMILY, performanceModel, entries,
-        configurations);
+    eval.writeConfigurationToPerformance(Evaluation.FAMILY, performanceModel,
+                                         entries, configurations);
   }
 
   @Test
@@ -1251,8 +1302,8 @@ public class EvaluationTest {
     FeatureModel fm = new EmailFM();
     Featurewise featurewise = new Featurewise(programName, fm);
 
-    Set<PerformanceEntryStatistic> featurewiseEntries = featurewise
-        .getFeaturewiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> featurewiseEntries =
+        featurewise.getFeaturewiseEntries(performanceEntries);
     List<String> options = EmailAdapter.getEmailOptions();
     featurewise.generateCSVData(featurewiseEntries, options);
   }
@@ -1264,15 +1315,16 @@ public class EvaluationTest {
     FeatureModel fm = new EmailFM();
     Featurewise featurewise = new Featurewise(programName, fm);
     List<String> options = EmailAdapter.getEmailOptions();
-    Map<Set<String>, Double> learnedModel = featurewise.getLearnedModel(options);
+    Map<Set<String>, Double> learnedModel =
+        featurewise.getLearnedModel(options);
 
     // arguments
     String[] args = new String[0];
 
     Executor executor = new FeaturewiseExecutor(programName);
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
-    Set<PerformanceEntryStatistic> featurewiseEntries = featurewise
-        .getFeaturewiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> featurewiseEntries =
+        featurewise.getFeaturewiseEntries(performanceEntries);
 
     Set<Set<String>> configurations = this.getConfigs(performanceEntries);
 
@@ -1281,13 +1333,14 @@ public class EvaluationTest {
     args[0] = "-delres";
     args[1] = "-saveres";
 
-    PerformanceModelBuilder featurewiseBuilder = new FeaturewisePerformanceModelBuilder(programName,
-        learnedModel);
+    PerformanceModelBuilder featurewiseBuilder =
+        new FeaturewisePerformanceModelBuilder(programName, learnedModel);
     PerformanceModel performanceModel = featurewiseBuilder.createModel(args);
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.FEATURE_WISE, performanceModel,
-        featurewiseEntries, configurations);
+    eval.writeConfigurationToPerformance(Evaluation.FEATURE_WISE,
+                                         performanceModel, featurewiseEntries,
+                                         configurations);
   }
 
   @Test
@@ -1302,8 +1355,8 @@ public class EvaluationTest {
 
     FeatureModel fm = new EmailFM();
     Featurewise featurewise = new Featurewise(programName, fm);
-    Set<PerformanceEntryStatistic> featurewiseEntries = featurewise
-        .getFeaturewiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> featurewiseEntries =
+        featurewise.getFeaturewiseEntries(performanceEntries);
 
     Evaluation eval = new Evaluation(programName);
     double samplingTime = eval.getTotalSamplingTime(featurewiseEntries);
@@ -1322,8 +1375,8 @@ public class EvaluationTest {
 
     FeatureModel fm = new EmailFM();
     Pairwise pairwise = new Pairwise(programName, fm);
-    Set<PerformanceEntryStatistic> pairwiseEntries = pairwise
-        .getPairwiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> pairwiseEntries =
+        pairwise.getPairwiseEntries(performanceEntries);
     List<String> options = EmailAdapter.getEmailOptions();
     pairwise.generateCSVData(pairwiseEntries, options);
   }
@@ -1342,8 +1395,8 @@ public class EvaluationTest {
 
     Executor executor = new PairwiseExecutor(programName);
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
-    Set<PerformanceEntryStatistic> pairwiseEntries = pairwise
-        .getPairwiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> pairwiseEntries =
+        pairwise.getPairwiseEntries(performanceEntries);
 
     Set<Set<String>> configurations = this.getConfigs(performanceEntries);
 
@@ -1352,13 +1405,13 @@ public class EvaluationTest {
     args[0] = "-delres";
     args[1] = "-saveres";
 
-    PerformanceModelBuilder pairwiseBuilder = new PairwisePerformanceModelBuilder(programName,
-        learnedModel);
+    PerformanceModelBuilder pairwiseBuilder =
+        new PairwisePerformanceModelBuilder(programName, learnedModel);
     PerformanceModel performanceModel = pairwiseBuilder.createModel(args);
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.PAIR_WISE, performanceModel, pairwiseEntries,
-        configurations);
+    eval.writeConfigurationToPerformance(Evaluation.PAIR_WISE, performanceModel,
+                                         pairwiseEntries, configurations);
   }
 
   @Test
@@ -1373,8 +1426,8 @@ public class EvaluationTest {
 
     FeatureModel fm = new EmailFM();
     Pairwise pairwise = new Pairwise(programName, fm);
-    Set<PerformanceEntryStatistic> pairwiseEntries = pairwise
-        .getPairwiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> pairwiseEntries =
+        pairwise.getPairwiseEntries(performanceEntries);
 
     Evaluation eval = new Evaluation(programName);
     double samplingTime = eval.getTotalSamplingTime(pairwiseEntries);
@@ -1402,7 +1455,8 @@ public class EvaluationTest {
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.BRUTE_FORCE, performanceEntries);
+    eval.writeConfigurationToPerformance(Evaluation.BRUTE_FORCE,
+                                         performanceEntries);
   }
 
   @Test
@@ -1431,7 +1485,8 @@ public class EvaluationTest {
     Set<String> optionsSet = new HashSet<>(options);
 
     Set<PerformanceEntryStatistic> entries = new HashSet<>();
-    PerformanceEntryStatistic entry = new PerformanceEntryStatistic(true, optionsSet);
+    PerformanceEntryStatistic entry =
+        new PerformanceEntryStatistic(true, optionsSet);
     entries.add(entry);
 
     Executor executor = new GroundTruthEvaluationExecutor(programName);
@@ -1444,8 +1499,8 @@ public class EvaluationTest {
     }
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.FAMILY, performanceModel, entries,
-        configurations);
+    eval.writeConfigurationToPerformance(Evaluation.FAMILY, performanceModel,
+                                         entries, configurations);
   }
 
   @Test
@@ -1461,8 +1516,8 @@ public class EvaluationTest {
     FeatureModel fm = new ElevatorFM();
     Featurewise featurewise = new Featurewise(programName, fm);
 
-    Set<PerformanceEntryStatistic> featurewiseEntries = featurewise
-        .getFeaturewiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> featurewiseEntries =
+        featurewise.getFeaturewiseEntries(performanceEntries);
     List<String> options = ElevatorAdapter.getElevatorOptions();
     featurewise.generateCSVData(featurewiseEntries, options);
   }
@@ -1474,15 +1529,16 @@ public class EvaluationTest {
     FeatureModel fm = new ElevatorFM();
     Featurewise featurewise = new Featurewise(programName, fm);
     List<String> options = ElevatorAdapter.getElevatorOptions();
-    Map<Set<String>, Double> learnedModel = featurewise.getLearnedModel(options);
+    Map<Set<String>, Double> learnedModel =
+        featurewise.getLearnedModel(options);
 
     // arguments
     String[] args = new String[0];
 
     Executor executor = new FeaturewiseExecutor(programName);
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
-    Set<PerformanceEntryStatistic> featurewiseEntries = featurewise
-        .getFeaturewiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> featurewiseEntries =
+        featurewise.getFeaturewiseEntries(performanceEntries);
 
     Set<Set<String>> configurations = this.getConfigs(performanceEntries);
 
@@ -1491,13 +1547,14 @@ public class EvaluationTest {
     args[0] = "-delres";
     args[1] = "-saveres";
 
-    PerformanceModelBuilder featurewiseBuilder = new FeaturewisePerformanceModelBuilder(programName,
-        learnedModel);
+    PerformanceModelBuilder featurewiseBuilder =
+        new FeaturewisePerformanceModelBuilder(programName, learnedModel);
     PerformanceModel performanceModel = featurewiseBuilder.createModel(args);
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.FEATURE_WISE, performanceModel,
-        featurewiseEntries, configurations);
+    eval.writeConfigurationToPerformance(Evaluation.FEATURE_WISE,
+                                         performanceModel, featurewiseEntries,
+                                         configurations);
   }
 
   @Test
@@ -1512,8 +1569,8 @@ public class EvaluationTest {
 
     FeatureModel fm = new ElevatorFM();
     Pairwise pairwise = new Pairwise(programName, fm);
-    Set<PerformanceEntryStatistic> pairwiseEntries = pairwise
-        .getPairwiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> pairwiseEntries =
+        pairwise.getPairwiseEntries(performanceEntries);
     List<String> options = ElevatorAdapter.getElevatorOptions();
     pairwise.generateCSVData(pairwiseEntries, options);
   }
@@ -1532,8 +1589,8 @@ public class EvaluationTest {
 
     Executor executor = new PairwiseExecutor(programName);
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
-    Set<PerformanceEntryStatistic> pairwiseEntries = pairwise
-        .getPairwiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> pairwiseEntries =
+        pairwise.getPairwiseEntries(performanceEntries);
 
     Set<Set<String>> configurations = this.getConfigs(performanceEntries);
 
@@ -1542,13 +1599,13 @@ public class EvaluationTest {
     args[0] = "-delres";
     args[1] = "-saveres";
 
-    PerformanceModelBuilder pairwiseBuilder = new PairwisePerformanceModelBuilder(programName,
-        learnedModel);
+    PerformanceModelBuilder pairwiseBuilder =
+        new PairwisePerformanceModelBuilder(programName, learnedModel);
     PerformanceModel performanceModel = pairwiseBuilder.createModel(args);
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.PAIR_WISE, performanceModel, pairwiseEntries,
-        configurations);
+    eval.writeConfigurationToPerformance(Evaluation.PAIR_WISE, performanceModel,
+                                         pairwiseEntries, configurations);
   }
 
   @Test
@@ -1563,8 +1620,8 @@ public class EvaluationTest {
 
     FeatureModel fm = new ElevatorFM();
     Featurewise featurewise = new Featurewise(programName, fm);
-    Set<PerformanceEntryStatistic> featurewiseEntries = featurewise
-        .getFeaturewiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> featurewiseEntries =
+        featurewise.getFeaturewiseEntries(performanceEntries);
 
     Evaluation eval = new Evaluation(programName);
     double samplingTime = eval.getTotalSamplingTime(featurewiseEntries);
@@ -1583,8 +1640,8 @@ public class EvaluationTest {
 
     FeatureModel fm = new ElevatorFM();
     Pairwise pairwise = new Pairwise(programName, fm);
-    Set<PerformanceEntryStatistic> pairwiseEntries = pairwise
-        .getPairwiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> pairwiseEntries =
+        pairwise.getPairwiseEntries(performanceEntries);
 
     Evaluation eval = new Evaluation(programName);
     double samplingTime = eval.getTotalSamplingTime(pairwiseEntries);
@@ -1605,7 +1662,8 @@ public class EvaluationTest {
     List<Coverage> coverageList = splatDelay.readFileCoverage();
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.SPLAT_DELAY, coverageList, performanceEntries);
+    eval.writeConfigurationToPerformance(Evaluation.SPLAT_DELAY, coverageList,
+                                         performanceEntries);
   }
 
   @Test
@@ -1634,7 +1692,8 @@ public class EvaluationTest {
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.BRUTE_FORCE, performanceEntries);
+    eval.writeConfigurationToPerformance(Evaluation.BRUTE_FORCE,
+                                         performanceEntries);
   }
 
   @Test
@@ -1653,32 +1712,36 @@ public class EvaluationTest {
     // arguments
     String[] args = new String[0];
 
-    BaseRegionInstrumenter instrumenter = new ConfigCrusherTimerRegionInstrumenter(programName);
+    BaseRegionInstrumenter instrumenter =
+        new ConfigCrusherTimerRegionInstrumenter(programName);
     instrumenter.instrument(args);
-    Map<JavaRegion, Set<Set<String>>> javaRegionsToOptionSet = instrumenter.getRegionsToOptionSet();
+    Map<JavaRegion, Set<Set<String>>> javaRegionsToOptionSet =
+        instrumenter.getRegionsToOptionSet();
 
     Analysis analysis = new DefaultStaticAnalysis();
-    Map<Region, Set<Set<String>>> regionsToOptionSet = analysis.transform(javaRegionsToOptionSet);
+    Map<Region, Set<Set<String>>> regionsToOptionSet =
+        analysis.transform(javaRegionsToOptionSet);
 
     Executor executor = new ConfigCrusherExecutor(programName);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
 
-    Set<String> options = new HashSet<>(ColorCounterAdapter.getColorCounterOptions());
-    Set<Set<String>> configurations = BruteForceExecutor
-        .getBruteForceConfigurationsFromOptions(options);
+    Set<String> options =
+        new HashSet<>(ColorCounterAdapter.getColorCounterOptions());
+    Set<Set<String>> configurations =
+        BruteForceExecutor.getBruteForceConfigurationsFromOptions(options);
 
     args = new String[2];
     args[0] = "-delres";
     args[1] = "-saveres";
 
-    PerformanceModelBuilder builder = new ConfigCrusherPerformanceModelBuilder(programName,
-        measuredPerformance,
-        regionsToOptionSet);
+    PerformanceModelBuilder builder = new ConfigCrusherPerformanceModelBuilder(
+        programName, measuredPerformance, regionsToOptionSet);
     PerformanceModel performanceModel = builder.createModel(args);
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.CONFIG_CRUSHER, performanceModel,
-        measuredPerformance, configurations);
+    eval.writeConfigurationToPerformance(Evaluation.CONFIG_CRUSHER,
+                                         performanceModel, measuredPerformance,
+                                         configurations);
   }
 
   @Test
@@ -1695,11 +1758,13 @@ public class EvaluationTest {
     List<Coverage> coverageList = splatDelay.readFileCoverage();
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.SPLAT_DELAY, coverageList, performanceEntries);
+    eval.writeConfigurationToPerformance(Evaluation.SPLAT_DELAY, coverageList,
+                                         performanceEntries);
   }
 
   @Test
-  public void colorCounterGroundTruth() throws IOException, InterruptedException {
+  public void colorCounterGroundTruth()
+      throws IOException, InterruptedException {
     this.analyzeGroundTruth(ColorCounterMain.PROGRAM_NAME);
   }
 
@@ -1716,8 +1781,8 @@ public class EvaluationTest {
     List<String> options = ColorCounterAdapter.getColorCounterOptions();
 
     Featurewise featurewise = new Featurewise(programName);
-    Set<PerformanceEntryStatistic> featurewiseEntries = featurewise
-        .getFeaturewiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> featurewiseEntries =
+        featurewise.getFeaturewiseEntries(performanceEntries);
     featurewise.generateCSVData(featurewiseEntries, options);
   }
 
@@ -1727,15 +1792,16 @@ public class EvaluationTest {
 
     List<String> options = ColorCounterAdapter.getColorCounterOptions();
     Featurewise featurewise = new Featurewise(programName);
-    Map<Set<String>, Double> learnedModel = featurewise.getLearnedModel(options);
+    Map<Set<String>, Double> learnedModel =
+        featurewise.getLearnedModel(options);
 
     // arguments
     String[] args = new String[0];
 
     Executor executor = new FeaturewiseExecutor(programName);
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
-    Set<PerformanceEntryStatistic> featurewiseEntries = featurewise
-        .getFeaturewiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> featurewiseEntries =
+        featurewise.getFeaturewiseEntries(performanceEntries);
 
     Set<Set<String>> configurations = this.getConfigs(performanceEntries);
 
@@ -1744,13 +1810,14 @@ public class EvaluationTest {
     args[0] = "-delres";
     args[1] = "-saveres";
 
-    PerformanceModelBuilder featurewiseBuilder = new FeaturewisePerformanceModelBuilder(programName,
-        learnedModel);
+    PerformanceModelBuilder featurewiseBuilder =
+        new FeaturewisePerformanceModelBuilder(programName, learnedModel);
     PerformanceModel performanceModel = featurewiseBuilder.createModel(args);
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.FEATURE_WISE, performanceModel,
-        featurewiseEntries, configurations);
+    eval.writeConfigurationToPerformance(Evaluation.FEATURE_WISE,
+                                         performanceModel, featurewiseEntries,
+                                         configurations);
   }
 
   @Test
@@ -1766,8 +1833,8 @@ public class EvaluationTest {
     List<String> options = ColorCounterAdapter.getColorCounterOptions();
 
     Pairwise pairwise = new Pairwise(programName);
-    Set<PerformanceEntryStatistic> pairwiseEntries = pairwise
-        .getPairwiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> pairwiseEntries =
+        pairwise.getPairwiseEntries(performanceEntries);
     pairwise.generateCSVData(pairwiseEntries, options);
   }
 
@@ -1784,8 +1851,8 @@ public class EvaluationTest {
 
     Executor executor = new PairwiseExecutor(programName);
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
-    Set<PerformanceEntryStatistic> pairwiseEntries = pairwise
-        .getPairwiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> pairwiseEntries =
+        pairwise.getPairwiseEntries(performanceEntries);
 
     Set<Set<String>> configurations = this.getConfigs(performanceEntries);
 
@@ -1794,13 +1861,13 @@ public class EvaluationTest {
     args[0] = "-delres";
     args[1] = "-saveres";
 
-    PerformanceModelBuilder pairwiseBuilder = new PairwisePerformanceModelBuilder(programName,
-        learnedModel);
+    PerformanceModelBuilder pairwiseBuilder =
+        new PairwisePerformanceModelBuilder(programName, learnedModel);
     PerformanceModel performanceModel = pairwiseBuilder.createModel(args);
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.PAIR_WISE, performanceModel, pairwiseEntries,
-        configurations);
+    eval.writeConfigurationToPerformance(Evaluation.PAIR_WISE, performanceModel,
+                                         pairwiseEntries, configurations);
   }
 
   @Test
@@ -1814,8 +1881,8 @@ public class EvaluationTest {
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
 
     Featurewise featurewise = new Featurewise(programName);
-    Set<PerformanceEntryStatistic> featurewiseEntries = featurewise
-        .getFeaturewiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> featurewiseEntries =
+        featurewise.getFeaturewiseEntries(performanceEntries);
 
     Evaluation eval = new Evaluation(programName);
     double samplingTime = eval.getTotalSamplingTime(featurewiseEntries);
@@ -1833,8 +1900,8 @@ public class EvaluationTest {
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
 
     Pairwise pairwise = new Pairwise(programName);
-    Set<PerformanceEntryStatistic> pairwiseEntries = pairwise
-        .getPairwiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> pairwiseEntries =
+        pairwise.getPairwiseEntries(performanceEntries);
 
     Evaluation eval = new Evaluation(programName);
     double samplingTime = eval.getTotalSamplingTime(pairwiseEntries);
@@ -1852,7 +1919,8 @@ public class EvaluationTest {
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
 
     SPLatDelay splatDelay = new SPLatDelay(programName);
-    Set<Set<String>> splatConfigurations = splatDelay.getSPLatDelayConfigurations();
+    Set<Set<String>> splatConfigurations =
+        splatDelay.getSPLatDelayConfigurations();
 
     Set<PerformanceEntryStatistic> splatEntries = new HashSet<>();
 
@@ -1904,7 +1972,8 @@ public class EvaluationTest {
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.BRUTE_FORCE, performanceEntries);
+    eval.writeConfigurationToPerformance(Evaluation.BRUTE_FORCE,
+                                         performanceEntries);
   }
 
   @Test
@@ -1923,32 +1992,35 @@ public class EvaluationTest {
     // arguments
     String[] args = new String[0];
 
-    BaseRegionInstrumenter instrumenter = new ConfigCrusherTimerRegionInstrumenter(programName);
+    BaseRegionInstrumenter instrumenter =
+        new ConfigCrusherTimerRegionInstrumenter(programName);
     instrumenter.instrument(args);
-    Map<JavaRegion, Set<Set<String>>> javaRegionsToOptionSet = instrumenter.getRegionsToOptionSet();
+    Map<JavaRegion, Set<Set<String>>> javaRegionsToOptionSet =
+        instrumenter.getRegionsToOptionSet();
 
     Analysis analysis = new DefaultStaticAnalysis();
-    Map<Region, Set<Set<String>>> regionsToOptionSet = analysis.transform(javaRegionsToOptionSet);
+    Map<Region, Set<Set<String>>> regionsToOptionSet =
+        analysis.transform(javaRegionsToOptionSet);
 
     Executor executor = new ConfigCrusherExecutor(programName);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
 
     Set<String> options = new HashSet<>(KanziAdapter.getKanziOptions());
-    Set<Set<String>> configurations = BruteForceExecutor
-        .getBruteForceConfigurationsFromOptions(options);
+    Set<Set<String>> configurations =
+        BruteForceExecutor.getBruteForceConfigurationsFromOptions(options);
 
     args = new String[2];
     args[0] = "-delres";
     args[1] = "-saveres";
 
-    PerformanceModelBuilder builder = new ConfigCrusherPerformanceModelBuilder(programName,
-        measuredPerformance,
-        regionsToOptionSet);
+    PerformanceModelBuilder builder = new ConfigCrusherPerformanceModelBuilder(
+        programName, measuredPerformance, regionsToOptionSet);
     PerformanceModel performanceModel = builder.createModel(args);
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.CONFIG_CRUSHER, performanceModel,
-        measuredPerformance, configurations);
+    eval.writeConfigurationToPerformance(Evaluation.CONFIG_CRUSHER,
+                                         performanceModel, measuredPerformance,
+                                         configurations);
   }
 
   @Test
@@ -1964,8 +2036,8 @@ public class EvaluationTest {
     List<String> options = KanziAdapter.getKanziOptions();
 
     Featurewise featurewise = new Featurewise(programName);
-    Set<PerformanceEntryStatistic> featurewiseEntries = featurewise
-        .getFeaturewiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> featurewiseEntries =
+        featurewise.getFeaturewiseEntries(performanceEntries);
     featurewise.generateCSVData(featurewiseEntries, options);
   }
 
@@ -1975,15 +2047,16 @@ public class EvaluationTest {
 
     List<String> options = KanziAdapter.getKanziOptions();
     Featurewise featurewise = new Featurewise(programName);
-    Map<Set<String>, Double> learnedModel = featurewise.getLearnedModel(options);
+    Map<Set<String>, Double> learnedModel =
+        featurewise.getLearnedModel(options);
 
     // arguments
     String[] args = new String[0];
 
     Executor executor = new FeaturewiseExecutor(programName);
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
-    Set<PerformanceEntryStatistic> featurewiseEntries = featurewise
-        .getFeaturewiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> featurewiseEntries =
+        featurewise.getFeaturewiseEntries(performanceEntries);
 
     Set<Set<String>> configurations = this.getConfigs(performanceEntries);
 
@@ -1992,13 +2065,14 @@ public class EvaluationTest {
     args[0] = "-delres";
     args[1] = "-saveres";
 
-    PerformanceModelBuilder featurewiseBuilder = new FeaturewisePerformanceModelBuilder(programName,
-        learnedModel);
+    PerformanceModelBuilder featurewiseBuilder =
+        new FeaturewisePerformanceModelBuilder(programName, learnedModel);
     PerformanceModel performanceModel = featurewiseBuilder.createModel(args);
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.FEATURE_WISE, performanceModel,
-        featurewiseEntries, configurations);
+    eval.writeConfigurationToPerformance(Evaluation.FEATURE_WISE,
+                                         performanceModel, featurewiseEntries,
+                                         configurations);
   }
 
   @Test
@@ -2014,8 +2088,8 @@ public class EvaluationTest {
     List<String> options = KanziAdapter.getKanziOptions();
 
     Pairwise pairwise = new Pairwise(programName);
-    Set<PerformanceEntryStatistic> pairwiseEntries = pairwise
-        .getPairwiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> pairwiseEntries =
+        pairwise.getPairwiseEntries(performanceEntries);
     pairwise.generateCSVData(pairwiseEntries, options);
   }
 
@@ -2032,8 +2106,8 @@ public class EvaluationTest {
 
     Executor executor = new PairwiseExecutor(programName);
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
-    Set<PerformanceEntryStatistic> pairwiseEntries = pairwise
-        .getPairwiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> pairwiseEntries =
+        pairwise.getPairwiseEntries(performanceEntries);
 
     Set<Set<String>> configurations = this.getConfigs(performanceEntries);
 
@@ -2042,13 +2116,13 @@ public class EvaluationTest {
     args[0] = "-delres";
     args[1] = "-saveres";
 
-    PerformanceModelBuilder pairwiseBuilder = new PairwisePerformanceModelBuilder(programName,
-        learnedModel);
+    PerformanceModelBuilder pairwiseBuilder =
+        new PairwisePerformanceModelBuilder(programName, learnedModel);
     PerformanceModel performanceModel = pairwiseBuilder.createModel(args);
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.PAIR_WISE, performanceModel, pairwiseEntries,
-        configurations);
+    eval.writeConfigurationToPerformance(Evaluation.PAIR_WISE, performanceModel,
+                                         pairwiseEntries, configurations);
   }
 
   @Test
@@ -2076,8 +2150,8 @@ public class EvaluationTest {
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
 
     Featurewise featurewise = new Featurewise(programName);
-    Set<PerformanceEntryStatistic> featurewiseEntries = featurewise
-        .getFeaturewiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> featurewiseEntries =
+        featurewise.getFeaturewiseEntries(performanceEntries);
 
     Evaluation eval = new Evaluation(programName);
     double samplingTime = eval.getTotalSamplingTime(featurewiseEntries);
@@ -2095,8 +2169,8 @@ public class EvaluationTest {
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
 
     Pairwise pairwise = new Pairwise(programName);
-    Set<PerformanceEntryStatistic> pairwiseEntries = pairwise
-        .getPairwiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> pairwiseEntries =
+        pairwise.getPairwiseEntries(performanceEntries);
 
     Evaluation eval = new Evaluation(programName);
     double samplingTime = eval.getTotalSamplingTime(pairwiseEntries);
@@ -2117,7 +2191,8 @@ public class EvaluationTest {
     List<Coverage> coverageList = splatDelay.readFileCoverage();
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.SPLAT_DELAY, coverageList, performanceEntries);
+    eval.writeConfigurationToPerformance(Evaluation.SPLAT_DELAY, coverageList,
+                                         performanceEntries);
   }
 
   @Test
@@ -2131,7 +2206,8 @@ public class EvaluationTest {
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
 
     SPLatDelay splatDelay = new SPLatDelay(programName);
-    Set<Set<String>> splatConfigurations = splatDelay.getSPLatDelayConfigurations();
+    Set<Set<String>> splatConfigurations =
+        splatDelay.getSPLatDelayConfigurations();
 
     Set<PerformanceEntryStatistic> splatEntries = new HashSet<>();
 
@@ -2179,7 +2255,8 @@ public class EvaluationTest {
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.BRUTE_FORCE, performanceEntries);
+    eval.writeConfigurationToPerformance(Evaluation.BRUTE_FORCE,
+                                         performanceEntries);
   }
 
   @Test
@@ -2198,12 +2275,15 @@ public class EvaluationTest {
     // arguments
     String[] args = new String[0];
 
-    BaseRegionInstrumenter instrumenter = new ConfigCrusherTimerRegionInstrumenter(programName);
+    BaseRegionInstrumenter instrumenter =
+        new ConfigCrusherTimerRegionInstrumenter(programName);
     instrumenter.instrument(args);
-    Map<JavaRegion, Set<Set<String>>> javaRegionsToOptionSet = instrumenter.getRegionsToOptionSet();
+    Map<JavaRegion, Set<Set<String>>> javaRegionsToOptionSet =
+        instrumenter.getRegionsToOptionSet();
 
     Analysis analysis = new DefaultStaticAnalysis();
-    Map<Region, Set<Set<String>>> regionsToOptionSet = analysis.transform(javaRegionsToOptionSet);
+    Map<Region, Set<Set<String>>> regionsToOptionSet =
+        analysis.transform(javaRegionsToOptionSet);
 
     Executor executor = new ConfigCrusherExecutor(programName);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
@@ -2220,14 +2300,14 @@ public class EvaluationTest {
     args[0] = "-delres";
     args[1] = "-saveres";
 
-    PerformanceModelBuilder builder = new ConfigCrusherPerformanceModelBuilder(programName,
-        measuredPerformance,
-        regionsToOptionSet);
+    PerformanceModelBuilder builder = new ConfigCrusherPerformanceModelBuilder(
+        programName, measuredPerformance, regionsToOptionSet);
     PerformanceModel performanceModel = builder.createModel(args);
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.CONFIG_CRUSHER, performanceModel,
-        measuredPerformance, configurations);
+    eval.writeConfigurationToPerformance(Evaluation.CONFIG_CRUSHER,
+                                         performanceModel, measuredPerformance,
+                                         configurations);
   }
 
   @Test
@@ -2252,8 +2332,8 @@ public class EvaluationTest {
     List<String> options = SortAdapter.getSortOptions();
 
     Featurewise featurewise = new Featurewise(programName);
-    Set<PerformanceEntryStatistic> featurewiseEntries = featurewise
-        .getFeaturewiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> featurewiseEntries =
+        featurewise.getFeaturewiseEntries(performanceEntries);
     featurewise.generateCSVData(featurewiseEntries, options);
   }
 
@@ -2263,15 +2343,16 @@ public class EvaluationTest {
 
     List<String> options = SortAdapter.getSortOptions();
     Featurewise featurewise = new Featurewise(programName);
-    Map<Set<String>, Double> learnedModel = featurewise.getLearnedModel(options);
+    Map<Set<String>, Double> learnedModel =
+        featurewise.getLearnedModel(options);
 
     // arguments
     String[] args = new String[0];
 
     Executor executor = new FeaturewiseExecutor(programName);
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
-    Set<PerformanceEntryStatistic> featurewiseEntries = featurewise
-        .getFeaturewiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> featurewiseEntries =
+        featurewise.getFeaturewiseEntries(performanceEntries);
 
     Set<Set<String>> configurations = this.getConfigs(performanceEntries);
 
@@ -2280,13 +2361,14 @@ public class EvaluationTest {
     args[0] = "-delres";
     args[1] = "-saveres";
 
-    PerformanceModelBuilder featurewiseBuilder = new FeaturewisePerformanceModelBuilder(programName,
-        learnedModel);
+    PerformanceModelBuilder featurewiseBuilder =
+        new FeaturewisePerformanceModelBuilder(programName, learnedModel);
     PerformanceModel performanceModel = featurewiseBuilder.createModel(args);
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.FEATURE_WISE, performanceModel,
-        featurewiseEntries, configurations);
+    eval.writeConfigurationToPerformance(Evaluation.FEATURE_WISE,
+                                         performanceModel, featurewiseEntries,
+                                         configurations);
   }
 
   @Test
@@ -2300,8 +2382,8 @@ public class EvaluationTest {
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
 
     Featurewise featurewise = new Featurewise(programName);
-    Set<PerformanceEntryStatistic> featurewiseEntries = featurewise
-        .getFeaturewiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> featurewiseEntries =
+        featurewise.getFeaturewiseEntries(performanceEntries);
 
     Evaluation eval = new Evaluation(programName);
     double samplingTime = eval.getTotalSamplingTime(featurewiseEntries);
@@ -2321,8 +2403,8 @@ public class EvaluationTest {
     List<String> options = SortAdapter.getSortOptions();
 
     Pairwise pairwise = new Pairwise(programName);
-    Set<PerformanceEntryStatistic> pairwiseEntries = pairwise
-        .getPairwiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> pairwiseEntries =
+        pairwise.getPairwiseEntries(performanceEntries);
     pairwise.generateCSVData(pairwiseEntries, options);
   }
 
@@ -2339,8 +2421,8 @@ public class EvaluationTest {
 
     Executor executor = new PairwiseExecutor(programName);
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
-    Set<PerformanceEntryStatistic> pairwiseEntries = pairwise
-        .getPairwiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> pairwiseEntries =
+        pairwise.getPairwiseEntries(performanceEntries);
 
     Set<Set<String>> configurations = this.getConfigs(performanceEntries);
 
@@ -2349,13 +2431,13 @@ public class EvaluationTest {
     args[0] = "-delres";
     args[1] = "-saveres";
 
-    PerformanceModelBuilder pairwiseBuilder = new PairwisePerformanceModelBuilder(programName,
-        learnedModel);
+    PerformanceModelBuilder pairwiseBuilder =
+        new PairwisePerformanceModelBuilder(programName, learnedModel);
     PerformanceModel performanceModel = pairwiseBuilder.createModel(args);
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.PAIR_WISE, performanceModel, pairwiseEntries,
-        configurations);
+    eval.writeConfigurationToPerformance(Evaluation.PAIR_WISE, performanceModel,
+                                         pairwiseEntries, configurations);
   }
 
   @Test
@@ -2369,8 +2451,8 @@ public class EvaluationTest {
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
 
     Pairwise pairwise = new Pairwise(programName);
-    Set<PerformanceEntryStatistic> pairwiseEntries = pairwise
-        .getPairwiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> pairwiseEntries =
+        pairwise.getPairwiseEntries(performanceEntries);
 
     Evaluation eval = new Evaluation(programName);
     double samplingTime = eval.getTotalSamplingTime(pairwiseEntries);
@@ -2391,7 +2473,8 @@ public class EvaluationTest {
     List<Coverage> coverageList = splatDelay.readFileCoverage();
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.SPLAT_DELAY, coverageList, performanceEntries);
+    eval.writeConfigurationToPerformance(Evaluation.SPLAT_DELAY, coverageList,
+                                         performanceEntries);
   }
 
   @Test
@@ -2405,7 +2488,8 @@ public class EvaluationTest {
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
 
     SPLatDelay splatDelay = new SPLatDelay(programName);
-    Set<Set<String>> splatConfigurations = splatDelay.getSPLatDelayConfigurations();
+    Set<Set<String>> splatConfigurations =
+        splatDelay.getSPLatDelayConfigurations();
 
     Set<PerformanceEntryStatistic> splatEntries = new HashSet<>();
 
@@ -2433,7 +2517,8 @@ public class EvaluationTest {
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.BRUTE_FORCE, performanceEntries);
+    eval.writeConfigurationToPerformance(Evaluation.BRUTE_FORCE,
+                                         performanceEntries);
   }
 
   @Test
@@ -2452,32 +2537,35 @@ public class EvaluationTest {
     // arguments
     String[] args = new String[0];
 
-    BaseRegionInstrumenter instrumenter = new ConfigCrusherTimerRegionInstrumenter(programName);
+    BaseRegionInstrumenter instrumenter =
+        new ConfigCrusherTimerRegionInstrumenter(programName);
     instrumenter.instrument(args);
-    Map<JavaRegion, Set<Set<String>>> javaRegionsToOptionSet = instrumenter.getRegionsToOptionSet();
+    Map<JavaRegion, Set<Set<String>>> javaRegionsToOptionSet =
+        instrumenter.getRegionsToOptionSet();
 
     Analysis analysis = new DefaultStaticAnalysis();
-    Map<Region, Set<Set<String>>> regionsToOptionSet = analysis.transform(javaRegionsToOptionSet);
+    Map<Region, Set<Set<String>>> regionsToOptionSet =
+        analysis.transform(javaRegionsToOptionSet);
 
     Executor executor = new ConfigCrusherExecutor(programName);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
 
     Set<String> options = new HashSet<>(GrepAdapter.getGrepOptions());
-    Set<Set<String>> configurations = BruteForceExecutor
-        .getBruteForceConfigurationsFromOptions(options);
+    Set<Set<String>> configurations =
+        BruteForceExecutor.getBruteForceConfigurationsFromOptions(options);
 
     args = new String[2];
     args[0] = "-delres";
     args[1] = "-saveres";
 
-    PerformanceModelBuilder builder = new ConfigCrusherPerformanceModelBuilder(programName,
-        measuredPerformance,
-        regionsToOptionSet);
+    PerformanceModelBuilder builder = new ConfigCrusherPerformanceModelBuilder(
+        programName, measuredPerformance, regionsToOptionSet);
     PerformanceModel performanceModel = builder.createModel(args);
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.CONFIG_CRUSHER, performanceModel,
-        measuredPerformance, configurations);
+    eval.writeConfigurationToPerformance(Evaluation.CONFIG_CRUSHER,
+                                         performanceModel, measuredPerformance,
+                                         configurations);
   }
 
   @Test
@@ -2493,8 +2581,8 @@ public class EvaluationTest {
     List<String> options = GrepAdapter.getGrepOptions();
 
     Featurewise featurewise = new Featurewise(programName);
-    Set<PerformanceEntryStatistic> featurewiseEntries = featurewise
-        .getFeaturewiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> featurewiseEntries =
+        featurewise.getFeaturewiseEntries(performanceEntries);
     featurewise.generateCSVData(featurewiseEntries, options);
   }
 
@@ -2504,15 +2592,16 @@ public class EvaluationTest {
 
     List<String> options = GrepAdapter.getGrepOptions();
     Featurewise featurewise = new Featurewise(programName);
-    Map<Set<String>, Double> learnedModel = featurewise.getLearnedModel(options);
+    Map<Set<String>, Double> learnedModel =
+        featurewise.getLearnedModel(options);
 
     // arguments
     String[] args = new String[0];
 
     Executor executor = new FeaturewiseExecutor(programName);
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
-    Set<PerformanceEntryStatistic> featurewiseEntries = featurewise
-        .getFeaturewiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> featurewiseEntries =
+        featurewise.getFeaturewiseEntries(performanceEntries);
 
     Set<Set<String>> configurations = this.getConfigs(performanceEntries);
 
@@ -2521,13 +2610,14 @@ public class EvaluationTest {
     args[0] = "-delres";
     args[1] = "-saveres";
 
-    PerformanceModelBuilder featurewiseBuilder = new FeaturewisePerformanceModelBuilder(programName,
-        learnedModel);
+    PerformanceModelBuilder featurewiseBuilder =
+        new FeaturewisePerformanceModelBuilder(programName, learnedModel);
     PerformanceModel performanceModel = featurewiseBuilder.createModel(args);
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.FEATURE_WISE, performanceModel,
-        featurewiseEntries, configurations);
+    eval.writeConfigurationToPerformance(Evaluation.FEATURE_WISE,
+                                         performanceModel, featurewiseEntries,
+                                         configurations);
   }
 
   @Test
@@ -2543,8 +2633,8 @@ public class EvaluationTest {
     List<String> options = GrepAdapter.getGrepOptions();
 
     Pairwise pairwise = new Pairwise(programName);
-    Set<PerformanceEntryStatistic> pairwiseEntries = pairwise
-        .getPairwiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> pairwiseEntries =
+        pairwise.getPairwiseEntries(performanceEntries);
     pairwise.generateCSVData(pairwiseEntries, options);
   }
 
@@ -2561,8 +2651,8 @@ public class EvaluationTest {
 
     Executor executor = new PairwiseExecutor(programName);
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
-    Set<PerformanceEntryStatistic> pairwiseEntries = pairwise
-        .getPairwiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> pairwiseEntries =
+        pairwise.getPairwiseEntries(performanceEntries);
 
     Set<Set<String>> configurations = this.getConfigs(performanceEntries);
 
@@ -2571,13 +2661,13 @@ public class EvaluationTest {
     args[0] = "-delres";
     args[1] = "-saveres";
 
-    PerformanceModelBuilder pairwiseBuilder = new PairwisePerformanceModelBuilder(programName,
-        learnedModel);
+    PerformanceModelBuilder pairwiseBuilder =
+        new PairwisePerformanceModelBuilder(programName, learnedModel);
     PerformanceModel performanceModel = pairwiseBuilder.createModel(args);
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.PAIR_WISE, performanceModel, pairwiseEntries,
-        configurations);
+    eval.writeConfigurationToPerformance(Evaluation.PAIR_WISE, performanceModel,
+                                         pairwiseEntries, configurations);
   }
 
   @Test
@@ -2605,8 +2695,8 @@ public class EvaluationTest {
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
 
     Featurewise featurewise = new Featurewise(programName);
-    Set<PerformanceEntryStatistic> featurewiseEntries = featurewise
-        .getFeaturewiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> featurewiseEntries =
+        featurewise.getFeaturewiseEntries(performanceEntries);
 
     Evaluation eval = new Evaluation(programName);
     double samplingTime = eval.getTotalSamplingTime(featurewiseEntries);
@@ -2624,8 +2714,8 @@ public class EvaluationTest {
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
 
     Pairwise pairwise = new Pairwise(programName);
-    Set<PerformanceEntryStatistic> pairwiseEntries = pairwise
-        .getPairwiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> pairwiseEntries =
+        pairwise.getPairwiseEntries(performanceEntries);
 
     Evaluation eval = new Evaluation(programName);
     double samplingTime = eval.getTotalSamplingTime(pairwiseEntries);
@@ -2646,7 +2736,8 @@ public class EvaluationTest {
     List<Coverage> coverageList = splatDelay.readFileCoverage();
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.SPLAT_DELAY, coverageList, performanceEntries);
+    eval.writeConfigurationToPerformance(Evaluation.SPLAT_DELAY, coverageList,
+                                         performanceEntries);
   }
 
   @Test
@@ -2660,7 +2751,8 @@ public class EvaluationTest {
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
 
     SPLatDelay splatDelay = new SPLatDelay(programName);
-    Set<Set<String>> splatConfigurations = splatDelay.getSPLatDelayConfigurations();
+    Set<Set<String>> splatConfigurations =
+        splatDelay.getSPLatDelayConfigurations();
 
     Set<PerformanceEntryStatistic> splatEntries = new HashSet<>();
 
@@ -2700,8 +2792,8 @@ public class EvaluationTest {
     List<String> options = PrevaylerAdapter.getPrevaylerOptions();
 
     Featurewise featurewise = new Featurewise(programName);
-    Set<PerformanceEntryStatistic> featurewiseEntries = featurewise
-        .getFeaturewiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> featurewiseEntries =
+        featurewise.getFeaturewiseEntries(performanceEntries);
     featurewise.generateCSVData(featurewiseEntries, options);
   }
 
@@ -2711,15 +2803,16 @@ public class EvaluationTest {
 
     List<String> options = PrevaylerAdapter.getPrevaylerOptions();
     Featurewise featurewise = new Featurewise(programName);
-    Map<Set<String>, Double> learnedModel = featurewise.getLearnedModel(options);
+    Map<Set<String>, Double> learnedModel =
+        featurewise.getLearnedModel(options);
 
     // arguments
     String[] args = new String[0];
 
     Executor executor = new FeaturewiseExecutor(programName);
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
-    Set<PerformanceEntryStatistic> featurewiseEntries = featurewise
-        .getFeaturewiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> featurewiseEntries =
+        featurewise.getFeaturewiseEntries(performanceEntries);
 
     Set<Set<String>> configurations = this.getConfigs(performanceEntries);
 
@@ -2728,13 +2821,14 @@ public class EvaluationTest {
     args[0] = "-delres";
     args[1] = "-saveres";
 
-    PerformanceModelBuilder featurewiseBuilder = new FeaturewisePerformanceModelBuilder(programName,
-        learnedModel);
+    PerformanceModelBuilder featurewiseBuilder =
+        new FeaturewisePerformanceModelBuilder(programName, learnedModel);
     PerformanceModel performanceModel = featurewiseBuilder.createModel(args);
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.FEATURE_WISE, performanceModel,
-        featurewiseEntries, configurations);
+    eval.writeConfigurationToPerformance(Evaluation.FEATURE_WISE,
+                                         performanceModel, featurewiseEntries,
+                                         configurations);
   }
 
   @Test
@@ -2748,8 +2842,8 @@ public class EvaluationTest {
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
 
     Featurewise featurewise = new Featurewise(programName);
-    Set<PerformanceEntryStatistic> featurewiseEntries = featurewise
-        .getFeaturewiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> featurewiseEntries =
+        featurewise.getFeaturewiseEntries(performanceEntries);
 
     Evaluation eval = new Evaluation(programName);
     double samplingTime = eval.getTotalSamplingTime(featurewiseEntries);
@@ -2769,8 +2863,8 @@ public class EvaluationTest {
     List<String> options = PrevaylerAdapter.getPrevaylerOptions();
 
     Pairwise pairwise = new Pairwise(programName);
-    Set<PerformanceEntryStatistic> pairwiseEntries = pairwise
-        .getPairwiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> pairwiseEntries =
+        pairwise.getPairwiseEntries(performanceEntries);
     pairwise.generateCSVData(pairwiseEntries, options);
   }
 
@@ -2787,8 +2881,8 @@ public class EvaluationTest {
 
     Executor executor = new PairwiseExecutor(programName);
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
-    Set<PerformanceEntryStatistic> pairwiseEntries = pairwise
-        .getPairwiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> pairwiseEntries =
+        pairwise.getPairwiseEntries(performanceEntries);
 
     Set<Set<String>> configurations = this.getConfigs(performanceEntries);
 
@@ -2797,13 +2891,13 @@ public class EvaluationTest {
     args[0] = "-delres";
     args[1] = "-saveres";
 
-    PerformanceModelBuilder pairwiseBuilder = new PairwisePerformanceModelBuilder(programName,
-        learnedModel);
+    PerformanceModelBuilder pairwiseBuilder =
+        new PairwisePerformanceModelBuilder(programName, learnedModel);
     PerformanceModel performanceModel = pairwiseBuilder.createModel(args);
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.PAIR_WISE, performanceModel, pairwiseEntries,
-        configurations);
+    eval.writeConfigurationToPerformance(Evaluation.PAIR_WISE, performanceModel,
+                                         pairwiseEntries, configurations);
   }
 
   @Test
@@ -2817,8 +2911,8 @@ public class EvaluationTest {
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
 
     Pairwise pairwise = new Pairwise(programName);
-    Set<PerformanceEntryStatistic> pairwiseEntries = pairwise
-        .getPairwiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> pairwiseEntries =
+        pairwise.getPairwiseEntries(performanceEntries);
 
     Evaluation eval = new Evaluation(programName);
     double samplingTime = eval.getTotalSamplingTime(pairwiseEntries);
@@ -2839,7 +2933,8 @@ public class EvaluationTest {
     List<Coverage> coverageList = splatDelay.readFileCoverage();
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.SPLAT_DELAY, coverageList, performanceEntries);
+    eval.writeConfigurationToPerformance(Evaluation.SPLAT_DELAY, coverageList,
+                                         performanceEntries);
   }
 
   @Test
@@ -2853,7 +2948,8 @@ public class EvaluationTest {
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
 
     SPLatDelay splatDelay = new SPLatDelay(programName);
-    Set<Set<String>> splatConfigurations = splatDelay.getSPLatDelayConfigurations();
+    Set<Set<String>> splatConfigurations =
+        splatDelay.getSPLatDelayConfigurations();
 
     Set<PerformanceEntryStatistic> splatEntries = new HashSet<>();
 
@@ -2881,7 +2977,8 @@ public class EvaluationTest {
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.BRUTE_FORCE, performanceEntries);
+    eval.writeConfigurationToPerformance(Evaluation.BRUTE_FORCE,
+                                         performanceEntries);
   }
 
   @Test
@@ -2900,32 +2997,35 @@ public class EvaluationTest {
     // arguments
     String[] args = new String[0];
 
-    BaseRegionInstrumenter instrumenter = new ConfigCrusherTimerRegionInstrumenter(programName);
+    BaseRegionInstrumenter instrumenter =
+        new ConfigCrusherTimerRegionInstrumenter(programName);
     instrumenter.instrument(args);
-    Map<JavaRegion, Set<Set<String>>> javaRegionsToOptionSet = instrumenter.getRegionsToOptionSet();
+    Map<JavaRegion, Set<Set<String>>> javaRegionsToOptionSet =
+        instrumenter.getRegionsToOptionSet();
 
     Analysis analysis = new DefaultStaticAnalysis();
-    Map<Region, Set<Set<String>>> regionsToOptionSet = analysis.transform(javaRegionsToOptionSet);
+    Map<Region, Set<Set<String>>> regionsToOptionSet =
+        analysis.transform(javaRegionsToOptionSet);
 
     Executor executor = new ConfigCrusherExecutor(programName);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
 
     Set<String> options = new HashSet<>(OptimizerAdapter.getOptimizerOptions());
-    Set<Set<String>> configurations = BruteForceExecutor
-        .getBruteForceConfigurationsFromOptions(options);
+    Set<Set<String>> configurations =
+        BruteForceExecutor.getBruteForceConfigurationsFromOptions(options);
 
     args = new String[2];
     args[0] = "-delres";
     args[1] = "-saveres";
 
-    PerformanceModelBuilder builder = new ConfigCrusherPerformanceModelBuilder(programName,
-        measuredPerformance,
-        regionsToOptionSet);
+    PerformanceModelBuilder builder = new ConfigCrusherPerformanceModelBuilder(
+        programName, measuredPerformance, regionsToOptionSet);
     PerformanceModel performanceModel = builder.createModel(args);
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.CONFIG_CRUSHER, performanceModel,
-        measuredPerformance, configurations);
+    eval.writeConfigurationToPerformance(Evaluation.CONFIG_CRUSHER,
+                                         performanceModel, measuredPerformance,
+                                         configurations);
   }
 
   @Test
@@ -2942,7 +3042,8 @@ public class EvaluationTest {
     List<Coverage> coverageList = splatDelay.readFileCoverage();
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.SPLAT_DELAY, coverageList, performanceEntries);
+    eval.writeConfigurationToPerformance(Evaluation.SPLAT_DELAY, coverageList,
+                                         performanceEntries);
   }
 
   @Test
@@ -2958,8 +3059,8 @@ public class EvaluationTest {
     List<String> options = OptimizerAdapter.getOptimizerOptions();
 
     Featurewise featurewise = new Featurewise(programName);
-    Set<PerformanceEntryStatistic> featurewiseEntries = featurewise
-        .getFeaturewiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> featurewiseEntries =
+        featurewise.getFeaturewiseEntries(performanceEntries);
     featurewise.generateCSVData(featurewiseEntries, options);
   }
 
@@ -2969,15 +3070,16 @@ public class EvaluationTest {
 
     List<String> options = OptimizerAdapter.getOptimizerOptions();
     Featurewise featurewise = new Featurewise(programName);
-    Map<Set<String>, Double> learnedModel = featurewise.getLearnedModel(options);
+    Map<Set<String>, Double> learnedModel =
+        featurewise.getLearnedModel(options);
 
     // arguments
     String[] args = new String[0];
 
     Executor executor = new FeaturewiseExecutor(programName);
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
-    Set<PerformanceEntryStatistic> featurewiseEntries = featurewise
-        .getFeaturewiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> featurewiseEntries =
+        featurewise.getFeaturewiseEntries(performanceEntries);
 
     Set<Set<String>> configurations = this.getConfigs(performanceEntries);
 
@@ -2986,13 +3088,14 @@ public class EvaluationTest {
     args[0] = "-delres";
     args[1] = "-saveres";
 
-    PerformanceModelBuilder featurewiseBuilder = new FeaturewisePerformanceModelBuilder(programName,
-        learnedModel);
+    PerformanceModelBuilder featurewiseBuilder =
+        new FeaturewisePerformanceModelBuilder(programName, learnedModel);
     PerformanceModel performanceModel = featurewiseBuilder.createModel(args);
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.FEATURE_WISE, performanceModel,
-        featurewiseEntries, configurations);
+    eval.writeConfigurationToPerformance(Evaluation.FEATURE_WISE,
+                                         performanceModel, featurewiseEntries,
+                                         configurations);
   }
 
   @Test
@@ -3008,8 +3111,8 @@ public class EvaluationTest {
     List<String> options = OptimizerAdapter.getOptimizerOptions();
 
     Pairwise pairwise = new Pairwise(programName);
-    Set<PerformanceEntryStatistic> pairwiseEntries = pairwise
-        .getPairwiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> pairwiseEntries =
+        pairwise.getPairwiseEntries(performanceEntries);
     pairwise.generateCSVData(pairwiseEntries, options);
   }
 
@@ -3026,8 +3129,8 @@ public class EvaluationTest {
 
     Executor executor = new PairwiseExecutor(programName);
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
-    Set<PerformanceEntryStatistic> pairwiseEntries = pairwise
-        .getPairwiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> pairwiseEntries =
+        pairwise.getPairwiseEntries(performanceEntries);
 
     Set<Set<String>> configurations = this.getConfigs(performanceEntries);
 
@@ -3036,13 +3139,13 @@ public class EvaluationTest {
     args[0] = "-delres";
     args[1] = "-saveres";
 
-    PerformanceModelBuilder pairwiseBuilder = new PairwisePerformanceModelBuilder(programName,
-        learnedModel);
+    PerformanceModelBuilder pairwiseBuilder =
+        new PairwisePerformanceModelBuilder(programName, learnedModel);
     PerformanceModel performanceModel = pairwiseBuilder.createModel(args);
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.PAIR_WISE, performanceModel, pairwiseEntries,
-        configurations);
+    eval.writeConfigurationToPerformance(Evaluation.PAIR_WISE, performanceModel,
+                                         pairwiseEntries, configurations);
   }
 
   @Test
@@ -3056,8 +3159,8 @@ public class EvaluationTest {
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
 
     Featurewise featurewise = new Featurewise(programName);
-    Set<PerformanceEntryStatistic> featurewiseEntries = featurewise
-        .getFeaturewiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> featurewiseEntries =
+        featurewise.getFeaturewiseEntries(performanceEntries);
 
     Evaluation eval = new Evaluation(programName);
     double samplingTime = eval.getTotalSamplingTime(featurewiseEntries);
@@ -3075,8 +3178,8 @@ public class EvaluationTest {
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
 
     Pairwise pairwise = new Pairwise(programName);
-    Set<PerformanceEntryStatistic> pairwiseEntries = pairwise
-        .getPairwiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> pairwiseEntries =
+        pairwise.getPairwiseEntries(performanceEntries);
 
     Evaluation eval = new Evaluation(programName);
     double samplingTime = eval.getTotalSamplingTime(pairwiseEntries);
@@ -3094,7 +3197,8 @@ public class EvaluationTest {
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
 
     SPLatDelay splatDelay = new SPLatDelay(programName);
-    Set<Set<String>> splatConfigurations = splatDelay.getSPLatDelayConfigurations();
+    Set<Set<String>> splatConfigurations =
+        splatDelay.getSPLatDelayConfigurations();
 
     Set<PerformanceEntryStatistic> splatEntries = new HashSet<>();
 
@@ -3136,7 +3240,8 @@ public class EvaluationTest {
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.BRUTE_FORCE, performanceEntries);
+    eval.writeConfigurationToPerformance(Evaluation.BRUTE_FORCE,
+                                         performanceEntries);
   }
 
   @Test
@@ -3155,32 +3260,35 @@ public class EvaluationTest {
     // arguments
     String[] args = new String[0];
 
-    BaseRegionInstrumenter instrumenter = new ConfigCrusherTimerRegionInstrumenter(programName);
+    BaseRegionInstrumenter instrumenter =
+        new ConfigCrusherTimerRegionInstrumenter(programName);
     instrumenter.instrument(args);
-    Map<JavaRegion, Set<Set<String>>> javaRegionsToOptionSet = instrumenter.getRegionsToOptionSet();
+    Map<JavaRegion, Set<Set<String>>> javaRegionsToOptionSet =
+        instrumenter.getRegionsToOptionSet();
 
     Analysis analysis = new DefaultStaticAnalysis();
-    Map<Region, Set<Set<String>>> regionsToOptionSet = analysis.transform(javaRegionsToOptionSet);
+    Map<Region, Set<Set<String>>> regionsToOptionSet =
+        analysis.transform(javaRegionsToOptionSet);
 
     Executor executor = new ConfigCrusherExecutor(programName);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
 
     Set<String> options = new HashSet<>(PrevaylerAdapter.getPrevaylerOptions());
-    Set<Set<String>> configurations = BruteForceExecutor
-        .getBruteForceConfigurationsFromOptions(options);
+    Set<Set<String>> configurations =
+        BruteForceExecutor.getBruteForceConfigurationsFromOptions(options);
 
     args = new String[2];
     args[0] = "-delres";
     args[1] = "-saveres";
 
-    PerformanceModelBuilder builder = new ConfigCrusherPerformanceModelBuilder(programName,
-        measuredPerformance,
-        regionsToOptionSet);
+    PerformanceModelBuilder builder = new ConfigCrusherPerformanceModelBuilder(
+        programName, measuredPerformance, regionsToOptionSet);
     PerformanceModel performanceModel = builder.createModel(args);
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.CONFIG_CRUSHER, performanceModel,
-        measuredPerformance, configurations);
+    eval.writeConfigurationToPerformance(Evaluation.CONFIG_CRUSHER,
+                                         performanceModel, measuredPerformance,
+                                         configurations);
   }
 
   @Test
@@ -3199,32 +3307,35 @@ public class EvaluationTest {
     // arguments
     String[] args = new String[0];
 
-    BaseRegionInstrumenter instrumenter = new ConfigCrusherTimerRegionInstrumenter(programName);
+    BaseRegionInstrumenter instrumenter =
+        new ConfigCrusherTimerRegionInstrumenter(programName);
     instrumenter.instrument(args);
-    Map<JavaRegion, Set<Set<String>>> javaRegionsToOptionSet = instrumenter.getRegionsToOptionSet();
+    Map<JavaRegion, Set<Set<String>>> javaRegionsToOptionSet =
+        instrumenter.getRegionsToOptionSet();
 
     Analysis analysis = new DefaultStaticAnalysis();
-    Map<Region, Set<Set<String>>> regionsToOptionSet = analysis.transform(javaRegionsToOptionSet);
+    Map<Region, Set<Set<String>>> regionsToOptionSet =
+        analysis.transform(javaRegionsToOptionSet);
 
     Executor executor = new ConfigCrusherExecutor(programName);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
 
     Set<String> options = new HashSet<>(Regions12Adapter.getRegions12Options());
-    Set<Set<String>> configurations = BruteForceExecutor
-        .getBruteForceConfigurationsFromOptions(options);
+    Set<Set<String>> configurations =
+        BruteForceExecutor.getBruteForceConfigurationsFromOptions(options);
 
     args = new String[2];
     args[0] = "-delres";
     args[1] = "-saveres";
 
-    PerformanceModelBuilder builder = new ConfigCrusherPerformanceModelBuilder(programName,
-        measuredPerformance,
-        regionsToOptionSet);
+    PerformanceModelBuilder builder = new ConfigCrusherPerformanceModelBuilder(
+        programName, measuredPerformance, regionsToOptionSet);
     PerformanceModel performanceModel = builder.createModel(args);
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.CONFIG_CRUSHER, performanceModel,
-        measuredPerformance, configurations);
+    eval.writeConfigurationToPerformance(Evaluation.CONFIG_CRUSHER,
+                                         performanceModel, measuredPerformance,
+                                         configurations);
   }
 
   @Test
@@ -3234,32 +3345,35 @@ public class EvaluationTest {
     // arguments
     String[] args = new String[0];
 
-    BaseRegionInstrumenter instrumenter = new ConfigCrusherTimerRegionInstrumenter(programName);
+    BaseRegionInstrumenter instrumenter =
+        new ConfigCrusherTimerRegionInstrumenter(programName);
     instrumenter.instrument(args);
-    Map<JavaRegion, Set<Set<String>>> javaRegionsToOptionSet = instrumenter.getRegionsToOptionSet();
+    Map<JavaRegion, Set<Set<String>>> javaRegionsToOptionSet =
+        instrumenter.getRegionsToOptionSet();
 
     Analysis analysis = new DefaultStaticAnalysis();
-    Map<Region, Set<Set<String>>> regionsToOptionSet = analysis.transform(javaRegionsToOptionSet);
+    Map<Region, Set<Set<String>>> regionsToOptionSet =
+        analysis.transform(javaRegionsToOptionSet);
 
     Executor executor = new ConfigCrusherExecutor(programName);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
 
     Set<String> options = new HashSet<>(Regions16Adapter.getRegions16Options());
-    Set<Set<String>> configurations = BruteForceExecutor
-        .getBruteForceConfigurationsFromOptions(options);
+    Set<Set<String>> configurations =
+        BruteForceExecutor.getBruteForceConfigurationsFromOptions(options);
 
     args = new String[2];
     args[0] = "-delres";
     args[1] = "-saveres";
 
-    PerformanceModelBuilder builder = new ConfigCrusherPerformanceModelBuilder(programName,
-        measuredPerformance,
-        regionsToOptionSet);
+    PerformanceModelBuilder builder = new ConfigCrusherPerformanceModelBuilder(
+        programName, measuredPerformance, regionsToOptionSet);
     PerformanceModel performanceModel = builder.createModel(args);
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.CONFIG_CRUSHER, performanceModel,
-        measuredPerformance, configurations);
+    eval.writeConfigurationToPerformance(Evaluation.CONFIG_CRUSHER,
+                                         performanceModel, measuredPerformance,
+                                         configurations);
   }
 
   @Test
@@ -3293,7 +3407,8 @@ public class EvaluationTest {
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.BRUTE_FORCE, performanceEntries);
+    eval.writeConfigurationToPerformance(Evaluation.BRUTE_FORCE,
+                                         performanceEntries);
   }
 
   @Test
@@ -3312,12 +3427,15 @@ public class EvaluationTest {
     // arguments
     String[] args = new String[0];
 
-    BaseRegionInstrumenter instrumenter = new ConfigCrusherTimerRegionInstrumenter(programName);
+    BaseRegionInstrumenter instrumenter =
+        new ConfigCrusherTimerRegionInstrumenter(programName);
     instrumenter.instrument(args);
-    Map<JavaRegion, Set<Set<String>>> javaRegionsToOptionSet = instrumenter.getRegionsToOptionSet();
+    Map<JavaRegion, Set<Set<String>>> javaRegionsToOptionSet =
+        instrumenter.getRegionsToOptionSet();
 
     Analysis analysis = new DefaultStaticAnalysis();
-    Map<Region, Set<Set<String>>> regionsToOptionSet = analysis.transform(javaRegionsToOptionSet);
+    Map<Region, Set<Set<String>>> regionsToOptionSet =
+        analysis.transform(javaRegionsToOptionSet);
 
     Executor executor = new ConfigCrusherExecutor(programName);
     Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
@@ -3326,9 +3444,8 @@ public class EvaluationTest {
     args[0] = "-delres";
     args[1] = "-saveres";
 
-    PerformanceModelBuilder builder = new ConfigCrusherPerformanceModelBuilder(programName,
-        measuredPerformance,
-        regionsToOptionSet);
+    PerformanceModelBuilder builder = new ConfigCrusherPerformanceModelBuilder(
+        programName, measuredPerformance, regionsToOptionSet);
     PerformanceModel performanceModel = builder.createModel(args);
 
     args = new String[0];
@@ -3338,8 +3455,9 @@ public class EvaluationTest {
     Set<Set<String>> configurations = this.getConfigs(performanceEntries);
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.CONFIG_CRUSHER, performanceModel,
-        measuredPerformance, configurations);
+    eval.writeConfigurationToPerformance(Evaluation.CONFIG_CRUSHER,
+                                         performanceModel, measuredPerformance,
+                                         configurations);
   }
 
   @Test
@@ -3364,8 +3482,8 @@ public class EvaluationTest {
     List<String> options = DensityAdapter.getDensityOptions();
 
     Featurewise featurewise = new Featurewise(programName);
-    Set<PerformanceEntryStatistic> featurewiseEntries = featurewise
-        .getFeaturewiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> featurewiseEntries =
+        featurewise.getFeaturewiseEntries(performanceEntries);
     featurewise.generateCSVData(featurewiseEntries, options);
   }
 
@@ -3375,15 +3493,16 @@ public class EvaluationTest {
 
     List<String> options = DensityAdapter.getDensityOptions();
     Featurewise featurewise = new Featurewise(programName);
-    Map<Set<String>, Double> learnedModel = featurewise.getLearnedModel(options);
+    Map<Set<String>, Double> learnedModel =
+        featurewise.getLearnedModel(options);
 
     // arguments
     String[] args = new String[0];
 
     Executor executor = new FeaturewiseExecutor(programName);
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
-    Set<PerformanceEntryStatistic> featurewiseEntries = featurewise
-        .getFeaturewiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> featurewiseEntries =
+        featurewise.getFeaturewiseEntries(performanceEntries);
 
     Set<Set<String>> configurations = this.getConfigs(performanceEntries);
 
@@ -3392,13 +3511,14 @@ public class EvaluationTest {
     args[0] = "-delres";
     args[1] = "-saveres";
 
-    PerformanceModelBuilder featurewiseBuilder = new FeaturewisePerformanceModelBuilder(programName,
-        learnedModel);
+    PerformanceModelBuilder featurewiseBuilder =
+        new FeaturewisePerformanceModelBuilder(programName, learnedModel);
     PerformanceModel performanceModel = featurewiseBuilder.createModel(args);
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.FEATURE_WISE, performanceModel,
-        featurewiseEntries, configurations);
+    eval.writeConfigurationToPerformance(Evaluation.FEATURE_WISE,
+                                         performanceModel, featurewiseEntries,
+                                         configurations);
   }
 
   @Test
@@ -3414,8 +3534,8 @@ public class EvaluationTest {
     List<String> options = DensityAdapter.getDensityOptions();
 
     Pairwise pairwise = new Pairwise(programName);
-    Set<PerformanceEntryStatistic> pairwiseEntries = pairwise
-        .getPairwiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> pairwiseEntries =
+        pairwise.getPairwiseEntries(performanceEntries);
     pairwise.generateCSVData(pairwiseEntries, options);
   }
 
@@ -3432,8 +3552,8 @@ public class EvaluationTest {
 
     Executor executor = new FeaturewiseExecutor(programName);
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
-    Set<PerformanceEntryStatistic> pairwiseEntries = pairwise
-        .getPairwiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> pairwiseEntries =
+        pairwise.getPairwiseEntries(performanceEntries);
 
     Set<Set<String>> configurations = this.getConfigs(performanceEntries);
 
@@ -3442,13 +3562,13 @@ public class EvaluationTest {
     args[0] = "-delres";
     args[1] = "-saveres";
 
-    PerformanceModelBuilder pairwiseBuilder = new PairwisePerformanceModelBuilder(programName,
-        learnedModel);
+    PerformanceModelBuilder pairwiseBuilder =
+        new PairwisePerformanceModelBuilder(programName, learnedModel);
     PerformanceModel performanceModel = pairwiseBuilder.createModel(args);
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.PAIR_WISE, performanceModel, pairwiseEntries,
-        configurations);
+    eval.writeConfigurationToPerformance(Evaluation.PAIR_WISE, performanceModel,
+                                         pairwiseEntries, configurations);
   }
 
   @Test
@@ -3462,8 +3582,8 @@ public class EvaluationTest {
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
 
     Featurewise featurewise = new Featurewise(programName);
-    Set<PerformanceEntryStatistic> featurewiseEntries = featurewise
-        .getFeaturewiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> featurewiseEntries =
+        featurewise.getFeaturewiseEntries(performanceEntries);
 
     Evaluation eval = new Evaluation(programName);
     double samplingTime = eval.getTotalSamplingTime(featurewiseEntries);
@@ -3481,8 +3601,8 @@ public class EvaluationTest {
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
 
     Pairwise pairwise = new Pairwise(programName);
-    Set<PerformanceEntryStatistic> pairwiseEntries = pairwise
-        .getPairwiseEntries(performanceEntries);
+    Set<PerformanceEntryStatistic> pairwiseEntries =
+        pairwise.getPairwiseEntries(performanceEntries);
 
     Evaluation eval = new Evaluation(programName);
     double samplingTime = eval.getTotalSamplingTime(pairwiseEntries);
@@ -3504,13 +3624,15 @@ public class EvaluationTest {
     this.analyzeGroundTruthSamplingTime(LuceneMain.PROGRAM_NAME);
   }
 
-  private void analyzeGroundTruthSamplingTime(String programName) throws IOException {
+  private void analyzeGroundTruthSamplingTime(String programName)
+      throws IOException {
     Evaluation eval = new Evaluation(programName);
     double samplingTime = eval.getTotalSamplingTime(Evaluation.GROUND_TRUTH);
     Evaluation.prettyPrintTime(samplingTime);
   }
 
-  private void analyzeGroundTruth(String programName) throws IOException, InterruptedException {
+  private void analyzeGroundTruth(String programName)
+      throws IOException, InterruptedException {
     // arguments
     String[] args = new String[0];
 
@@ -3518,10 +3640,12 @@ public class EvaluationTest {
     Set<PerformanceEntryStatistic> performanceEntries = executor.execute(args);
 
     Evaluation eval = new Evaluation(programName);
-    eval.writeConfigurationToPerformance(Evaluation.GROUND_TRUTH, performanceEntries);
+    eval.writeConfigurationToPerformance(Evaluation.GROUND_TRUTH,
+                                         performanceEntries);
   }
 
-  private Set<Set<String>> getConfigs(Set<PerformanceEntryStatistic> performanceEntries) {
+  private Set<Set<String>>
+  getConfigs(Set<PerformanceEntryStatistic> performanceEntries) {
     Set<Set<String>> configs = new HashSet<>();
 
     for (PerformanceEntryStatistic entry : performanceEntries) {
@@ -3530,5 +3654,4 @@ public class EvaluationTest {
 
     return configs;
   }
-
 }

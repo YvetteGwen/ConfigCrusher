@@ -22,7 +22,6 @@ import edu.cmu.cs.mvelezce.tool.execute.java.adapter.sleep.SleepAdapter;
 import edu.cmu.cs.mvelezce.tool.execute.java.adapter.sort.SortAdapter;
 import edu.cmu.cs.mvelezce.tool.execute.java.adapter.zipme.ZipmeAdapter;
 import edu.cmu.cs.mvelezce.tool.performance.entry.DefaultPerformanceEntry;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.Map;
@@ -33,125 +32,132 @@ import java.util.Set;
  */
 public class ConfigCrusherExecutor extends BaseExecutor {
 
-    public ConfigCrusherExecutor() {
-        this(null);
+  public ConfigCrusherExecutor() { this(null); }
+
+  public ConfigCrusherExecutor(String programName) {
+    this(programName, null, null, null);
+  }
+
+  public ConfigCrusherExecutor(String programName, String entryPoint,
+                               String classDir,
+                               Set<Set<String>> configurations) {
+    super(programName, entryPoint, classDir, configurations);
+  }
+
+  public Map<String, Long> getResults() {
+    Map<String, Long> result = RegionsCounter.getRegionsToCount();
+
+    if (!result.isEmpty()) {
+      System.out.println("Start region count: " + RegionsCounter.startCount);
+      System.out.println("Exit region count: " + RegionsCounter.endCount);
+      return result;
     }
 
-    public ConfigCrusherExecutor(String programName) {
-        this(programName, null, null, null);
+    result = Regions.getRegionsToProcessedPerformance();
+
+    for (Map.Entry<String, Long> entry : result.entrySet()) {
+      long overhead = Regions.regionsToOverhead.get(entry.getKey());
+      result.put(entry.getKey(), entry.getValue() - overhead);
     }
 
-    public ConfigCrusherExecutor(String programName, String entryPoint, String classDir, Set<Set<String>> configurations) {
-        super(programName, entryPoint, classDir, configurations);
+    if (!result.isEmpty()) {
+      return result;
     }
 
-    public Map<String, Long> getResults() {
-        Map<String, Long> result = RegionsCounter.getRegionsToCount();
+    throw new RuntimeException("No data is available");
+  }
 
-        if(!result.isEmpty()) {
-            System.out.println("Start region count: " + RegionsCounter.startCount);
-            System.out.println("Exit region count: " + RegionsCounter.endCount);
-            return result;
-        }
+  @Override
+  public Set<DefaultPerformanceEntry> execute(int iteration)
+      throws IOException, InterruptedException {
+    // TODO factory pattern or switch statement to create the right adapter
+    Adapter adapter;
 
-        result = Regions.getRegionsToProcessedPerformance();
-
-        for(Map.Entry<String, Long> entry : result.entrySet()) {
-            long overhead = Regions.regionsToOverhead.get(entry.getKey());
-            result.put(entry.getKey(), entry.getValue() - overhead);
-        }
-
-        if(!result.isEmpty()) {
-            return result;
-        }
-
-        throw new RuntimeException("No data is available");
+    if (this.getProgramName().contains("elevator")) {
+      adapter = new ElevatorAdapter(this.getProgramName(), this.getEntryPoint(),
+                                    this.getClassDir());
+    } else if (this.getProgramName().contains("gpl")) {
+      adapter = new GPLAdapter(this.getProgramName(), this.getEntryPoint(),
+                               this.getClassDir());
+    } else if (this.getProgramName().contains("sleep")) {
+      adapter = new SleepAdapter(this.getProgramName(), this.getEntryPoint(),
+                                 this.getClassDir());
+    } else if (this.getProgramName().contains("zipme")) {
+      adapter = new ZipmeAdapter(this.getProgramName(), this.getEntryPoint(),
+                                 this.getClassDir());
+    }
+    //        else if(this.getProgramName().contains("pngtastic")) {
+    //            adapter = new PngtasticAdapter(this.getProgramName(),
+    //            this.getEntryPoint(), this.getClassDir());
+    //        }
+    else if (this.getProgramName().contains("pngtasticColorCounter")) {
+      adapter = new ColorCounterAdapter(
+          this.getProgramName(), this.getEntryPoint(), this.getClassDir());
+    } else if (this.getProgramName().contains("pngtasticOptimizer")) {
+      adapter = new OptimizerAdapter(this.getProgramName(),
+                                     this.getEntryPoint(), this.getClassDir());
+    } else if (this.getProgramName().contains(
+                   RunningExampleMain.PROGRAM_NAME)) {
+      adapter = new RunningExampleAdapter(
+          this.getProgramName(), this.getEntryPoint(), this.getClassDir());
+    } else if (this.getProgramName().contains("regions12")) {
+      adapter = new Regions12Adapter(this.getProgramName(),
+                                     this.getEntryPoint(), this.getClassDir());
+    } else if (this.getProgramName().contains("regions13")) {
+      adapter = new Regions13Adapter(this.getProgramName(),
+                                     this.getEntryPoint(), this.getClassDir());
+    } else if (this.getProgramName().contains("regions14")) {
+      adapter = new Regions14Adapter(this.getProgramName(),
+                                     this.getEntryPoint(), this.getClassDir());
+    } else if (this.getProgramName().contains("regions16")) {
+      adapter = new Regions16Adapter(this.getProgramName(),
+                                     this.getEntryPoint(), this.getClassDir());
+    } else if (this.getProgramName().contains("prevayler")) {
+      adapter = new PrevaylerAdapter(this.getProgramName(),
+                                     this.getEntryPoint(), this.getClassDir());
+    } else if (this.getProgramName().contains("kanzi")) {
+      adapter = new KanziAdapter(this.getProgramName(), this.getEntryPoint(),
+                                 this.getClassDir());
+    } else if (this.getProgramName().contains("grep")) {
+      adapter = new GrepAdapter(this.getProgramName(), this.getEntryPoint(),
+                                this.getClassDir());
+    } else if (this.getProgramName().contains("sort")) {
+      adapter = new SortAdapter(this.getProgramName(), this.getEntryPoint(),
+                                this.getClassDir());
+    } else if (this.getProgramName().contains("density")) {
+      adapter = new DensityAdapter(this.getProgramName(), this.getEntryPoint(),
+                                   this.getClassDir());
+    } else if (this.getProgramName().contains("email")) {
+      adapter = new EmailAdapter(this.getProgramName(), this.getEntryPoint(),
+                                 this.getClassDir());
+    } else {
+      throw new RuntimeException("Could not create an adapter for " +
+                                 this.getProgramName());
     }
 
-    @Override
-    public Set<DefaultPerformanceEntry> execute(int iteration) throws IOException, InterruptedException {
-        // TODO factory pattern or switch statement to create the right adapter
-        Adapter adapter;
+    for (Set<String> configuration : this.getConfigurations()) {
+      adapter.execute(configuration, iteration);
 
-        if(this.getProgramName().contains("elevator")) {
-            adapter = new ElevatorAdapter(this.getProgramName(), this.getEntryPoint(), this.getClassDir());
-        }
-        else if(this.getProgramName().contains("gpl")) {
-            adapter = new GPLAdapter(this.getProgramName(), this.getEntryPoint(), this.getClassDir());
-        }
-        else if(this.getProgramName().contains("sleep")) {
-            adapter = new SleepAdapter(this.getProgramName(), this.getEntryPoint(), this.getClassDir());
-        }
-        else if(this.getProgramName().contains("zipme")) {
-            adapter = new ZipmeAdapter(this.getProgramName(), this.getEntryPoint(), this.getClassDir());
-        }
-//        else if(this.getProgramName().contains("pngtastic")) {
-//            adapter = new PngtasticAdapter(this.getProgramName(), this.getEntryPoint(), this.getClassDir());
-//        }
-        else if(this.getProgramName().contains("pngtasticColorCounter")) {
-            adapter = new ColorCounterAdapter(this.getProgramName(), this.getEntryPoint(), this.getClassDir());
-        }
-        else if(this.getProgramName().contains("pngtasticOptimizer")) {
-            adapter = new OptimizerAdapter(this.getProgramName(), this.getEntryPoint(), this.getClassDir());
-        }
-        else if(this.getProgramName().contains(RunningExampleMain.PROGRAM_NAME)) {
-            adapter = new RunningExampleAdapter(this.getProgramName(), this.getEntryPoint(), this.getClassDir());
-        }
-        else if(this.getProgramName().contains("regions12")) {
-            adapter = new Regions12Adapter(this.getProgramName(), this.getEntryPoint(), this.getClassDir());
-        }
-        else if(this.getProgramName().contains("regions13")) {
-            adapter = new Regions13Adapter(this.getProgramName(), this.getEntryPoint(), this.getClassDir());
-        }
-        else if(this.getProgramName().contains("regions14")) {
-            adapter = new Regions14Adapter(this.getProgramName(), this.getEntryPoint(), this.getClassDir());
-        }
-        else if(this.getProgramName().contains("regions16")) {
-            adapter = new Regions16Adapter(this.getProgramName(), this.getEntryPoint(), this.getClassDir());
-        }
-        else if(this.getProgramName().contains("prevayler")) {
-            adapter = new PrevaylerAdapter(this.getProgramName(), this.getEntryPoint(), this.getClassDir());
-        }
-        else if(this.getProgramName().contains("kanzi")) {
-            adapter = new KanziAdapter(this.getProgramName(), this.getEntryPoint(), this.getClassDir());
-        }
-        else if(this.getProgramName().contains("grep")) {
-            adapter = new GrepAdapter(this.getProgramName(), this.getEntryPoint(), this.getClassDir());
-        }
-        else if(this.getProgramName().contains("sort")) {
-            adapter = new SortAdapter(this.getProgramName(), this.getEntryPoint(), this.getClassDir());
-        }
-        else if(this.getProgramName().contains("density")) {
-            adapter = new DensityAdapter(this.getProgramName(), this.getEntryPoint(), this.getClassDir());
-        }
-        else if(this.getProgramName().contains("email")) {
-            adapter = new EmailAdapter(this.getProgramName(), this.getEntryPoint(), this.getClassDir());
-        }
-        else {
-            throw new RuntimeException("Could not create an adapter for " + this.getProgramName());
-        }
-
-        for(Set<String> configuration : this.getConfigurations()) {
-            adapter.execute(configuration, iteration);
-
-            System.gc();
-            Thread.sleep(5000);
-        }
-
-        String outputDir = this.getOutputDir() + "/" + this.getProgramName() + "/" + iteration;
-        File outputFile = new File(outputDir);
-
-        if(!outputFile.exists()) {
-            throw new RuntimeException("The output file could not be found " + outputDir);
-        }
-
-        Set<DefaultPerformanceEntry> performanceEntries = this.aggregateExecutions(outputFile);
-        return performanceEntries;
+      System.gc();
+      Thread.sleep(5000);
     }
 
-    @Override
-    public String getOutputDir() {
-        return BaseExecutor.DIRECTORY + "/configcrusher/programs";
+    String outputDir =
+        this.getOutputDir() + "/" + this.getProgramName() + "/" + iteration;
+    File outputFile = new File(outputDir);
+
+    if (!outputFile.exists()) {
+      throw new RuntimeException("The output file could not be found " +
+                                 outputDir);
     }
 
+    Set<DefaultPerformanceEntry> performanceEntries =
+        this.aggregateExecutions(outputFile);
+    return performanceEntries;
+  }
+
+  @Override
+  public String getOutputDir() {
+    return BaseExecutor.DIRECTORY + "/configcrusher/programs";
+  }
 }

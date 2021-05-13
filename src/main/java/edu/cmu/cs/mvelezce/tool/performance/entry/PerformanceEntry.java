@@ -5,8 +5,7 @@ import java.io.IOException;
 
 public interface PerformanceEntry {
 
-    public void writeToFile(PerformanceEntry performanceEntry) throws IOException;
+  public void writeToFile(PerformanceEntry performanceEntry) throws IOException;
 
-    public PerformanceEntry readFromFile(File file) throws IOException;
-
+  public PerformanceEntry readFromFile(File file) throws IOException;
 }

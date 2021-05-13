@@ -8,16 +8,15 @@ import java.util.Set;
 
 public class BerkeleyAdapter extends BaseAdapter {
 
-  public BerkeleyAdapter() {
-    this(null, null, null);
-  }
+  public BerkeleyAdapter() { this(null, null, null); }
 
   public BerkeleyAdapter(String programName, String entryPoint, String dir) {
     super(programName, entryPoint, dir, BerkeleyAdapter.getBerkeleyOptions());
   }
 
   public static List<String> getBerkeleyOptions() {
-    String[] options = {"RECORDS", "DATA", "DUPLICATES", "KEYSIZE", "SEQUENTIAL"};
+    String[] options = {"RECORDS", "DATA", "DUPLICATES", "KEYSIZE",
+                        "SEQUENTIAL"};
 
     return Arrays.asList(options);
   }

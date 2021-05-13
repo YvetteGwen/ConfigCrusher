@@ -9,46 +9,46 @@ import java.util.Set;
 // TODO do we need this class?
 public class SleepDynamicAdapter extends DynamicAdapter {
 
-    private static final String[] CONFIGURATIONS = {"A", "B", "C", "D"};
+  private static final String[] CONFIGURATIONS = {"A", "B", "C", "D"};
 
-    private String mainClassFile;
+  private String mainClassFile;
 
-    public SleepDynamicAdapter(String mainClassFile) {
-        this.mainClassFile = mainClassFile;
+  public SleepDynamicAdapter(String mainClassFile) {
+    this.mainClassFile = mainClassFile;
+  }
+
+  // TODO pass the main class to execute
+  public void execute(Set<String> configuration)
+      throws ClassNotFoundException, NoSuchMethodException {
+    Class<?> mainClass = this.loadClass(this.mainClassFile);
+    Method method = mainClass.getMethod(DynamicAdapter.MAIN, String[].class);
+
+    //        try {
+    //            Region program = Regions.getProgram();
+    //            Regions.addExecutingRegion(program);
+    //
+    //            program.startTime();
+    //            method.invoke(null, (Object)
+    //            this.adaptConfiguration(configuration)); program.endTime();
+    //
+    //            Regions.removeExecutingRegion(program);
+    //        }
+    //        catch (IllegalAccessException | InvocationTargetException e) {
+    //            e.printStackTrace();
+    //        }
+  }
+
+  public String[] adaptConfiguration(Set<String> configuration) {
+    String[] sleepConfiguration = new String[4];
+
+    for (int i = 0; i < sleepConfiguration.length; i++) {
+      if (configuration.contains(SleepDynamicAdapter.CONFIGURATIONS[i])) {
+        sleepConfiguration[i] = "true";
+      } else {
+        sleepConfiguration[i] = "false";
+      }
     }
 
-    // TODO pass the main class to execute
-    public void execute(Set<String> configuration) throws ClassNotFoundException, NoSuchMethodException {
-        Class<?> mainClass = this.loadClass(this.mainClassFile);
-        Method method = mainClass.getMethod(DynamicAdapter.MAIN, String[].class);
-
-//        try {
-//            Region program = Regions.getProgram();
-//            Regions.addExecutingRegion(program);
-//
-//            program.startTime();
-//            method.invoke(null, (Object) this.adaptConfiguration(configuration));
-//            program.endTime();
-//
-//            Regions.removeExecutingRegion(program);
-//        }
-//        catch (IllegalAccessException | InvocationTargetException e) {
-//            e.printStackTrace();
-//        }
-    }
-
-    public String[] adaptConfiguration(Set<String> configuration) {
-        String[] sleepConfiguration = new String[4];
-
-        for(int i = 0; i < sleepConfiguration.length; i++) {
-            if(configuration.contains(SleepDynamicAdapter.CONFIGURATIONS[i])) {
-                sleepConfiguration[i] = "true";
-            }
-            else {
-                sleepConfiguration[i] = "false";
-            }
-        }
-
-        return sleepConfiguration;
-    }
+    return sleepConfiguration;
+  }
 }

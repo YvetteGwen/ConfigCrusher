@@ -40,7 +40,8 @@ public class GrepMain extends BaseMain {
     Adapter adapter = new GrepAdapter();
     Set<String> configuration = adapter.configurationAsSet(this.getArgs());
 
-    ConfigCrusherExecutor executor = new ConfigCrusherExecutor(this.getProgramName());
+    ConfigCrusherExecutor executor =
+        new ConfigCrusherExecutor(this.getProgramName());
     Map<String, Long> results = executor.getResults();
     executor.writeToFile(this.getIteration(), configuration, results);
   }
@@ -48,7 +49,8 @@ public class GrepMain extends BaseMain {
   @Override
   public void execute(String mainClass, String[] args) {
     try {
-      BaseRegionInstrumenter instrumenter = new ConfigCrusherTimerRegionInstrumenter("grep");
+      BaseRegionInstrumenter instrumenter =
+          new ConfigCrusherTimerRegionInstrumenter("grep");
       instrumenter.instrument(args);
       Set<JavaRegion> regions = instrumenter.getRegionsToOptionSet().keySet();
 
@@ -56,7 +58,8 @@ public class GrepMain extends BaseMain {
         Regions.regionsToOverhead.put(region.getRegionID(), 0L);
       }
       Regions.regionsToOverhead.put(Regions.PROGRAM_REGION_ID, 0L);
-    } catch (InvocationTargetException | NoSuchMethodException | IOException | IllegalAccessException | InterruptedException e) {
+    } catch (InvocationTargetException | NoSuchMethodException | IOException |
+             IllegalAccessException | InterruptedException e) {
       throw new RuntimeException("Could not add regions to the Regions class");
     }
 
@@ -71,10 +74,8 @@ public class GrepMain extends BaseMain {
       } finally {
         Regions.exit(program.getRegionID());
       }
-    }
-    else {
+    } else {
       throw new RuntimeException("Could not find the main class " + mainClass);
     }
-
   }
 }

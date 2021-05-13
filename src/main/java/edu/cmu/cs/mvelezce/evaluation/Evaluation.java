@@ -25,7 +25,8 @@ import org.apache.commons.io.FileUtils;
 
 public class Evaluation {
 
-  public static final String DIRECTORY = Options.DIRECTORY + "/evaluation/programs/java";
+  public static final String DIRECTORY =
+      Options.DIRECTORY + "/evaluation/programs/java";
   public static final String COMPARISON_DIR = "/comparison";
   public static final String FULL_DIR = "/full";
   public static final String DOT_CSV = ".csv";
@@ -41,9 +42,7 @@ public class Evaluation {
 
   private String programName;
 
-  public Evaluation(String programName) {
-    this.programName = programName;
-  }
+  public Evaluation(String programName) { this.programName = programName; }
 
   static void prettyPrintTime(double time) {
     System.out.println(time + " seconds");
@@ -69,8 +68,9 @@ public class Evaluation {
   }
 
   private File getFile(String approach) {
-    String fileString = Evaluation.DIRECTORY + "/" + this.programName + Evaluation.FULL_DIR + "/"
-        + approach + Evaluation.DOT_CSV;
+    String fileString = Evaluation.DIRECTORY + "/" + this.programName +
+                        Evaluation.FULL_DIR + "/" + approach +
+                        Evaluation.DOT_CSV;
     return new File(fileString);
   }
 
@@ -92,10 +92,12 @@ public class Evaluation {
     return lines;
   }
 
-  public void writeConfigurationToPerformance(String approach,
-      Set<PerformanceEntryStatistic> performanceEntries) throws IOException {
-    String outputDir = Evaluation.DIRECTORY + "/" + this.programName + Evaluation.FULL_DIR + "/"
-        + approach + Evaluation.DOT_CSV;
+  public void writeConfigurationToPerformance(
+      String approach, Set<PerformanceEntryStatistic> performanceEntries)
+      throws IOException {
+    String outputDir = Evaluation.DIRECTORY + "/" + this.programName +
+                       Evaluation.FULL_DIR + "/" + approach +
+                       Evaluation.DOT_CSV;
     File outputFile = new File(outputDir);
 
     if (outputFile.exists()) {
@@ -109,9 +111,11 @@ public class Evaluation {
     DecimalFormat decimalFormat = new DecimalFormat("#.###");
 
     for (PerformanceEntryStatistic performanceEntry : performanceEntries) {
-      if (performanceEntry.getRegionsToProcessedPerformanceHumanReadable().size() != 1) {
-        throw new RuntimeException("This method can only handle approaches that measure 1 region" +
-            " (e.g. Brute force)");
+      if (performanceEntry.getRegionsToProcessedPerformanceHumanReadable()
+              .size() != 1) {
+        throw new RuntimeException(
+            "This method can only handle approaches that measure 1 region"
+            + " (e.g. Brute force)");
       }
 
       result.append("true");
@@ -120,16 +124,23 @@ public class Evaluation {
       result.append(performanceEntry.getConfiguration());
       result.append('"');
       result.append(",");
-      double performance = performanceEntry.getRegionsToProcessedPerformanceHumanReadable().values()
-          .iterator().next();
+      double performance =
+          performanceEntry.getRegionsToProcessedPerformanceHumanReadable()
+              .values()
+              .iterator()
+              .next();
       result.append(decimalFormat.format(performance));
       result.append(",");
-      double std = performanceEntry.getRegionsToProcessedStdHumanReadable().values().iterator()
-          .next();
+      double std = performanceEntry.getRegionsToProcessedStdHumanReadable()
+                       .values()
+                       .iterator()
+                       .next();
       result.append(decimalFormat.format(std));
       result.append(",");
-      List<Double> ci = performanceEntry.getRegionsToProcessedCIHumanReadable().values().iterator()
-          .next();
+      List<Double> ci = performanceEntry.getRegionsToProcessedCIHumanReadable()
+                            .values()
+                            .iterator()
+                            .next();
       double minCI = ci.get(0);
       double maxCI = ci.get(1);
       result.append(decimalFormat.format(minCI));
@@ -145,10 +156,12 @@ public class Evaluation {
     writer.close();
   }
 
-  public void writeConfigurationToPerformance(String approach, List<Coverage> coverageList,
+  public void writeConfigurationToPerformance(
+      String approach, List<Coverage> coverageList,
       Set<PerformanceEntryStatistic> performanceEntryStats) throws IOException {
-    String outputDir = Evaluation.DIRECTORY + "/" + this.programName + Evaluation.FULL_DIR + "/"
-        + approach + Evaluation.DOT_CSV;
+    String outputDir = Evaluation.DIRECTORY + "/" + this.programName +
+                       Evaluation.FULL_DIR + "/" + approach +
+                       Evaluation.DOT_CSV;
     File outputFile = new File(outputDir);
 
     if (outputFile.exists()) {
@@ -180,11 +193,16 @@ public class Evaluation {
         result.append(config);
         result.append('"');
         result.append(",");
-        double perf = entry.getRegionsToProcessedPerformanceHumanReadable().values().iterator()
-            .next();
+        double perf = entry.getRegionsToProcessedPerformanceHumanReadable()
+                          .values()
+                          .iterator()
+                          .next();
         result.append(decimalFormat.format(perf));
         result.append(",");
-        double std = entry.getRegionsToProcessedStdHumanReadable().values().iterator().next();
+        double std = entry.getRegionsToProcessedStdHumanReadable()
+                         .values()
+                         .iterator()
+                         .next();
         result.append(decimalFormat.format(std));
         result.append("\n");
 
@@ -220,12 +238,13 @@ public class Evaluation {
     writer.close();
   }
 
-  public void writeConfigurationToPerformance(String approach, PerformanceModel
-      performanceModel, Set<PerformanceEntryStatistic> performanceEntryStats,
-      Set<Set<String>> configurations) throws
-      IOException {
-    String outputDir = Evaluation.DIRECTORY + "/" + this.programName + Evaluation.FULL_DIR + "/"
-        + approach + Evaluation.DOT_CSV;
+  public void writeConfigurationToPerformance(
+      String approach, PerformanceModel performanceModel,
+      Set<PerformanceEntryStatistic> performanceEntryStats,
+      Set<Set<String>> configurations) throws IOException {
+    String outputDir = Evaluation.DIRECTORY + "/" + this.programName +
+                       Evaluation.FULL_DIR + "/" + approach +
+                       Evaluation.DOT_CSV;
     File outputFile = new File(outputDir);
 
     if (outputFile.exists()) {
@@ -239,8 +258,10 @@ public class Evaluation {
     for (Set<String> configuration : configurations) {
       PerformanceEntryStatistic performanceStat = null;
 
-      for (PerformanceEntryStatistic performanceEntryStatistic : performanceEntryStats) {
-        if (performanceEntryStatistic.getConfiguration().equals(configuration)) {
+      for (PerformanceEntryStatistic performanceEntryStatistic :
+           performanceEntryStats) {
+        if (performanceEntryStatistic.getConfiguration().equals(
+                configuration)) {
           performanceStat = performanceEntryStatistic;
           break;
         }
@@ -248,8 +269,7 @@ public class Evaluation {
 
       if (performanceStat != null) {
         result.append(true);
-      }
-      else {
+      } else {
         result.append(false);
       }
 
@@ -276,9 +296,9 @@ public class Evaluation {
   }
 
   private File checkFileExists(String approach) throws IOException {
-    String outputDir =
-        Evaluation.DIRECTORY + "/" + this.programName + "/" + Evaluation.FULL_DIR + "/"
-            + approach + Evaluation.DOT_CSV;
+    String outputDir = Evaluation.DIRECTORY + "/" + this.programName + "/" +
+                       Evaluation.FULL_DIR + "/" + approach +
+                       Evaluation.DOT_CSV;
     File outputFile = new File(outputDir);
 
     if (!outputFile.exists()) {
@@ -296,9 +316,9 @@ public class Evaluation {
       version = "all";
     }
 
-    String outputDir =
-        Evaluation.DIRECTORY + "/" + this.programName + "/" + Evaluation.COMPARISON_DIR + "/"
-            + version + "_" + approach1 + "_" + approach2 + Evaluation.DOT_CSV;
+    String outputDir = Evaluation.DIRECTORY + "/" + this.programName + "/" +
+                       Evaluation.COMPARISON_DIR + "/" + version + "_" +
+                       approach1 + "_" + approach2 + Evaluation.DOT_CSV;
     File outputFile = new File(outputDir);
 
     if (outputFile.exists()) {
@@ -308,7 +328,8 @@ public class Evaluation {
     return outputFile;
   }
 
-  private void compareLengthsOfFiles(File file1, File file2) throws IOException {
+  private void compareLengthsOfFiles(File file1, File file2)
+      throws IOException {
     FileInputStream fstream = new FileInputStream(file1);
     DataInputStream in = new DataInputStream(fstream);
     BufferedReader br = new BufferedReader(new InputStreamReader(in));
@@ -337,7 +358,8 @@ public class Evaluation {
     in.close();
 
     if (approach1LineCount != approach2LineCount) {
-      throw new RuntimeException("The approach files do not have the same length");
+      throw new RuntimeException(
+          "The approach files do not have the same length");
     }
   }
 
@@ -360,7 +382,8 @@ public class Evaluation {
       int startOptionIndex = strLine.indexOf("[") + 1;
       int endOptionIndex = strLine.lastIndexOf("]");
 
-      String optionsString = strLine.substring(startOptionIndex, endOptionIndex);
+      String optionsString =
+          strLine.substring(startOptionIndex, endOptionIndex);
       String[] arrayOptions = optionsString.split(",");
 
       for (int i = 0; i < arrayOptions.length; i++) {
@@ -388,7 +411,8 @@ public class Evaluation {
       int startOptionIndex = strLine.indexOf("[") + 1;
       int endOptionIndex = strLine.lastIndexOf("]");
 
-      String optionsString = strLine.substring(startOptionIndex, endOptionIndex);
+      String optionsString =
+          strLine.substring(startOptionIndex, endOptionIndex);
       String[] arrayOptions = optionsString.split(",");
 
       for (int i = 0; i < arrayOptions.length; i++) {
@@ -409,7 +433,8 @@ public class Evaluation {
     return confToData;
   }
 
-  public void compareApproaches(String approach1, String approach2) throws IOException {
+  public void compareApproaches(String approach1, String approach2)
+      throws IOException {
     this.compareApproaches(approach1, approach2, false);
   }
 
@@ -436,10 +461,10 @@ public class Evaluation {
     int predictedOutside = 0;
 
     result.append(
-        "measured,configuration," + approach1 + "," + approach1 + "_std," + approach2 + ","
-            + approach2
-            + "_std," + approach2 + "_minci," + approach2
-            + "_maxci,1withinci,absolute error,relative error,squared error");
+        "measured,configuration," + approach1 + "," + approach1 + "_std," +
+        approach2 + "," + approach2 + "_std," + approach2 + "_minci," +
+        approach2 +
+        "_maxci,1withinci,absolute error,relative error,squared error");
     result.append("\n");
 
     for (Set<String> configuration : configurations) {
@@ -489,17 +514,13 @@ public class Evaluation {
         if (measured) {
           if (within) {
             measuredWithin++;
-          }
-          else {
+          } else {
             measuredOutside++;
-
           }
-        }
-        else {
+        } else {
           if (within) {
             predictedWithin++;
-          }
-          else {
+          } else {
             predictedOutside++;
           }
         }
@@ -572,15 +593,14 @@ public class Evaluation {
     writer.close();
   }
 
-  public String getProgramName() {
-    return this.programName;
-  }
+  public String getProgramName() { return this.programName; }
 
   public double getTotalSamplingTime(Set<PerformanceEntryStatistic> entries) {
     double time = 0.0;
 
     for (PerformanceEntryStatistic entry : entries) {
-      Map<Region, Double> regionToTime = entry.getRegionsToProcessedPerformanceHumanReadable();
+      Map<Region, Double> regionToTime =
+          entry.getRegionsToProcessedPerformanceHumanReadable();
 
       for (double exec : regionToTime.values()) {
         time += exec;

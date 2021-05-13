@@ -30,20 +30,23 @@ public class VarexJProcessor {
   public static Map<JavaRegion, Set<String>> parse()
       throws IOException, SAXException, ParserConfigurationException {
     DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-//        factory.setValidating(true);
-//        factory.setIgnoringElementContentWhitespace(true);
+    //        factory.setValidating(true);
+    //        factory.setIgnoringElementContentWhitespace(true);
     DocumentBuilder builder = factory.newDocumentBuilder();
-    File coverage = new File(BaseAdapter.USER_HOME
-        + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/gpl/coverage2.xml");
+    File coverage = new File(
+        BaseAdapter.USER_HOME +
+        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/gpl/coverage2.xml");
 
     if (!coverage.exists()) {
       throw new RuntimeException("No file");
     }
 
-    String src = BaseAdapter.USER_HOME
-        + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/gpl/src/";
+    String src =
+        BaseAdapter.USER_HOME +
+        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/gpl/src/";
     String[] extensions = {"java"};
-    Collection<File> files = FileUtils.listFiles(new File(src), extensions, true);
+    Collection<File> files =
+        FileUtils.listFiles(new File(src), extensions, true);
 
     Document root = builder.parse(coverage);
     root.getDocumentElement().normalize();
@@ -53,17 +56,17 @@ public class VarexJProcessor {
 
     for (int i = 0; i < fileList.getLength(); i++) {
       Node fileNode = fileList.item(i);
-      Element fileElement = (Element) fileNode;
+      Element fileElement = (Element)fileNode;
       NodeList methodList = fileElement.getElementsByTagName("Method");
 
       for (int j = 0; j < methodList.getLength(); j++) {
         Node methodNode = methodList.item(j);
-        Element methodElement = (Element) methodNode;
+        Element methodElement = (Element)methodNode;
         NodeList instructionList = methodElement.getElementsByTagName("instr");
 
         for (int k = 0; k < instructionList.getLength(); k++) {
           Node instructionNode = instructionList.item(k);
-          Element instructionElement = (Element) instructionNode;
+          Element instructionElement = (Element)instructionNode;
 
           Map<String, String> entry = new HashMap<>();
           String className = fileElement.getAttribute("name");
@@ -92,34 +95,42 @@ public class VarexJProcessor {
       }
     }
 
-//        for (int i = 0; i < fileList.getLength(); i++) {
-//            Node fileNode = fileList.item(i);
-//            Element fileElement = (Element) fileNode;
-//
-//            System.out.println("File " + fileElement.getAttribute("name"));
-//            NodeList methodList = fileElement.getElementsByTagName("Method");
-//
-//            for (int j = 0; j < methodList.getLength(); j++) {
-//                Node methodNode = methodList.item(j);
-//                Element methodElement = (Element) methodNode;
-//
-//                System.out.println("Method " + methodElement.getAttribute("name"));
-//                NodeList instructionList = methodElement.getElementsByTagName("instr");
-//
-//                for (int k = 0; k < instructionList.getLength(); k++) {
-//                    Node instructionNode = instructionList.item(k);
-//                    Element instructionElement = (Element) instructionNode;
-//
-//                    Map<String, String> entry = new HashMap<>();
-//                    entry.put("index", instructionElement.getAttribute("index"));
-//                    entry.put("features", instructionElement.getAttribute("text"));
-//                }
-//
-//                System.out.println("");
-//            }
-////                System.out.println(eElement.getElementsByTagName("firstname").item(0).getTextContent());
-////                System.out.println(eElement.getElementsByTagName("lastname").item(0).getTextContent());
-//        }
+    //        for (int i = 0; i < fileList.getLength(); i++) {
+    //            Node fileNode = fileList.item(i);
+    //            Element fileElement = (Element) fileNode;
+    //
+    //            System.out.println("File " +
+    //            fileElement.getAttribute("name")); NodeList methodList =
+    //            fileElement.getElementsByTagName("Method");
+    //
+    //            for (int j = 0; j < methodList.getLength(); j++) {
+    //                Node methodNode = methodList.item(j);
+    //                Element methodElement = (Element) methodNode;
+    //
+    //                System.out.println("Method " +
+    //                methodElement.getAttribute("name")); NodeList
+    //                instructionList =
+    //                methodElement.getElementsByTagName("instr");
+    //
+    //                for (int k = 0; k < instructionList.getLength(); k++) {
+    //                    Node instructionNode = instructionList.item(k);
+    //                    Element instructionElement = (Element)
+    //                    instructionNode;
+    //
+    //                    Map<String, String> entry = new HashMap<>();
+    //                    entry.put("index",
+    //                    instructionElement.getAttribute("index"));
+    //                    entry.put("features",
+    //                    instructionElement.getAttribute("text"));
+    //                }
+    //
+    //                System.out.println("");
+    //            }
+    ////
+    /// System.out.println(eElement.getElementsByTagName("firstname").item(0).getTextContent());
+    ////
+    /// System.out.println(eElement.getElementsByTagName("lastname").item(0).getTextContent());
+    //        }
 
     Map<JavaRegion, Set<String>> regionsToOptions = new HashMap<>();
     String currentPackage = "";
@@ -138,7 +149,8 @@ public class VarexJProcessor {
 
     for (Map<String, String> result : queryResult) {
       String usedTermsString = result.get("features");
-      Set<String> usedTerms = new HashSet<>(Arrays.asList(usedTermsString.split(",")));
+      Set<String> usedTerms =
+          new HashSet<>(Arrays.asList(usedTermsString.split(",")));
       boolean addRegion = false;
 
       for (String feature : features) {
@@ -168,8 +180,9 @@ public class VarexJProcessor {
       String entryMethod = result.get("method");
       String entryInstruction = result.get("instruction");
 
-      if (!currentPackage.equals(entryPackage) || !currentClass.equals(entryClass) || !currentMethod
-          .equals(entryMethod)) {
+      if (!currentPackage.equals(entryPackage) ||
+          !currentClass.equals(entryClass) ||
+          !currentMethod.equals(entryMethod)) {
         currentBytecodeIndex = 0;
         currentInstruction = entryInstruction;
         currentUsedTerms = new HashSet<>();
@@ -179,8 +192,7 @@ public class VarexJProcessor {
         currentClass = entryClass;
         currentMethod = entryMethod;
         atStartOfMethod = true;
-      }
-      else {
+      } else {
         atStartOfMethod = false;
       }
 
@@ -188,22 +200,26 @@ public class VarexJProcessor {
         currentUsedTerms = new HashSet<>();
         currentUsedTerms.addAll(usedTerms);
 
-        if (currentUsedTerms.equals(firstUsedTermsInMethod) && !atStartOfMethod) {
+        if (currentUsedTerms.equals(firstUsedTermsInMethod) &&
+            !atStartOfMethod) {
           continue;
         }
 
-        if (!currentInstruction.contains("if") && !atStartOfMethod && currentBytecodeIndex == (
-            entryBytecodeIndexes - 1)) {
+        if (!currentInstruction.contains("if") && !atStartOfMethod &&
+            currentBytecodeIndex == (entryBytecodeIndexes - 1)) {
           continue;
         }
 
-        currentJavaRegion = new JavaRegion(entryPackage, entryClass, entryMethod,
-            Math.max(0, entryBytecodeIndexes - 1));
-        regionsToOptions.put(currentJavaRegion, new HashSet<>(currentUsedTerms));
-        System.out.println(
-            currentJavaRegion.getRegionPackage() + " " + currentJavaRegion.getRegionClass() + " "
-                + currentJavaRegion.getRegionMethod() + " " + currentJavaRegion
-                .getStartBytecodeIndex() + " with " + currentUsedTerms);
+        currentJavaRegion =
+            new JavaRegion(entryPackage, entryClass, entryMethod,
+                           Math.max(0, entryBytecodeIndexes - 1));
+        regionsToOptions.put(currentJavaRegion,
+                             new HashSet<>(currentUsedTerms));
+        System.out.println(currentJavaRegion.getRegionPackage() + " " +
+                           currentJavaRegion.getRegionClass() + " " +
+                           currentJavaRegion.getRegionMethod() + " " +
+                           currentJavaRegion.getStartBytecodeIndex() +
+                           " with " + currentUsedTerms);
       }
 
       currentBytecodeIndex = entryBytecodeIndexes;
@@ -222,8 +238,9 @@ public class VarexJProcessor {
         String entryMethod = result.get("method");
         int index = Integer.parseInt(result.get("index"));
 
-        if (!javaRegion.getRegionPackage().equals(entryPackage) || !javaRegion.getRegionClass()
-            .equals(entryClass) || !javaRegion.getRegionMethod().equals(entryMethod)) {
+        if (!javaRegion.getRegionPackage().equals(entryPackage) ||
+            !javaRegion.getRegionClass().equals(entryClass) ||
+            !javaRegion.getRegionMethod().equals(entryMethod)) {
           if (!regionUsedTerms.isEmpty()) {
             break;
           }
@@ -237,11 +254,13 @@ public class VarexJProcessor {
           }
 
           String usedTermsString = result.get("features");
-          regionUsedTerms = new HashSet<>(Arrays.asList(usedTermsString.split(",")));
+          regionUsedTerms =
+              new HashSet<>(Arrays.asList(usedTermsString.split(",")));
         }
 
         String usedTermsString = result.get("features");
-        Set<String> usedTerms = new HashSet<>(Arrays.asList(usedTermsString.split(",")));
+        Set<String> usedTerms =
+            new HashSet<>(Arrays.asList(usedTermsString.split(",")));
 
         if (!regionUsedTerms.equals(usedTerms)) {
           regionUsedTerms = new HashSet<>();
@@ -253,7 +272,6 @@ public class VarexJProcessor {
         System.out.println(javaRegion.getRegionMethod());
         regionsWithSameFeatureInAllInstructions.add(javaRegion);
       }
-
     }
 
     for (JavaRegion javaRegion : regionsWithSameFeatureInAllInstructions) {
@@ -262,5 +280,4 @@ public class VarexJProcessor {
 
     return regionsToOptions;
   }
-
 }

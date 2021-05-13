@@ -17,7 +17,8 @@ import java.util.Set;
 
 public class DensityMain extends BaseMain {
 
-  public static final String DENSITY_MAIN = DensityMain.class.getCanonicalName();
+  public static final String DENSITY_MAIN =
+      DensityMain.class.getCanonicalName();
   public static final String PROGRAM_NAME = "density";
 
   public DensityMain(String programName, String iteration, String[] args) {
@@ -40,7 +41,8 @@ public class DensityMain extends BaseMain {
     Adapter adapter = new DensityAdapter();
     Set<String> configuration = adapter.configurationAsSet(this.getArgs());
 
-    ConfigCrusherExecutor executor = new ConfigCrusherExecutor(this.getProgramName());
+    ConfigCrusherExecutor executor =
+        new ConfigCrusherExecutor(this.getProgramName());
     Map<String, Long> results = executor.getResults();
     executor.writeToFile(this.getIteration(), configuration, results);
   }
@@ -48,7 +50,8 @@ public class DensityMain extends BaseMain {
   @Override
   public void execute(String mainClass, String[] args) {
     try {
-      BaseRegionInstrumenter instrumenter = new ConfigCrusherTimerRegionInstrumenter("density");
+      BaseRegionInstrumenter instrumenter =
+          new ConfigCrusherTimerRegionInstrumenter("density");
       instrumenter.instrument(args);
       Set<JavaRegion> regions = instrumenter.getRegionsToOptionSet().keySet();
 
@@ -56,7 +59,8 @@ public class DensityMain extends BaseMain {
         Regions.regionsToOverhead.put(region.getRegionID(), 0L);
       }
       Regions.regionsToOverhead.put(Regions.PROGRAM_REGION_ID, 0L);
-    } catch (InvocationTargetException | NoSuchMethodException | IOException | IllegalAccessException | InterruptedException e) {
+    } catch (InvocationTargetException | NoSuchMethodException | IOException |
+             IllegalAccessException | InterruptedException e) {
       throw new RuntimeException("Could not add regions to the Regions class");
     }
 
@@ -71,8 +75,7 @@ public class DensityMain extends BaseMain {
       } finally {
         Regions.exit(program.getRegionID());
       }
-    }
-    else {
+    } else {
       throw new RuntimeException("Could not find the main class " + mainClass);
     }
   }

@@ -18,7 +18,8 @@ import optimizer.com.googlecode.pngtastic.Run;
 
 public class OptimizerMain extends BaseMain {
 
-  public static final String OPTIMIZER_MAIN = OptimizerMain.class.getCanonicalName();
+  public static final String OPTIMIZER_MAIN =
+      OptimizerMain.class.getCanonicalName();
   public static final String PROGRAM_NAME = "pngtasticOptimizer";
 
   public OptimizerMain(String programName, String iteration, String[] args) {
@@ -41,7 +42,8 @@ public class OptimizerMain extends BaseMain {
     Adapter adapter = new OptimizerAdapter();
     Set<String> configuration = adapter.configurationAsSet(this.getArgs());
 
-    ConfigCrusherExecutor executor = new ConfigCrusherExecutor(this.getProgramName());
+    ConfigCrusherExecutor executor =
+        new ConfigCrusherExecutor(this.getProgramName());
     Map<String, Long> results = executor.getResults();
     executor.writeToFile(this.getIteration(), configuration, results);
   }
@@ -49,8 +51,8 @@ public class OptimizerMain extends BaseMain {
   @Override
   public void execute(String mainClass, String[] args) {
     try {
-      BaseRegionInstrumenter instrumenter = new ConfigCrusherTimerRegionInstrumenter(
-          "pngtasticOptimizer");
+      BaseRegionInstrumenter instrumenter =
+          new ConfigCrusherTimerRegionInstrumenter("pngtasticOptimizer");
       instrumenter.instrument(args);
       Set<JavaRegion> regions = instrumenter.getRegionsToOptionSet().keySet();
 
@@ -58,7 +60,8 @@ public class OptimizerMain extends BaseMain {
         Regions.regionsToOverhead.put(region.getRegionID(), 0L);
       }
       Regions.regionsToOverhead.put(Regions.PROGRAM_REGION_ID, 0L);
-    } catch (InvocationTargetException | NoSuchMethodException | IOException | IllegalAccessException | InterruptedException e) {
+    } catch (InvocationTargetException | NoSuchMethodException | IOException |
+             IllegalAccessException | InterruptedException e) {
       throw new RuntimeException("Could not add regions to the Regions class");
     }
 
@@ -73,8 +76,7 @@ public class OptimizerMain extends BaseMain {
       } finally {
         Regions.exit(program.getRegionID());
       }
-    }
-    else {
+    } else {
       throw new RuntimeException("Could not find the main class " + mainClass);
     }
   }

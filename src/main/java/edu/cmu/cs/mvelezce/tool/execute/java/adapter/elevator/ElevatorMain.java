@@ -17,7 +17,8 @@ import java.util.Set;
  */
 public class ElevatorMain extends BaseMain {
 
-  public static final String ELEVATOR_MAIN = ElevatorMain.class.getCanonicalName();
+  public static final String ELEVATOR_MAIN =
+      ElevatorMain.class.getCanonicalName();
   public static final String PROGRAM_NAME = "elevator";
 
   public ElevatorMain(String programName, String iteration, String[] args) {
@@ -40,25 +41,30 @@ public class ElevatorMain extends BaseMain {
     Adapter adapter = new ElevatorAdapter();
     Set<String> configuration = adapter.configurationAsSet(this.getArgs());
 
-    ConfigCrusherExecutor executor = new ConfigCrusherExecutor(this.getProgramName());
+    ConfigCrusherExecutor executor =
+        new ConfigCrusherExecutor(this.getProgramName());
     Map<String, Long> results = executor.getResults();
     executor.writeToFile(this.getIteration(), configuration, results);
   }
 
   @Override
   public void execute(String mainClass, String[] args) {
-//        try {
-//            BaseRegionInstrumenter instrumenter = new ConfigCrusherTimerRegionInstrumenter("elevator");
-//            instrumenter.instrument(args);
-//            Set<JavaRegion> regions = instrumenter.getRegionsToOptionSet().keySet();
-//
-//            for(JavaRegion region : regions) {
-//                Regions.regionsToOverhead.put(region.getRegionID(), 0L);
-//            }
+    //        try {
+    //            BaseRegionInstrumenter instrumenter = new
+    //            ConfigCrusherTimerRegionInstrumenter("elevator");
+    //            instrumenter.instrument(args);
+    //            Set<JavaRegion> regions =
+    //            instrumenter.getRegionsToOptionSet().keySet();
+    //
+    //            for(JavaRegion region : regions) {
+    //                Regions.regionsToOverhead.put(region.getRegionID(), 0L);
+    //            }
     Regions.regionsToOverhead.put(Regions.PROGRAM_REGION_ID, 0L);
-//        } catch(InvocationTargetException | NoSuchMethodException | IOException | IllegalAccessException | InterruptedException e) {
-//            throw new RuntimeException("Could not add regions to the Regions class");
-//        }
+    //        } catch(InvocationTargetException | NoSuchMethodException |
+    //        IOException | IllegalAccessException | InterruptedException e) {
+    //            throw new RuntimeException("Could not add regions to the
+    //            Regions class");
+    //        }
 
     if (mainClass.contains("PL_Interface_impl")) {
       Region program = new Region(Regions.PROGRAM_REGION_ID);
@@ -71,8 +77,7 @@ public class ElevatorMain extends BaseMain {
       } finally {
         Regions.exit(program.getRegionID());
       }
-    }
-    else {
+    } else {
       throw new RuntimeException("Could not find the main class " + mainClass);
     }
   }

@@ -36,7 +36,8 @@ import java.util.Set;
 
 public class BruteForceExecutor extends BaseExecutor {
 
-  public static void main(String[] args) throws IOException, InterruptedException {
+  public static void main(String[] args)
+      throws IOException, InterruptedException {
     String program = args[0];
     String classDirectory = args[1];
     String entryPoint = args[2];
@@ -44,19 +45,18 @@ public class BruteForceExecutor extends BaseExecutor {
 
     if (program.equals(RunningExampleMain.PROGRAM_NAME)) {
       executeRunningExample(classDirectory, entryPoint, iterations);
-    }
-    else if (program.equals(BerkeleyMain.PROGRAM_NAME)) {
+    } else if (program.equals(BerkeleyMain.PROGRAM_NAME)) {
       executeBerkeley(classDirectory, entryPoint, iterations);
-    }
-    else if (program.equals(LuceneMain.PROGRAM_NAME)) {
+    } else if (program.equals(LuceneMain.PROGRAM_NAME)) {
       executeLucene(classDirectory, entryPoint, iterations);
-    }
-    else {
-      throw new RuntimeException("Could not find the program " + program + " to run");
+    } else {
+      throw new RuntimeException("Could not find the program " + program +
+                                 " to run");
     }
   }
 
-  private static void executeLucene(String classDirectory, String entryPoint, String iterations)
+  private static void executeLucene(String classDirectory, String entryPoint,
+                                    String iterations)
       throws IOException, InterruptedException {
     Set<String> options = new HashSet<>(LuceneAdapter.getLuceneOptions());
     Set<Set<String>> configurations =
@@ -69,13 +69,13 @@ public class BruteForceExecutor extends BaseExecutor {
     args[1] = "-saveres";
     args[2] = "-i" + iterations;
 
-    Executor executor =
-        new BruteForceExecutor(
-            LuceneMain.PROGRAM_NAME, entryPoint, classDirectory, configurations);
+    Executor executor = new BruteForceExecutor(
+        LuceneMain.PROGRAM_NAME, entryPoint, classDirectory, configurations);
     executor.execute(args);
   }
 
-  private static void executeBerkeley(String classDirectory, String entryPoint, String iterations)
+  private static void executeBerkeley(String classDirectory, String entryPoint,
+                                      String iterations)
       throws IOException, InterruptedException {
     Set<String> options = new HashSet<>(BerkeleyAdapter.getBerkeleyOptions());
     Set<Set<String>> configurations =
@@ -88,16 +88,17 @@ public class BruteForceExecutor extends BaseExecutor {
     args[1] = "-saveres";
     args[2] = "-i" + iterations;
 
-    Executor executor =
-        new BruteForceExecutor(
-            BerkeleyMain.PROGRAM_NAME, entryPoint, classDirectory, configurations);
+    Executor executor = new BruteForceExecutor(
+        BerkeleyMain.PROGRAM_NAME, entryPoint, classDirectory, configurations);
     executor.execute(args);
   }
 
-  private static void executeRunningExample(String classDirectory, String entryPoint,
-      String iterations)
+  private static void executeRunningExample(String classDirectory,
+                                            String entryPoint,
+                                            String iterations)
       throws IOException, InterruptedException {
-    Set<String> options = new HashSet<>(RunningExampleAdapter.getRunningExampleOptions());
+    Set<String> options =
+        new HashSet<>(RunningExampleAdapter.getRunningExampleOptions());
     Set<Set<String>> configurations =
         BruteForceExecutor.getBruteForceConfigurationsFromOptions(options);
     System.out.println("Configurations to sample: " + configurations.size());
@@ -109,8 +110,8 @@ public class BruteForceExecutor extends BaseExecutor {
     args[2] = "-i" + iterations;
 
     Executor executor =
-        new BruteForceExecutor(
-            RunningExampleMain.PROGRAM_NAME, entryPoint, classDirectory, configurations);
+        new BruteForceExecutor(RunningExampleMain.PROGRAM_NAME, entryPoint,
+                               classDirectory, configurations);
     executor.execute(args);
   }
 
@@ -118,12 +119,13 @@ public class BruteForceExecutor extends BaseExecutor {
     this(programName, null, null, null);
   }
 
-  public BruteForceExecutor(
-      String programName, String entryPoint, String dir, Set<Set<String>> configurations) {
+  public BruteForceExecutor(String programName, String entryPoint, String dir,
+                            Set<Set<String>> configurations) {
     super(programName, entryPoint, dir, configurations);
   }
 
-  public static Set<Set<String>> getBruteForceConfigurations(Set<Set<String>> configurations) {
+  public static Set<Set<String>>
+  getBruteForceConfigurations(Set<Set<String>> configurations) {
     Set<String> options = new HashSet<>();
 
     for (Set<String> configuration : configurations) {
@@ -133,7 +135,8 @@ public class BruteForceExecutor extends BaseExecutor {
     return BruteForceExecutor.getBruteForceConfigurationsFromOptions(options);
   }
 
-  public static Set<Set<String>> getBruteForceConfigurationsFromOptions(Set<String> options) {
+  public static Set<Set<String>>
+  getBruteForceConfigurationsFromOptions(Set<String> options) {
     return Helper.getConfigurations(options);
   }
 
@@ -153,9 +156,10 @@ public class BruteForceExecutor extends BaseExecutor {
     throw new RuntimeException("No data is available");
   }
 
-  //    public static Set<PerformanceEntry> repeatProcessMeasure(String programName, int iterations,
-  // String srcDir, String classDir, String entryPoint) throws IOException, ParseException,
-  // InterruptedException {
+  //    public static Set<PerformanceEntry> repeatProcessMeasure(String
+  //    programName, int iterations,
+  // String srcDir, String classDir, String entryPoint) throws IOException,
+  // ParseException, InterruptedException {
   //// TODO compile both original and instrumented
   //        //        Formatter.compile(srcDir, classDir);
   ////        Formatter.formatReturnWithMethod(classDir);
@@ -173,16 +177,19 @@ public class BruteForceExecutor extends BaseExecutor {
   //        args[2] = "-i" + iterations;
   //        Options.getCommandLine(args);
   //
-  //        List<Set<PerformanceEntry>> executionsPerformance = new ArrayList<>();
+  //        List<Set<PerformanceEntry>> executionsPerformance = new
+  //        ArrayList<>();
   //
   //        for(int i = 0; i < Options.getIterations(); i++) {
-  //            executionsPerformance.add(BaseExecutor.measureConfigurationPerformance(programName +
+  //            executionsPerformance.add(BaseExecutor.measureConfigurationPerformance(programName
+  //            +
   // BaseExecutor.UNDERSCORE + i, args, entryPoint, classDir, configurations));
   //        }
   //
   //        List<PerformanceEntryStatistic> perfStats =
   // BaseExecutor.getExecutionsStats(executionsPerformance);
-  //        Set<PerformanceEntry> measuredPerformance = BaseExecutor.averageExecutions(perfStats,
+  //        Set<PerformanceEntry> measuredPerformance =
+  //        BaseExecutor.averageExecutions(perfStats,
   // executionsPerformance.get(0));
   //        programName = programName.substring(0, programName.indexOf("-"));
   //        BruteForce.saveBFPerformance(programName, perfStats);
@@ -190,9 +197,11 @@ public class BruteForceExecutor extends BaseExecutor {
   //        return measuredPerformance;
   //    }
 
-  //    public static void saveBFPerformance(String programName, List<PerformanceEntryStatistic>
+  //    public static void saveBFPerformance(String programName,
+  //    List<PerformanceEntryStatistic>
   // perfStats) throws IOException {
-  //        File file = new File(BruteForce.BF_RES_DIR + "/" + programName + Options.DOT_CSV);
+  //        File file = new File(BruteForce.BF_RES_DIR + "/" + programName +
+  //        Options.DOT_CSV);
   //
   //        if(file.exists()) {
   //            if(!file.delete()) {
@@ -206,7 +215,8 @@ public class BruteForceExecutor extends BaseExecutor {
   //
   //        for(PerformanceEntryStatistic perfStat : perfStats) {
   //            if(perfStat.getRegionsToMean().size() != 1) {
-  //                throw new RuntimeException("The performancemodel entry should only have measured
+  //                throw new RuntimeException("The performancemodel entry
+  //                should only have measured
   // the entire program " + perfStat.getRegionsToMean().keySet());
   //            }
   //
@@ -217,11 +227,12 @@ public class BruteForceExecutor extends BaseExecutor {
   //            result.append(perfStat.getConfiguration());
   //            result.append('"');
   //            result.append(",");
-  //            result.append(perfStat.getRegionsToMean().values().iterator().next() /
+  //            result.append(perfStat.getRegionsToMean().values().iterator().next()
+  //            /
   // 1000000000.0);
   //            result.append(",");
-  //            result.append(perfStat.getRegionsToStd().values().iterator().next() / 1000000000.0);
-  //            result.append("\n");
+  //            result.append(perfStat.getRegionsToStd().values().iterator().next()
+  //            / 1000000000.0); result.append("\n");
   //        }
   //
   //        File directory = new File(BruteForce.BF_RES_DIR);
@@ -247,52 +258,53 @@ public class BruteForceExecutor extends BaseExecutor {
     Adapter adapter;
 
     if (programName.contains(RunningExampleMain.PROGRAM_NAME)) {
-      adapter = new BFRunningExampleAdapter(programName, this.getEntryPoint(), this.getClassDir());
-    }
-    else if (programName.contains("pngtasticColorCounter")) {
-      adapter = new BFColorCounterAdapter(programName, this.getEntryPoint(), this.getClassDir());
-    }
-    else if (programName.contains("regions12")) {
-      adapter = new BFRegions12Adapter(programName, this.getEntryPoint(), this.getClassDir());
-    }
-    else if (programName.contains("regions16")) {
-      adapter = new BFRegions16Adapter(programName, this.getEntryPoint(), this.getClassDir());
-    }
-    else if (programName.contains("pngtasticOptimizer")) {
-      adapter = new BFOptimizerAdapter(programName, this.getEntryPoint(), this.getClassDir());
-    }
-    else if (programName.contains("prevayler")) {
-      adapter = new BFPrevaylerAdapter(programName, this.getEntryPoint(), this.getClassDir());
-    }
-    else if (programName.contains("kanzi")) {
-      adapter = new BFKanziAdapter(programName, this.getEntryPoint(), this.getClassDir());
-    }
-    else if (programName.contains("grep")) {
-      adapter = new BFGrepAdapter(programName, this.getEntryPoint(), this.getClassDir());
-    }
-    else if (programName.contains("find")) {
-      adapter = new BFFindAdapter(programName, this.getEntryPoint(), this.getClassDir());
-    }
-    else if (programName.contains("sort")) {
-      adapter = new BFSortAdapter(programName, this.getEntryPoint(), this.getClassDir());
-    }
-    else if (programName.contains("density")) {
-      adapter = new BFDensityAdapter(programName, this.getEntryPoint(), this.getClassDir());
-    }
-    else if (programName.contains("elevator")) {
-      adapter = new BFElevatorAdapter(programName, this.getEntryPoint(), this.getClassDir());
-    }
-    else if (programName.contains("email")) {
-      adapter = new BFEmailAdapter(programName, this.getEntryPoint(), this.getClassDir());
-    }
-    else if (programName.equals(BerkeleyMain.PROGRAM_NAME)) {
-      adapter = new BFBerkeleyAdapter(programName, this.getEntryPoint(), this.getClassDir());
-    }
-    else if (programName.equals(LuceneMain.PROGRAM_NAME)) {
-      adapter = new BFLuceneAdapter(programName, this.getEntryPoint(), this.getClassDir());
-    }
-    else {
-      throw new RuntimeException("Could not create an adapter for " + programName);
+      adapter = new BFRunningExampleAdapter(programName, this.getEntryPoint(),
+                                            this.getClassDir());
+    } else if (programName.contains("pngtasticColorCounter")) {
+      adapter = new BFColorCounterAdapter(programName, this.getEntryPoint(),
+                                          this.getClassDir());
+    } else if (programName.contains("regions12")) {
+      adapter = new BFRegions12Adapter(programName, this.getEntryPoint(),
+                                       this.getClassDir());
+    } else if (programName.contains("regions16")) {
+      adapter = new BFRegions16Adapter(programName, this.getEntryPoint(),
+                                       this.getClassDir());
+    } else if (programName.contains("pngtasticOptimizer")) {
+      adapter = new BFOptimizerAdapter(programName, this.getEntryPoint(),
+                                       this.getClassDir());
+    } else if (programName.contains("prevayler")) {
+      adapter = new BFPrevaylerAdapter(programName, this.getEntryPoint(),
+                                       this.getClassDir());
+    } else if (programName.contains("kanzi")) {
+      adapter = new BFKanziAdapter(programName, this.getEntryPoint(),
+                                   this.getClassDir());
+    } else if (programName.contains("grep")) {
+      adapter = new BFGrepAdapter(programName, this.getEntryPoint(),
+                                  this.getClassDir());
+    } else if (programName.contains("find")) {
+      adapter = new BFFindAdapter(programName, this.getEntryPoint(),
+                                  this.getClassDir());
+    } else if (programName.contains("sort")) {
+      adapter = new BFSortAdapter(programName, this.getEntryPoint(),
+                                  this.getClassDir());
+    } else if (programName.contains("density")) {
+      adapter = new BFDensityAdapter(programName, this.getEntryPoint(),
+                                     this.getClassDir());
+    } else if (programName.contains("elevator")) {
+      adapter = new BFElevatorAdapter(programName, this.getEntryPoint(),
+                                      this.getClassDir());
+    } else if (programName.contains("email")) {
+      adapter = new BFEmailAdapter(programName, this.getEntryPoint(),
+                                   this.getClassDir());
+    } else if (programName.equals(BerkeleyMain.PROGRAM_NAME)) {
+      adapter = new BFBerkeleyAdapter(programName, this.getEntryPoint(),
+                                      this.getClassDir());
+    } else if (programName.equals(LuceneMain.PROGRAM_NAME)) {
+      adapter = new BFLuceneAdapter(programName, this.getEntryPoint(),
+                                    this.getClassDir());
+    } else {
+      throw new RuntimeException("Could not create an adapter for " +
+                                 programName);
     }
 
     for (Set<String> configuration : this.getConfigurations()) {
@@ -302,14 +314,17 @@ public class BruteForceExecutor extends BaseExecutor {
       Thread.sleep(5000);
     }
 
-    String outputDir = this.getOutputDir() + "/" + programName + "/" + iteration;
+    String outputDir =
+        this.getOutputDir() + "/" + programName + "/" + iteration;
     File outputFile = new File(outputDir);
 
     if (!outputFile.exists()) {
-      throw new RuntimeException("The output file could not be found " + outputDir);
+      throw new RuntimeException("The output file could not be found " +
+                                 outputDir);
     }
 
-    Set<DefaultPerformanceEntry> performanceEntries = this.aggregateExecutions(outputFile);
+    Set<DefaultPerformanceEntry> performanceEntries =
+        this.aggregateExecutions(outputFile);
     return performanceEntries;
 
     //        programName += "-bf";
@@ -317,7 +332,8 @@ public class BruteForceExecutor extends BaseExecutor {
     //        args[0] = "-i" + iterations;
     //        Options.getCommandLine(args);
     //
-    //        List<Set<PerformanceEntry>> executionsPerformance = new ArrayList<>();
+    //        List<Set<PerformanceEntry>> executionsPerformance = new
+    //        ArrayList<>();
     //
     //        for(int i = 0; i < Options.getIterations(); i++) {
     //            executionsPerformance.add(BaseExecutor.measureConfigurationPerformance(programName
@@ -326,7 +342,8 @@ public class BruteForceExecutor extends BaseExecutor {
     //
     //        List<PerformanceEntryStatistic> perfStats =
     // BaseExecutor.getExecutionsStats(executionsPerformance);
-    //        Set<PerformanceEntry> measuredPerformance = BaseExecutor.averageExecutions(perfStats,
+    //        Set<PerformanceEntry> measuredPerformance =
+    //        BaseExecutor.averageExecutions(perfStats,
     // executionsPerformance.get(0));
     //        programName = programName.substring(0, programName.indexOf("-"));
     //        BruteForce.saveBFPerformance(programName, perfStats);

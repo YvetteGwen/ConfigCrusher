@@ -5,14 +5,16 @@ import java.util.Set;
 
 public interface Adapter {
 
-    public void execute(Set<String> configuration, int iteration) throws IOException, InterruptedException;
+  public void execute(Set<String> configuration, int iteration)
+      throws IOException, InterruptedException;
 
-    public void execute(Set<String> configuration) throws IOException, InterruptedException;
+  public void execute(Set<String> configuration)
+      throws IOException, InterruptedException;
 
-    public void execute(String mainAdapter, String[] args) throws InterruptedException, IOException;
+  public void execute(String mainAdapter, String[] args)
+      throws InterruptedException, IOException;
 
-    public String[] configurationAsMainArguments(Set<String> configuration);
+  public String[] configurationAsMainArguments(Set<String> configuration);
 
-    public Set<String> configurationAsSet(String[] configuration);
-
+  public Set<String> configurationAsSet(String[] configuration);
 }

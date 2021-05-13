@@ -38,19 +38,18 @@ public class ConfigCrusherRegionTransformerTest {
         }
 
         @Override
-        public void transformMethod(MethodNode methodNode) {
-
-        }
+        public void transformMethod(MethodNode methodNode) {}
       };
-    } catch (InvocationTargetException | NoSuchMethodException | IllegalAccessException | MalformedURLException e) {
+    } catch (InvocationTargetException | NoSuchMethodException |
+             IllegalAccessException | MalformedURLException e) {
       e.printStackTrace();
     }
-
   }
 
   @Test
   public void testGetWhereToStartInstrumenting1()
-      throws InvocationTargetException, NoSuchMethodException, MalformedURLException, IllegalAccessException {
+      throws InvocationTargetException, NoSuchMethodException,
+             MalformedURLException, IllegalAccessException {
     // Build methodGraph
     MethodGraph methodGraph = new MethodGraph();
 
@@ -90,13 +89,16 @@ public class ConfigCrusherRegionTransformerTest {
       }
     }
 
-    Assert.assertEquals(a, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, a));
-    Assert.assertEquals(c, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, c));
+    Assert.assertEquals(
+        a, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, a));
+    Assert.assertEquals(
+        c, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, c));
   }
 
   @Test
   public void testGetWhereToEndInstrumenting1()
-      throws InvocationTargetException, NoSuchMethodException, MalformedURLException, IllegalAccessException {
+      throws InvocationTargetException, NoSuchMethodException,
+             MalformedURLException, IllegalAccessException {
     // Build methodGraph
     MethodGraph methodGraph = new MethodGraph();
 
@@ -136,13 +138,16 @@ public class ConfigCrusherRegionTransformerTest {
       }
     }
 
-    Assert.assertEquals(c, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, a));
-    Assert.assertEquals(e, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, c));
+    Assert.assertEquals(
+        c, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, a));
+    Assert.assertEquals(
+        e, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, c));
   }
 
   @Test
   public void testGetWhereToStartInstrumenting2()
-      throws InvocationTargetException, NoSuchMethodException, MalformedURLException, IllegalAccessException {
+      throws InvocationTargetException, NoSuchMethodException,
+             MalformedURLException, IllegalAccessException {
     // Build methodGraph
     MethodGraph methodGraph = new MethodGraph();
 
@@ -179,13 +184,16 @@ public class ConfigCrusherRegionTransformerTest {
       }
     }
 
-    Assert.assertEquals(a, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, a));
-    Assert.assertEquals(b, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, b));
+    Assert.assertEquals(
+        a, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, a));
+    Assert.assertEquals(
+        b, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, b));
   }
 
   @Test
   public void testGetWhereToEndInstrumenting2()
-      throws InvocationTargetException, NoSuchMethodException, MalformedURLException, IllegalAccessException {
+      throws InvocationTargetException, NoSuchMethodException,
+             MalformedURLException, IllegalAccessException {
     // Build methodGraph
     MethodGraph methodGraph = new MethodGraph();
 
@@ -222,13 +230,16 @@ public class ConfigCrusherRegionTransformerTest {
       }
     }
 
-    Assert.assertEquals(b, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, a));
-    Assert.assertEquals(e, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, b));
+    Assert.assertEquals(
+        b, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, a));
+    Assert.assertEquals(
+        e, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, b));
   }
 
   @Test
   public void testGetWhereToStartInstrumenting3()
-      throws InvocationTargetException, NoSuchMethodException, MalformedURLException, IllegalAccessException {
+      throws InvocationTargetException, NoSuchMethodException,
+             MalformedURLException, IllegalAccessException {
     // Build methodGraph
     MethodGraph methodGraph = new MethodGraph();
 
@@ -268,13 +279,16 @@ public class ConfigCrusherRegionTransformerTest {
       }
     }
 
-    Assert.assertEquals(a, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, a));
-    Assert.assertEquals(b, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, b));
+    Assert.assertEquals(
+        a, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, a));
+    Assert.assertEquals(
+        b, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, b));
   }
 
   @Test
   public void testGetWhereToEndInstrumenting3()
-      throws InvocationTargetException, NoSuchMethodException, MalformedURLException, IllegalAccessException {
+      throws InvocationTargetException, NoSuchMethodException,
+             MalformedURLException, IllegalAccessException {
     // Build methodGraph
     MethodGraph methodGraph = new MethodGraph();
 
@@ -314,13 +328,16 @@ public class ConfigCrusherRegionTransformerTest {
       }
     }
 
-    Assert.assertEquals(b, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, a));
-    Assert.assertEquals(e, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, b));
+    Assert.assertEquals(
+        b, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, a));
+    Assert.assertEquals(
+        e, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, b));
   }
 
   @Test
   public void testGetWhereToStartInstrumenting4()
-      throws InvocationTargetException, NoSuchMethodException, MalformedURLException, IllegalAccessException {
+      throws InvocationTargetException, NoSuchMethodException,
+             MalformedURLException, IllegalAccessException {
     // Build methodGraph
     MethodGraph methodGraph = new MethodGraph();
 
@@ -360,13 +377,16 @@ public class ConfigCrusherRegionTransformerTest {
       }
     }
 
-    Assert.assertEquals(x, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, x));
-    Assert.assertEquals(b, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, b));
+    Assert.assertEquals(
+        x, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, x));
+    Assert.assertEquals(
+        b, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, b));
   }
 
   @Test
   public void testGetWhereToEndInstrumenting4()
-      throws InvocationTargetException, NoSuchMethodException, MalformedURLException, IllegalAccessException {
+      throws InvocationTargetException, NoSuchMethodException,
+             MalformedURLException, IllegalAccessException {
     // Build methodGraph
     MethodGraph methodGraph = new MethodGraph();
 
@@ -406,13 +426,16 @@ public class ConfigCrusherRegionTransformerTest {
       }
     }
 
-    Assert.assertEquals(a, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, x));
-    Assert.assertEquals(e, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, b));
+    Assert.assertEquals(
+        a, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, x));
+    Assert.assertEquals(
+        e, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, b));
   }
 
   @Test
   public void testGetWhereToStartInstrumenting5()
-      throws InvocationTargetException, NoSuchMethodException, MalformedURLException, IllegalAccessException {
+      throws InvocationTargetException, NoSuchMethodException,
+             MalformedURLException, IllegalAccessException {
     // Build methodGraph
     MethodGraph methodGraph = new MethodGraph();
 
@@ -448,12 +471,14 @@ public class ConfigCrusherRegionTransformerTest {
       }
     }
 
-    Assert.assertEquals(a, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, a));
+    Assert.assertEquals(
+        a, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, a));
   }
 
   @Test
   public void testGetWhereToEndInstrumenting5()
-      throws InvocationTargetException, NoSuchMethodException, MalformedURLException, IllegalAccessException {
+      throws InvocationTargetException, NoSuchMethodException,
+             MalformedURLException, IllegalAccessException {
     // Build methodGraph
     MethodGraph methodGraph = new MethodGraph();
 
@@ -489,12 +514,14 @@ public class ConfigCrusherRegionTransformerTest {
       }
     }
 
-    Assert.assertEquals(d, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, a));
+    Assert.assertEquals(
+        d, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, a));
   }
 
   @Test
   public void testGetWhereToStartInstrumenting6()
-      throws InvocationTargetException, NoSuchMethodException, MalformedURLException, IllegalAccessException {
+      throws InvocationTargetException, NoSuchMethodException,
+             MalformedURLException, IllegalAccessException {
     // Build methodGraph
     MethodGraph methodGraph = new MethodGraph();
 
@@ -541,14 +568,18 @@ public class ConfigCrusherRegionTransformerTest {
       }
     }
 
-    Assert.assertEquals(f, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, f));
-    Assert.assertEquals(x, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, x));
-    Assert.assertEquals(b, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, b));
+    Assert.assertEquals(
+        f, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, f));
+    Assert.assertEquals(
+        x, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, x));
+    Assert.assertEquals(
+        b, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, b));
   }
 
   @Test
   public void testGetWhereToEndInstrumenting6()
-      throws InvocationTargetException, NoSuchMethodException, MalformedURLException, IllegalAccessException {
+      throws InvocationTargetException, NoSuchMethodException,
+             MalformedURLException, IllegalAccessException {
     // Build methodGraph
     MethodGraph methodGraph = new MethodGraph();
 
@@ -595,14 +626,18 @@ public class ConfigCrusherRegionTransformerTest {
       }
     }
 
-    Assert.assertEquals(x, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, f));
-    Assert.assertEquals(a, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, x));
-    Assert.assertEquals(e, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, b));
+    Assert.assertEquals(
+        x, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, f));
+    Assert.assertEquals(
+        a, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, x));
+    Assert.assertEquals(
+        e, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, b));
   }
 
   @Test
   public void testGetWhereToStartInstrumenting7()
-      throws InvocationTargetException, NoSuchMethodException, MalformedURLException, IllegalAccessException {
+      throws InvocationTargetException, NoSuchMethodException,
+             MalformedURLException, IllegalAccessException {
     // Build methodGraph
     MethodGraph methodGraph = new MethodGraph();
 
@@ -643,13 +678,16 @@ public class ConfigCrusherRegionTransformerTest {
       }
     }
 
-    Assert.assertEquals(a, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, a));
-    Assert.assertEquals(c, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, c));
+    Assert.assertEquals(
+        a, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, a));
+    Assert.assertEquals(
+        c, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, c));
   }
 
   @Test
   public void testGetWhereToEndInstrumenting7()
-      throws InvocationTargetException, NoSuchMethodException, MalformedURLException, IllegalAccessException {
+      throws InvocationTargetException, NoSuchMethodException,
+             MalformedURLException, IllegalAccessException {
     // Build methodGraph
     MethodGraph methodGraph = new MethodGraph();
 
@@ -690,13 +728,16 @@ public class ConfigCrusherRegionTransformerTest {
       }
     }
 
-    Assert.assertEquals(c, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, a));
-    Assert.assertEquals(e, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, c));
+    Assert.assertEquals(
+        c, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, a));
+    Assert.assertEquals(
+        e, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, c));
   }
 
   @Test
   public void testGetWhereToStartInstrumenting8()
-      throws InvocationTargetException, NoSuchMethodException, MalformedURLException, IllegalAccessException {
+      throws InvocationTargetException, NoSuchMethodException,
+             MalformedURLException, IllegalAccessException {
     // Build methodGraph
     MethodGraph methodGraph = new MethodGraph();
 
@@ -742,13 +783,16 @@ public class ConfigCrusherRegionTransformerTest {
       }
     }
 
-    Assert.assertEquals(b, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, b));
-    Assert.assertEquals(g, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, g));
+    Assert.assertEquals(
+        b, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, b));
+    Assert.assertEquals(
+        g, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, g));
   }
 
   @Test
   public void testGetWhereToEndInstrumenting8()
-      throws InvocationTargetException, NoSuchMethodException, MalformedURLException, IllegalAccessException {
+      throws InvocationTargetException, NoSuchMethodException,
+             MalformedURLException, IllegalAccessException {
     // Build methodGraph
     MethodGraph methodGraph = new MethodGraph();
 
@@ -794,13 +838,16 @@ public class ConfigCrusherRegionTransformerTest {
       }
     }
 
-    Assert.assertEquals(e, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, b));
-    Assert.assertEquals(i, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, g));
+    Assert.assertEquals(
+        e, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, b));
+    Assert.assertEquals(
+        i, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, g));
   }
 
   @Test
   public void testGetWhereToStartInstrumenting9()
-      throws InvocationTargetException, NoSuchMethodException, MalformedURLException, IllegalAccessException {
+      throws InvocationTargetException, NoSuchMethodException,
+             MalformedURLException, IllegalAccessException {
     // Build methodGraph
     MethodGraph methodGraph = new MethodGraph();
 
@@ -840,13 +887,16 @@ public class ConfigCrusherRegionTransformerTest {
       }
     }
 
-    Assert.assertEquals(b, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, b));
-    Assert.assertEquals(d, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, d));
+    Assert.assertEquals(
+        b, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, b));
+    Assert.assertEquals(
+        d, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, d));
   }
 
   @Test
   public void testGetWhereToEndInstrumenting9()
-      throws InvocationTargetException, NoSuchMethodException, MalformedURLException, IllegalAccessException {
+      throws InvocationTargetException, NoSuchMethodException,
+             MalformedURLException, IllegalAccessException {
     // Build methodGraph
     MethodGraph methodGraph = new MethodGraph();
 
@@ -886,13 +936,16 @@ public class ConfigCrusherRegionTransformerTest {
       }
     }
 
-    Assert.assertEquals(d, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, b));
-    Assert.assertEquals(g, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, d));
+    Assert.assertEquals(
+        d, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, b));
+    Assert.assertEquals(
+        g, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, d));
   }
 
   @Test
   public void testGetWhereToStartInstrumenting10()
-      throws InvocationTargetException, NoSuchMethodException, MalformedURLException, IllegalAccessException {
+      throws InvocationTargetException, NoSuchMethodException,
+             MalformedURLException, IllegalAccessException {
     // Build methodGraph
     MethodGraph methodGraph = new MethodGraph();
 
@@ -932,13 +985,16 @@ public class ConfigCrusherRegionTransformerTest {
       }
     }
 
-    Assert.assertEquals(b, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, b));
-    Assert.assertEquals(d, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, d));
+    Assert.assertEquals(
+        b, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, b));
+    Assert.assertEquals(
+        d, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, d));
   }
 
   @Test
   public void testGetWhereToEndInstrumenting10()
-      throws InvocationTargetException, NoSuchMethodException, MalformedURLException, IllegalAccessException {
+      throws InvocationTargetException, NoSuchMethodException,
+             MalformedURLException, IllegalAccessException {
     // Build methodGraph
     MethodGraph methodGraph = new MethodGraph();
 
@@ -978,13 +1034,16 @@ public class ConfigCrusherRegionTransformerTest {
       }
     }
 
-    Assert.assertEquals(d, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, b));
-    Assert.assertEquals(g, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, d));
+    Assert.assertEquals(
+        d, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, b));
+    Assert.assertEquals(
+        g, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, d));
   }
 
   @Test
   public void testGetWhereToStartInstrumenting11()
-      throws InvocationTargetException, NoSuchMethodException, MalformedURLException, IllegalAccessException {
+      throws InvocationTargetException, NoSuchMethodException,
+             MalformedURLException, IllegalAccessException {
     // Build methodGraph
     MethodGraph methodGraph = new MethodGraph();
 
@@ -1021,13 +1080,16 @@ public class ConfigCrusherRegionTransformerTest {
       }
     }
 
-    Assert.assertEquals(b, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, b));
-    Assert.assertEquals(c, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, c));
+    Assert.assertEquals(
+        b, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, b));
+    Assert.assertEquals(
+        c, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, c));
   }
 
   @Test
   public void testGetWhereToEndInstrumenting11()
-      throws InvocationTargetException, NoSuchMethodException, MalformedURLException, IllegalAccessException {
+      throws InvocationTargetException, NoSuchMethodException,
+             MalformedURLException, IllegalAccessException {
     // Build methodGraph
     MethodGraph methodGraph = new MethodGraph();
 
@@ -1064,13 +1126,16 @@ public class ConfigCrusherRegionTransformerTest {
       }
     }
 
-    Assert.assertEquals(c, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, b));
-    Assert.assertEquals(f, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, c));
+    Assert.assertEquals(
+        c, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, b));
+    Assert.assertEquals(
+        f, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, c));
   }
 
   @Test
   public void testGetWhereToStartInstrumenting12()
-      throws InvocationTargetException, NoSuchMethodException, MalformedURLException, IllegalAccessException {
+      throws InvocationTargetException, NoSuchMethodException,
+             MalformedURLException, IllegalAccessException {
     // Build methodGraph
     MethodGraph methodGraph = new MethodGraph();
 
@@ -1111,14 +1176,18 @@ public class ConfigCrusherRegionTransformerTest {
       }
     }
 
-    Assert.assertEquals(x, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, x));
-    Assert.assertEquals(b, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, b));
-    Assert.assertEquals(c, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, c));
+    Assert.assertEquals(
+        x, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, x));
+    Assert.assertEquals(
+        b, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, b));
+    Assert.assertEquals(
+        c, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, c));
   }
 
   @Test
   public void testGetWhereToEndInstrumenting12()
-      throws InvocationTargetException, NoSuchMethodException, MalformedURLException, IllegalAccessException {
+      throws InvocationTargetException, NoSuchMethodException,
+             MalformedURLException, IllegalAccessException {
     // Build methodGraph
     MethodGraph methodGraph = new MethodGraph();
 
@@ -1159,14 +1228,18 @@ public class ConfigCrusherRegionTransformerTest {
       }
     }
 
-    Assert.assertEquals(e, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, x));
-    Assert.assertEquals(e, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, b));
-    Assert.assertEquals(e, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, c));
+    Assert.assertEquals(
+        e, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, x));
+    Assert.assertEquals(
+        e, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, b));
+    Assert.assertEquals(
+        e, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, c));
   }
 
   @Test
   public void testGetWhereToStartInstrumenting13()
-      throws InvocationTargetException, NoSuchMethodException, MalformedURLException, IllegalAccessException {
+      throws InvocationTargetException, NoSuchMethodException,
+             MalformedURLException, IllegalAccessException {
     // Build methodGraph
     MethodGraph methodGraph = new MethodGraph();
 
@@ -1210,14 +1283,18 @@ public class ConfigCrusherRegionTransformerTest {
       }
     }
 
-    Assert.assertEquals(x, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, x));
-    Assert.assertEquals(b, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, b));
-    Assert.assertEquals(e, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, e));
+    Assert.assertEquals(
+        x, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, x));
+    Assert.assertEquals(
+        b, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, b));
+    Assert.assertEquals(
+        e, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, e));
   }
 
   @Test
   public void testGetWhereToEndInstrumenting13()
-      throws InvocationTargetException, NoSuchMethodException, MalformedURLException, IllegalAccessException {
+      throws InvocationTargetException, NoSuchMethodException,
+             MalformedURLException, IllegalAccessException {
     // Build methodGraph
     MethodGraph methodGraph = new MethodGraph();
 
@@ -1261,14 +1338,18 @@ public class ConfigCrusherRegionTransformerTest {
       }
     }
 
-    Assert.assertEquals(a, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, x));
-    Assert.assertEquals(e, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, b));
-    Assert.assertEquals(f, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, e));
+    Assert.assertEquals(
+        a, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, x));
+    Assert.assertEquals(
+        e, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, b));
+    Assert.assertEquals(
+        f, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, e));
   }
 
   @Test
   public void testGetWhereToStartInstrumenting14()
-      throws InvocationTargetException, NoSuchMethodException, MalformedURLException, IllegalAccessException {
+      throws InvocationTargetException, NoSuchMethodException,
+             MalformedURLException, IllegalAccessException {
     // Build methodGraph
     MethodGraph methodGraph = new MethodGraph();
 
@@ -1326,16 +1407,22 @@ public class ConfigCrusherRegionTransformerTest {
       }
     }
 
-    Assert.assertEquals(a, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, a));
-    Assert.assertEquals(d, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, d));
-    Assert.assertEquals(g, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, g));
-    Assert.assertEquals(k, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, k));
-    Assert.assertEquals(j, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, j));
+    Assert.assertEquals(
+        a, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, a));
+    Assert.assertEquals(
+        d, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, d));
+    Assert.assertEquals(
+        g, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, g));
+    Assert.assertEquals(
+        k, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, k));
+    Assert.assertEquals(
+        j, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, j));
   }
 
   @Test
   public void testGetWhereToEndInstrumenting14()
-      throws InvocationTargetException, NoSuchMethodException, MalformedURLException, IllegalAccessException {
+      throws InvocationTargetException, NoSuchMethodException,
+             MalformedURLException, IllegalAccessException {
     // Build methodGraph
     MethodGraph methodGraph = new MethodGraph();
 
@@ -1393,16 +1480,22 @@ public class ConfigCrusherRegionTransformerTest {
       }
     }
 
-    Assert.assertEquals(d, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, a));
-    Assert.assertEquals(g, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, d));
-    Assert.assertEquals(l, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, g));
-    Assert.assertEquals(l, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, k));
-    Assert.assertEquals(l, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, j));
+    Assert.assertEquals(
+        d, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, a));
+    Assert.assertEquals(
+        g, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, d));
+    Assert.assertEquals(
+        l, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, g));
+    Assert.assertEquals(
+        l, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, k));
+    Assert.assertEquals(
+        l, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, j));
   }
 
   @Test
   public void testGetWhereToStartInstrumenting15()
-      throws InvocationTargetException, NoSuchMethodException, MalformedURLException, IllegalAccessException {
+      throws InvocationTargetException, NoSuchMethodException,
+             MalformedURLException, IllegalAccessException {
     // Build methodGraph
     MethodGraph methodGraph = new MethodGraph();
 
@@ -1459,15 +1552,20 @@ public class ConfigCrusherRegionTransformerTest {
       }
     }
 
-    Assert.assertEquals(a, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, a));
-    Assert.assertEquals(d, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, d));
-    Assert.assertEquals(g, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, g));
-    Assert.assertEquals(j, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, j));
+    Assert.assertEquals(
+        a, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, a));
+    Assert.assertEquals(
+        d, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, d));
+    Assert.assertEquals(
+        g, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, g));
+    Assert.assertEquals(
+        j, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, j));
   }
 
   @Test
   public void testGetWhereToEndInstrumenting15()
-      throws InvocationTargetException, NoSuchMethodException, MalformedURLException, IllegalAccessException {
+      throws InvocationTargetException, NoSuchMethodException,
+             MalformedURLException, IllegalAccessException {
     // Build methodGraph
     MethodGraph methodGraph = new MethodGraph();
 
@@ -1524,15 +1622,20 @@ public class ConfigCrusherRegionTransformerTest {
       }
     }
 
-    Assert.assertEquals(d, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, a));
-    Assert.assertEquals(g, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, d));
-    Assert.assertEquals(j, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, g));
-    Assert.assertEquals(l, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, j));
+    Assert.assertEquals(
+        d, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, a));
+    Assert.assertEquals(
+        g, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, d));
+    Assert.assertEquals(
+        j, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, g));
+    Assert.assertEquals(
+        l, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, j));
   }
 
   @Test
   public void testGetWhereToStartInstrumenting16()
-      throws InvocationTargetException, NoSuchMethodException, MalformedURLException, IllegalAccessException {
+      throws InvocationTargetException, NoSuchMethodException,
+             MalformedURLException, IllegalAccessException {
     // Build methodGraph
     MethodGraph methodGraph = new MethodGraph();
 
@@ -1572,13 +1675,16 @@ public class ConfigCrusherRegionTransformerTest {
       }
     }
 
-    Assert.assertEquals(b, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, b));
-    Assert.assertEquals(d, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, d));
+    Assert.assertEquals(
+        b, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, b));
+    Assert.assertEquals(
+        d, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, d));
   }
 
   @Test
   public void testGetWhereToEndInstrumenting16()
-      throws InvocationTargetException, NoSuchMethodException, MalformedURLException, IllegalAccessException {
+      throws InvocationTargetException, NoSuchMethodException,
+             MalformedURLException, IllegalAccessException {
     // Build methodGraph
     MethodGraph methodGraph = new MethodGraph();
 
@@ -1618,13 +1724,16 @@ public class ConfigCrusherRegionTransformerTest {
       }
     }
 
-    Assert.assertEquals(c, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, b));
-    Assert.assertEquals(g, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, d));
+    Assert.assertEquals(
+        c, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, b));
+    Assert.assertEquals(
+        g, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, d));
   }
 
   @Test
   public void testGetWhereToStartInstrumenting17()
-      throws InvocationTargetException, NoSuchMethodException, MalformedURLException, IllegalAccessException {
+      throws InvocationTargetException, NoSuchMethodException,
+             MalformedURLException, IllegalAccessException {
     // Build methodGraph
     MethodGraph methodGraph = new MethodGraph();
 
@@ -1664,13 +1773,16 @@ public class ConfigCrusherRegionTransformerTest {
       }
     }
 
-    Assert.assertEquals(c, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, c));
-    Assert.assertEquals(e, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, e));
+    Assert.assertEquals(
+        c, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, c));
+    Assert.assertEquals(
+        e, transformer.getBlockToStartInstrumentingBeforeIt(methodGraph, e));
   }
 
   @Test
   public void testGetWhereToEndInstrumenting17()
-      throws InvocationTargetException, NoSuchMethodException, MalformedURLException, IllegalAccessException {
+      throws InvocationTargetException, NoSuchMethodException,
+             MalformedURLException, IllegalAccessException {
     // Build methodGraph
     MethodGraph methodGraph = new MethodGraph();
 
@@ -1710,34 +1822,38 @@ public class ConfigCrusherRegionTransformerTest {
       }
     }
 
-    Assert.assertEquals(e, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, c));
-    Assert.assertEquals(f, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, e));
+    Assert.assertEquals(
+        e, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, c));
+    Assert.assertEquals(
+        f, transformer.getBlockToEndInstrumentingBeforeIt(methodGraph, e));
   }
 
   @Test
   public void testRunningExample()
-      throws IOException, InterruptedException, NoSuchMethodException, IllegalAccessException, InvocationTargetException {
+      throws IOException, InterruptedException, NoSuchMethodException,
+             IllegalAccessException, InvocationTargetException {
     String programName = RunningExampleMain.PROGRAM_NAME;
     String rootPackage = "edu";
-    String classDirectory = BaseAdapter.USER_HOME
-        + "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/running-example/target/classes";
+    String classDirectory =
+        BaseAdapter.USER_HOME +
+        "/Documents/Programming/Java/Projects/performance-mapper-evaluation/original/running-example/target/classes";
 
     // Program arguments
     String[] args = new String[0];
 
-//        String[] args = new String[1];
-//        args[0] = "-saveres";
+    //        String[] args = new String[1];
+    //        args[0] = "-saveres";
 
-//        String[] args = new String[2];
-//        args[0] = "-delres";
-//        args[1] = "-saveres";
+    //        String[] args = new String[2];
+    //        args[0] = "-delres";
+    //        args[1] = "-saveres";
 
     StaticAnalysis analysis = new TaintFlowAnalysis(programName);
-    Map<JavaRegion, Set<Set<String>>> decisionsToOptions = analysis.analyze(args);
+    Map<JavaRegion, Set<Set<String>>> decisionsToOptions =
+        analysis.analyze(args);
 
-    MethodTransformer methodTransformer = new ConfigCrusherTimerTransformer(programName,
-        rootPackage, classDirectory, decisionsToOptions);
+    MethodTransformer methodTransformer = new ConfigCrusherTimerTransformer(
+        programName, rootPackage, classDirectory, decisionsToOptions);
     methodTransformer.transformMethods();
   }
-
 }

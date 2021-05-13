@@ -43,7 +43,8 @@ public class LuceneMain extends BaseMain {
     Adapter adapter = new LuceneAdapter();
     Set<String> configuration = adapter.configurationAsSet(this.getArgs());
 
-    ConfigCrusherExecutor executor = new ConfigCrusherExecutor(this.getProgramName());
+    ConfigCrusherExecutor executor =
+        new ConfigCrusherExecutor(this.getProgramName());
     Map<String, Long> results = executor.getResults();
     executor.writeToFile(this.getIteration(), configuration, results);
   }
@@ -51,8 +52,8 @@ public class LuceneMain extends BaseMain {
   @Override
   public void execute(String mainClass, String[] args) {
     if (!mainClass.contains("IndexFiles")) {
-      throw new RuntimeException(
-          "Could not find the main class " + mainClass + " to execute with lucene");
+      throw new RuntimeException("Could not find the main class " + mainClass +
+                                 " to execute with lucene");
     }
 
     this.addRegionsForTracking(args);
@@ -73,7 +74,8 @@ public class LuceneMain extends BaseMain {
   private String[] addWorkloadArgs(String[] args) {
     List<String> argsList = new ArrayList<>(Arrays.asList(args));
     argsList.add("-docs");
-    argsList.add("../performance-mapper-evaluation/original/lucene/lucene-src/");
+    argsList.add(
+        "../performance-mapper-evaluation/original/lucene/lucene-src/");
 
     args = new String[argsList.size()];
     return argsList.toArray(args);
@@ -81,7 +83,8 @@ public class LuceneMain extends BaseMain {
 
   private void addRegionsForTracking(String[] args) {
     try {
-      BaseRegionInstrumenter instrumenter = new ConfigCrusherTimerRegionInstrumenter(PROGRAM_NAME);
+      BaseRegionInstrumenter instrumenter =
+          new ConfigCrusherTimerRegionInstrumenter(PROGRAM_NAME);
       instrumenter.instrument(args);
       Set<JavaRegion> regions = instrumenter.getRegionsToOptionSet().keySet();
 
@@ -90,11 +93,8 @@ public class LuceneMain extends BaseMain {
       }
 
       Regions.regionsToOverhead.put(Regions.PROGRAM_REGION_ID, 0L);
-    } catch (InvocationTargetException
-        | NoSuchMethodException
-        | IOException
-        | IllegalAccessException
-        | InterruptedException e) {
+    } catch (InvocationTargetException | NoSuchMethodException | IOException |
+             IllegalAccessException | InterruptedException e) {
       throw new RuntimeException("Could not add regions to the Regions class");
     }
   }

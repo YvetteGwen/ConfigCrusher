@@ -11,100 +11,109 @@ import edu.cmu.cs.mvelezce.tool.instrumentation.java.BaseRegionInstrumenter;
 import edu.cmu.cs.mvelezce.tool.instrumentation.java.ConfigCrusherTimerRegionInstrumenter;
 import edu.cmu.cs.mvelezce.tool.performance.entry.PerformanceEntryStatistic;
 import edu.cmu.cs.mvelezce.tool.performance.model.PerformanceModel;
-import org.junit.Test;
-
 import java.util.Map;
 import java.util.Set;
+import org.junit.Test;
 
 public class ConfigCrusherPerformanceModelBuilderTest {
 
-    @Test
-    public void runningExample() throws Exception {
-        String programName = RunningExampleMain.PROGRAM_NAME;
+  @Test
+  public void runningExample() throws Exception {
+    String programName = RunningExampleMain.PROGRAM_NAME;
 
-        // Program arguments
-        String[] args = new String[0];
+    // Program arguments
+    String[] args = new String[0];
 
-        BaseRegionInstrumenter instrumenter = new ConfigCrusherTimerRegionInstrumenter(programName);
-        instrumenter.instrument(args);
-        Map<JavaRegion, Set<Set<String>>> javaRegionsToOptionSet = instrumenter.getRegionsToOptionSet();
+    BaseRegionInstrumenter instrumenter =
+        new ConfigCrusherTimerRegionInstrumenter(programName);
+    instrumenter.instrument(args);
+    Map<JavaRegion, Set<Set<String>>> javaRegionsToOptionSet =
+        instrumenter.getRegionsToOptionSet();
 
-        Analysis analysis = new DefaultStaticAnalysis();
-        Map<Region, Set<Set<String>>> regionsToOptionSet = analysis.transform(javaRegionsToOptionSet);
+    Analysis analysis = new DefaultStaticAnalysis();
+    Map<Region, Set<Set<String>>> regionsToOptionSet =
+        analysis.transform(javaRegionsToOptionSet);
 
-        Executor executor = new ConfigCrusherExecutor(programName);
-        Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
+    Executor executor = new ConfigCrusherExecutor(programName);
+    Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
 
-        args = new String[2];
-        args[0] = "-delres";
-        args[1] = "-saveres";
+    args = new String[2];
+    args[0] = "-delres";
+    args[1] = "-saveres";
 
-        PerformanceModelBuilder builder = new ConfigCrusherPerformanceModelBuilder(programName, measuredPerformance,
-                regionsToOptionSet);
-        builder.createModel(args);
-    }
+    PerformanceModelBuilder builder = new ConfigCrusherPerformanceModelBuilder(
+        programName, measuredPerformance, regionsToOptionSet);
+    builder.createModel(args);
+  }
 
-    @Test
-    public void runningExample1() throws Exception {
-        String programName = RunningExampleMain.PROGRAM_NAME;
+  @Test
+  public void runningExample1() throws Exception {
+    String programName = RunningExampleMain.PROGRAM_NAME;
 
-        // Program arguments
-        String[] args = new String[0];
+    // Program arguments
+    String[] args = new String[0];
 
-        PerformanceModelBuilder builder = new ConfigCrusherPerformanceModelBuilder(programName);
-        builder.createModel(args);
-    }
+    PerformanceModelBuilder builder =
+        new ConfigCrusherPerformanceModelBuilder(programName);
+    builder.createModel(args);
+  }
 
-    @Test
-    public void prevayler() throws Exception {
-        String programName = "prevayler";
+  @Test
+  public void prevayler() throws Exception {
+    String programName = "prevayler";
 
-        // Program arguments
-        String[] args = new String[0];
+    // Program arguments
+    String[] args = new String[0];
 
-        BaseRegionInstrumenter instrumenter = new ConfigCrusherTimerRegionInstrumenter(programName);
-        instrumenter.instrument(args);
-        Map<JavaRegion, Set<Set<String>>> javaRegionsToOptionSet = instrumenter.getRegionsToOptionSet();
+    BaseRegionInstrumenter instrumenter =
+        new ConfigCrusherTimerRegionInstrumenter(programName);
+    instrumenter.instrument(args);
+    Map<JavaRegion, Set<Set<String>>> javaRegionsToOptionSet =
+        instrumenter.getRegionsToOptionSet();
 
-        Analysis analysis = new DefaultStaticAnalysis();
-        Map<Region, Set<Set<String>>> regionsToOptionSet = analysis.transform(javaRegionsToOptionSet);
+    Analysis analysis = new DefaultStaticAnalysis();
+    Map<Region, Set<Set<String>>> regionsToOptionSet =
+        analysis.transform(javaRegionsToOptionSet);
 
-        Executor executor = new ConfigCrusherExecutor(programName);
-        Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
+    Executor executor = new ConfigCrusherExecutor(programName);
+    Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
 
-        args = new String[2];
-        args[0] = "-delres";
-        args[1] = "-saveres";
+    args = new String[2];
+    args[0] = "-delres";
+    args[1] = "-saveres";
 
-        PerformanceModelBuilder builder = new ConfigCrusherPerformanceModelBuilder(programName, measuredPerformance,
-                regionsToOptionSet);
-        PerformanceModel model = builder.createModel(args);
-        model.toString();
-    }
+    PerformanceModelBuilder builder = new ConfigCrusherPerformanceModelBuilder(
+        programName, measuredPerformance, regionsToOptionSet);
+    PerformanceModel model = builder.createModel(args);
+    model.toString();
+  }
 
-    @Test
-    public void colorCounter() throws Exception {
-        String programName = "pngtasticColorCounter";
+  @Test
+  public void colorCounter() throws Exception {
+    String programName = "pngtasticColorCounter";
 
-        // Program arguments
-        String[] args = new String[0];
+    // Program arguments
+    String[] args = new String[0];
 
-        BaseRegionInstrumenter instrumenter = new ConfigCrusherTimerRegionInstrumenter(programName);
-        instrumenter.instrument(args);
-        Map<JavaRegion, Set<Set<String>>> javaRegionsToOptionSet = instrumenter.getRegionsToOptionSet();
+    BaseRegionInstrumenter instrumenter =
+        new ConfigCrusherTimerRegionInstrumenter(programName);
+    instrumenter.instrument(args);
+    Map<JavaRegion, Set<Set<String>>> javaRegionsToOptionSet =
+        instrumenter.getRegionsToOptionSet();
 
-        Analysis analysis = new DefaultStaticAnalysis();
-        Map<Region, Set<Set<String>>> regionsToOptionSet = analysis.transform(javaRegionsToOptionSet);
+    Analysis analysis = new DefaultStaticAnalysis();
+    Map<Region, Set<Set<String>>> regionsToOptionSet =
+        analysis.transform(javaRegionsToOptionSet);
 
-        Executor executor = new ConfigCrusherExecutor(programName);
-        Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
+    Executor executor = new ConfigCrusherExecutor(programName);
+    Set<PerformanceEntryStatistic> measuredPerformance = executor.execute(args);
 
-        args = new String[2];
-        args[0] = "-delres";
-        args[1] = "-saveres";
+    args = new String[2];
+    args[0] = "-delres";
+    args[1] = "-saveres";
 
-        PerformanceModelBuilder builder = new ConfigCrusherPerformanceModelBuilder(programName, measuredPerformance,
-                regionsToOptionSet);
-        builder.createModel(args);
-    }
+    PerformanceModelBuilder builder = new ConfigCrusherPerformanceModelBuilder(
+        programName, measuredPerformance, regionsToOptionSet);
+    builder.createModel(args);
+  }
 }

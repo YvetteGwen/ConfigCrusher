@@ -9,7 +9,7 @@ import edu.cmu.cs.mvelezce.sleep.statements.TimedStatement;
  */
 public interface TimedVisitor<T, U> extends Visitor<T, U> {
 
-    U visitTimedStatement(TimedStatement timedStatement);
+  U visitTimedStatement(TimedStatement timedStatement);
 
-    U visitTimedProgram(TimedProgram timedProgram);
+  U visitTimedProgram(TimedProgram timedProgram);
 }

@@ -8,13 +8,11 @@ import java.util.List;
  */
 public class PrettyMethodBlock extends MethodBlock {
 
-    private List<String> prettyInstructions = new ArrayList<>();
+  private List<String> prettyInstructions = new ArrayList<>();
 
-    public PrettyMethodBlock(String ID) {
-        super(ID);
-    }
+  public PrettyMethodBlock(String ID) { super(ID); }
 
-    public List<String> getPrettyInstructions() {
-        return this.prettyInstructions;
-    }
+  public List<String> getPrettyInstructions() {
+    return this.prettyInstructions;
+  }
 }

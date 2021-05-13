@@ -18,7 +18,8 @@ import java.util.Set;
 
 public class Regions12Main extends BaseMain {
 
-  public static final String REGIONS_12_MAIN = Regions12Main.class.getCanonicalName();
+  public static final String REGIONS_12_MAIN =
+      Regions12Main.class.getCanonicalName();
   public static final String PROGRAM_NAME = "regions12";
 
   public Regions12Main(String programName, String iteration, String[] args) {
@@ -31,8 +32,8 @@ public class Regions12Main extends BaseMain {
     String iteration = args[2];
     String[] sleepArgs = Arrays.copyOfRange(args, 3, args.length);
 
-    Main main = new edu.cmu.cs.mvelezce.tool.execute.java.adapter.regions12.Regions12Main(
-        programName, iteration, sleepArgs);
+    Main main = new edu.cmu.cs.mvelezce.tool.execute.java.adapter.regions12
+                    .Regions12Main(programName, iteration, sleepArgs);
     main.execute(mainClass, sleepArgs);
     main.logExecution();
   }
@@ -42,7 +43,8 @@ public class Regions12Main extends BaseMain {
     Adapter adapter = new Regions12Adapter();
     Set<String> configuration = adapter.configurationAsSet(this.getArgs());
 
-    ConfigCrusherExecutor executor = new ConfigCrusherExecutor(this.getProgramName());
+    ConfigCrusherExecutor executor =
+        new ConfigCrusherExecutor(this.getProgramName());
     Map<String, Long> results = executor.getResults();
     executor.writeToFile(this.getIteration(), configuration, results);
   }
@@ -50,7 +52,8 @@ public class Regions12Main extends BaseMain {
   @Override
   public void execute(String mainClass, String[] args) {
     try {
-      BaseRegionInstrumenter instrumenter = new ConfigCrusherTimerRegionInstrumenter("regions12");
+      BaseRegionInstrumenter instrumenter =
+          new ConfigCrusherTimerRegionInstrumenter("regions12");
       instrumenter.instrument(args);
       Set<JavaRegion> regions = instrumenter.getRegionsToOptionSet().keySet();
 
@@ -58,7 +61,8 @@ public class Regions12Main extends BaseMain {
         Regions.regionsToOverhead.put(region.getRegionID(), 0L);
       }
       Regions.regionsToOverhead.put(Regions.PROGRAM_REGION_ID, 0L);
-    } catch (InvocationTargetException | NoSuchMethodException | IOException | IllegalAccessException | InterruptedException e) {
+    } catch (InvocationTargetException | NoSuchMethodException | IOException |
+             IllegalAccessException | InterruptedException e) {
       throw new RuntimeException("Could not add regions to the Regions class");
     }
 
@@ -72,8 +76,7 @@ public class Regions12Main extends BaseMain {
       } finally {
         Regions.exit(program.getRegionID());
       }
-    }
-    else {
+    } else {
       throw new RuntimeException("Could not find the main class " + mainClass);
     }
   }

@@ -18,10 +18,12 @@ import java.util.Set;
 
 public class RunningExampleMain extends BaseMain {
 
-  public static final String RUNNING_EXAMPLE_MAIN = RunningExampleMain.class.getCanonicalName();
+  public static final String RUNNING_EXAMPLE_MAIN =
+      RunningExampleMain.class.getCanonicalName();
   public static final String PROGRAM_NAME = "running-example";
 
-  public RunningExampleMain(String programName, String iteration, String[] args) {
+  public RunningExampleMain(String programName, String iteration,
+                            String[] args) {
     super(programName, iteration, args);
   }
 
@@ -41,7 +43,8 @@ public class RunningExampleMain extends BaseMain {
     Adapter adapter = new RunningExampleAdapter();
     Set<String> configuration = adapter.configurationAsSet(this.getArgs());
 
-    ConfigCrusherExecutor executor = new ConfigCrusherExecutor(this.getProgramName());
+    ConfigCrusherExecutor executor =
+        new ConfigCrusherExecutor(this.getProgramName());
     Map<String, Long> results = executor.getResults();
     executor.writeToFile(this.getIteration(), configuration, results);
   }
@@ -49,7 +52,8 @@ public class RunningExampleMain extends BaseMain {
   @Override
   public void execute(String mainClass, String[] args) {
     try {
-      BaseRegionInstrumenter instrumenter = new ConfigCrusherTimerRegionInstrumenter(PROGRAM_NAME);
+      BaseRegionInstrumenter instrumenter =
+          new ConfigCrusherTimerRegionInstrumenter(PROGRAM_NAME);
       instrumenter.instrument(args);
       Set<JavaRegion> regions = instrumenter.getRegionsToOptionSet().keySet();
 
@@ -58,11 +62,8 @@ public class RunningExampleMain extends BaseMain {
       }
 
       Regions.regionsToOverhead.put(Regions.PROGRAM_REGION_ID, 0L);
-    } catch (InvocationTargetException
-        | NoSuchMethodException
-        | IOException
-        | IllegalAccessException
-        | InterruptedException e) {
+    } catch (InvocationTargetException | NoSuchMethodException | IOException |
+             IllegalAccessException | InterruptedException e) {
       throw new RuntimeException("Could not add regions to the Regions class");
     }
 
