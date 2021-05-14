@@ -7,7 +7,10 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.Set;
 
-// TODO use the interface instead of the performance entry class
+/**
+ *
+ * @TODO use the interface instead of the performance entry class
+ */
 public interface Executor {
 
   public Set<DefaultPerformanceEntry> execute(int iteration)

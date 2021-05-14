@@ -1,6 +1,8 @@
 package edu.cmu.cs.mvelezce.tool.execute.java.adapter.berkeley;
 
+/* commented out by gwen
 import com.sleepycat.analysis.Run;
+*/
 import edu.cmu.cs.mvelezce.tool.analysis.region.JavaRegion;
 import edu.cmu.cs.mvelezce.tool.analysis.region.Region;
 import edu.cmu.cs.mvelezce.tool.analysis.region.Regions;
@@ -71,6 +73,7 @@ public class BerkeleyMain extends BaseMain {
       throw new RuntimeException("Could not add regions to the Regions class");
     }
 
+    /* commented out by gwen
     Region program = new Region(Regions.PROGRAM_REGION_ID);
 
     try {
@@ -81,5 +84,6 @@ public class BerkeleyMain extends BaseMain {
     } finally {
       Regions.exit(program.getRegionID());
     }
+    */
   }
 }

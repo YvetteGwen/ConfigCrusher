@@ -12,7 +12,9 @@ import java.util.*;
 import org.apache.commons.io.FileUtils;
 
 /**
- * Created by miguelvelez on 4/30/17.
+ *
+ * @author Miguel Velez
+ * Created on 4/30/17.
  */
 public abstract class BaseExecutor implements Executor {
 

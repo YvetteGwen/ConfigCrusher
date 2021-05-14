@@ -3,7 +3,9 @@ package edu.cmu.cs.mvelezce.tool.execute.java;
 import edu.cmu.cs.mvelezce.tool.analysis.region.Regions;
 import edu.cmu.cs.mvelezce.tool.analysis.region.RegionsCounter;
 import edu.cmu.cs.mvelezce.tool.execute.java.adapter.Adapter;
-import edu.cmu.cs.mvelezce.tool.execute.java.adapter.colorCounter.ColorCounterAdapter;
+/* commented out by gwen
+import
+edu.cmu.cs.mvelezce.tool.execute.java.adapter.colorCounter.ColorCounterAdapter;
 import edu.cmu.cs.mvelezce.tool.execute.java.adapter.density.DensityAdapter;
 import edu.cmu.cs.mvelezce.tool.execute.java.adapter.elevator.ElevatorAdapter;
 import edu.cmu.cs.mvelezce.tool.execute.java.adapter.email.EmailAdapter;
@@ -16,6 +18,7 @@ import edu.cmu.cs.mvelezce.tool.execute.java.adapter.regions12.Regions12Adapter;
 import edu.cmu.cs.mvelezce.tool.execute.java.adapter.regions13.Regions13Adapter;
 import edu.cmu.cs.mvelezce.tool.execute.java.adapter.regions14.Regions14Adapter;
 import edu.cmu.cs.mvelezce.tool.execute.java.adapter.regions16.Regions16Adapter;
+*/
 import edu.cmu.cs.mvelezce.tool.execute.java.adapter.runningexample.RunningExampleAdapter;
 import edu.cmu.cs.mvelezce.tool.execute.java.adapter.runningexample.RunningExampleMain;
 import edu.cmu.cs.mvelezce.tool.execute.java.adapter.sleep.SleepAdapter;
@@ -26,9 +29,10 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Map;
 import java.util.Set;
-
 /**
- * Created by miguelvelez on 4/30/17.
+ *
+ * @author Miguel Velez
+ * Created on 4/30/17.
  */
 public class ConfigCrusherExecutor extends BaseExecutor {
 
@@ -73,6 +77,7 @@ public class ConfigCrusherExecutor extends BaseExecutor {
     // TODO factory pattern or switch statement to create the right adapter
     Adapter adapter;
 
+    /*  commented out by gwen
     if (this.getProgramName().contains("elevator")) {
       adapter = new ElevatorAdapter(this.getProgramName(), this.getEntryPoint(),
                                     this.getClassDir());
@@ -96,11 +101,14 @@ public class ConfigCrusherExecutor extends BaseExecutor {
     } else if (this.getProgramName().contains("pngtasticOptimizer")) {
       adapter = new OptimizerAdapter(this.getProgramName(),
                                      this.getEntryPoint(), this.getClassDir());
-    } else if (this.getProgramName().contains(
-                   RunningExampleMain.PROGRAM_NAME)) {
+    }
+    else */
+    if (this.getProgramName().contains(RunningExampleMain.PROGRAM_NAME)) {
       adapter = new RunningExampleAdapter(
           this.getProgramName(), this.getEntryPoint(), this.getClassDir());
-    } else if (this.getProgramName().contains("regions12")) {
+    }
+    /* commented out by gwen
+    else if (this.getProgramName().contains("regions12")) {
       adapter = new Regions12Adapter(this.getProgramName(),
                                      this.getEntryPoint(), this.getClassDir());
     } else if (this.getProgramName().contains("regions13")) {
@@ -130,7 +138,9 @@ public class ConfigCrusherExecutor extends BaseExecutor {
     } else if (this.getProgramName().contains("email")) {
       adapter = new EmailAdapter(this.getProgramName(), this.getEntryPoint(),
                                  this.getClassDir());
-    } else {
+    }
+    */
+    else {
       throw new RuntimeException("Could not create an adapter for " +
                                  this.getProgramName());
     }
