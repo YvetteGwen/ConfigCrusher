@@ -1,0 +1,5 @@
+{
+    "StaticAnalysis": {
+        "TaintAnalysisOutputDir": "tmp"
+    }
+}

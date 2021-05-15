@@ -5,33 +5,49 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import edu.cmu.cs.mvelezce.tool.Options;
 import edu.cmu.cs.mvelezce.tool.analysis.region.JavaRegion;
 import edu.cmu.cs.mvelezce.tool.analysis.region.Region;
+import edu.cmu.cs.mvelezce.tool.analysis.taint.java.StaticAnalysisConfig;
 import edu.cmu.cs.mvelezce.tool.analysis.taint.java.serialize.DecisionAndOptions;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
 import org.apache.commons.io.FileUtils;
+import org.apache.log4j.Logger;
 
 public abstract class BaseStaticAnalysis implements StaticAnalysis {
+
+  private static final Logger log =
+      Logger.getLogger(BaseStaticAnalysis.class.getName());
+
+  protected final StaticAnalysisConfig staticAnalysisConfig;
 
   protected static final String DIRECTORY =
       Options.DIRECTORY + "/analysis/java/programs";
   private String programName;
 
-  public BaseStaticAnalysis(String programName) {
+  public BaseStaticAnalysis(String programName,
+                            StaticAnalysisConfig staticAnalysisConfig) {
     this.programName = programName;
+    this.staticAnalysisConfig = staticAnalysisConfig;
   }
 
   @Override
   public Map<JavaRegion, Set<Set<String>>> analyze(String[] args)
       throws IOException {
+
+    log.debug("BasicFlowAnalysis.analyze begins.");
+
     Options.getCommandLine(args);
 
     String outputFile = BaseStaticAnalysis.DIRECTORY + "/" + this.programName;
     File file = new File(outputFile);
 
+    log.debug("outputFile = " + outputFile);
+
     Options.checkIfDeleteResult(file);
 
     if (file.exists()) {
+      log.debug("outputFile exists.");
+
       Collection<File> files = FileUtils.listFiles(file, null, true);
 
       if (files.size() != 1) {
@@ -43,9 +59,12 @@ public abstract class BaseStaticAnalysis implements StaticAnalysis {
       return this.readFromFile(files.iterator().next());
     }
 
+    log.debug("outputFile doesn't exists.");
+
     Map<JavaRegion, Set<Set<String>>> regionsToOptionsSet = this.analyze();
 
     if (Options.checkIfSave()) {
+      log.debug("Save is enabled.");
       this.writeToFile(regionsToOptionsSet);
     }
 

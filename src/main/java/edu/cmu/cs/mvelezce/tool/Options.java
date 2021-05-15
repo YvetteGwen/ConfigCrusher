@@ -8,12 +8,15 @@ import org.apache.commons.cli.DefaultParser;
 import org.apache.commons.cli.Option;
 import org.apache.commons.cli.ParseException;
 import org.apache.commons.io.FileUtils;
+import org.apache.log4j.Logger;
 
 /**
  * TODO add options for each component of the pipeline Created by mvelezce on
  * 4/28/17.
  */
 public abstract class Options {
+
+  private static final Logger log = Logger.getLogger(Options.class.getName());
 
   public static final String DIRECTORY = "src/main/resources";
   public static final String DOT_JSON = ".json";
@@ -45,6 +48,9 @@ public abstract class Options {
     } catch (ParseException e) {
       throw new RuntimeException("Could not parse the options you provided");
     }
+
+    log.debug("Options has saveres option: " +
+              Options.cmd.hasOption(Options.SAVERES));
   }
 
   public static void checkIfDeleteResult(File file) throws IOException {

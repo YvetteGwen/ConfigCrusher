@@ -4,21 +4,31 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import edu.cmu.cs.mvelezce.tool.analysis.region.JavaRegion;
 import edu.cmu.cs.mvelezce.tool.analysis.taint.java.BaseStaticAnalysis;
+import edu.cmu.cs.mvelezce.tool.analysis.taint.java.StaticAnalysisConfig;
 import edu.cmu.cs.mvelezce.tool.execute.java.adapter.BaseAdapter;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
+import org.apache.log4j.Logger;
 
 public class TaintFlowAnalysis extends BaseStaticAnalysis {
 
-  private static final String TAINTFLOW_OUTPUT_DIR =
-      BaseAdapter.USER_HOME +
-      "/Documents/Programming/Java/Projects/taintflow/src/main/resources/output";
+  final static Logger log = Logger.getLogger(TaintFlowAnalysis.class.getName());
 
-  public TaintFlowAnalysis(String programName) { super(programName); }
+  // private static final String TAINTFLOW_OUTPUT_DIR =
+  // BaseAdapter.USER_HOME +
+  // "/Documents/Programming/Java/Projects/taintflow/src/main/resources/output";
+
+  public TaintFlowAnalysis(String programName,
+                           StaticAnalysisConfig staticAnalysisConfig) {
+    super(programName, staticAnalysisConfig);
+  }
 
   @Override
   public Map<JavaRegion, Set<Set<String>>> analyze() throws IOException {
+
+    log.info("TaintFlowAnalysis begins.");
+
     List<ControlFlowResult> results = this.readTaintFlowResults();
     Map<JavaRegion, Set<Set<String>>> regionsToOptionsSet = new HashMap<>();
 
@@ -40,9 +50,14 @@ public class TaintFlowAnalysis extends BaseStaticAnalysis {
 
   private List<ControlFlowResult> readTaintFlowResults() throws IOException {
     ObjectMapper mapper = new ObjectMapper();
+
+    /*TaintFlowAnalysis.TAINTFLOW_OUTPUT_DIR*/
     File inputFile =
-        new File(TaintFlowAnalysis.TAINTFLOW_OUTPUT_DIR + "/" +
+        new File(this.staticAnalysisConfig.getTaintAnalysisOutputDir() + "/" +
                  this.getProgramName() + "/" + this.getProgramName() + ".json");
+
+    log.debug("inputFile = " + inputFile);
+
     List<ControlFlowResult> results = mapper.readValue(
         inputFile, new TypeReference<List<ControlFlowResult>>() {});
 

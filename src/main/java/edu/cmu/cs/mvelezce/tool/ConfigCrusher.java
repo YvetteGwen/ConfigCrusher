@@ -1,5 +1,6 @@
 package edu.cmu.cs.mvelezce.tool;
 
+import edu.cmu.cs.mvelezce.tool.SystemConfig;
 import edu.cmu.cs.mvelezce.tool.analysis.region.JavaRegion;
 import edu.cmu.cs.mvelezce.tool.analysis.region.Region;
 import edu.cmu.cs.mvelezce.tool.analysis.taint.java.StaticAnalysis;
@@ -21,30 +22,39 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
 import java.util.Set;
+import org.apache.log4j.Logger;
 
 public class ConfigCrusher {
+
+  final static Logger log = Logger.getLogger(ConfigCrusher.class.getName());
 
   private String programName;
   private String srcDir;
   private String classDir;
   private String entry;
+  private final SystemConfig systemConfig;
 
-  public ConfigCrusher(String programName, String classDir, String entry) {
-    this(programName, "", classDir, entry);
-  }
+  // public ConfigCrusher(String programName, String classDir, String entry) {
+  //   this(programName, "", classDir, entry);
+  // }
 
   public ConfigCrusher(String programName, String srcDir, String classDir,
-                       String entry) {
+                       String entry, SystemConfig systemConfig) {
     this.programName = programName;
     this.srcDir = srcDir;
     this.classDir = classDir;
     this.entry = entry;
+    this.systemConfig = systemConfig;
   }
 
   public PerformanceModel run(String[] args)
       throws IOException, NoSuchMethodException, IllegalAccessException,
              InvocationTargetException, InterruptedException {
-    StaticAnalysis analysis = new TaintFlowAnalysis(this.programName);
+
+    log.info("ConfigCrush begins to run.");
+
+    StaticAnalysis analysis = new TaintFlowAnalysis(
+        this.programName, this.systemConfig.staticAnalysisConfig);
     Map<JavaRegion, Set<Set<String>>> javaRegionsToOptionSet =
         analysis.analyze(args);
 

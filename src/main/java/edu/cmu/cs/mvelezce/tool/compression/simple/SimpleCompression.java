@@ -2,6 +2,7 @@ package edu.cmu.cs.mvelezce.tool.compression.simple;
 
 import edu.cmu.cs.mvelezce.tool.compression.BaseCompression;
 import java.util.*;
+import org.apache.log4j.Logger;
 
 /**
  *
@@ -10,11 +11,16 @@ import java.util.*;
  */
 public class SimpleCompression extends BaseCompression {
 
+  final static Logger log = Logger.getLogger(SimpleCompression.class.getName());
+
   public SimpleCompression(Set<Set<String>> optionSet) {
     this(null, optionSet);
   }
 
-  public SimpleCompression(String programName) { this(programName, null); }
+  public SimpleCompression(String programName) {
+    this(programName, null);
+    log.debug("constructor: SimpleCompression");
+  }
 
   public SimpleCompression(String programName, Set<Set<String>> optionSet) {
     super(programName, optionSet);
@@ -22,6 +28,9 @@ public class SimpleCompression extends BaseCompression {
 
   @Override
   public Set<Set<String>> compressConfigurations() {
+
+    log.debug("compressConfigurations");
+
     // Calculates which options are subsets of other options
     Set<Set<String>> filteredOptions =
         BaseCompression.filterOptions(this.getOptionSet());
